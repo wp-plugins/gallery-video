@@ -715,7 +715,7 @@ INSERT INTO `$table_name` (`name`, `title`,`description`, `value`) VALUES
 ('thumb_box_background', 'Box background', 'Box background', '333333'),
 ('thumb_box_use_shadow', 'Box use shadow', 'Box use shadow', 'on'),
 ('thumb_box_has_background', 'Box has background', 'Box has background', 'on'),
-('thumb_view_text', 'View Image Text', 'View Image Text', 'View Picture');
+('thumb_view_text', 'View Image Text', 'View Image Text', 'Watch Video');
 
 
 query1;
