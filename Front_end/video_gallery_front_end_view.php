@@ -3078,6 +3078,8 @@ jQuery(function(){
 				padding:0px !important
 			}
 			
+			
+			
 			section #huge_it_videogallery li .infoLayer ul li {
 				height:50px;
 				overflow:hidden;
@@ -3087,10 +3089,12 @@ jQuery(function(){
 			section #huge_it_videogallery li .infoLayer ul li h2 {
 				font-size: <?php echo $paramssld["thumb_title_font_size"]; ?>px;
 				color: #<?php echo $paramssld["thumb_title_font_color"]; ?>;
+				margin:0px !important;
 			}
 			
 			section #huge_it_videogallery li .infoLayer ul li p {
 				color: #<?php echo $paramssld["thumb_title_font_color"]; ?>;
+				margin:0px !important;
 			}
 			
 			section #huge_it_videogallery li .overLayer,
@@ -3110,6 +3114,8 @@ jQuery(function(){
 				z-index: 4;
 			}
 			
+			
+			
 			section #huge_it_videogallery li a {
 				position: absolute;
 				display: block;
@@ -3120,11 +3126,12 @@ jQuery(function(){
 				z-index: 6; 
 				border-radius: <?php echo $paramssld["thumb_image_border_radius"]; ?>px;
 			}
+
 			
 			#huge_it_videogallery li img {
-				width: <?php echo $paramssld["thumb_image_width"]; ?>px;	
+				width: <?php echo $paramssld["thumb_image_width"]; ?>px !important;	
 			<?php if($paramssld["thumb_image_behavior"]=='on'){?>
-				height: <?php echo $paramssld["thumb_image_height"]; ?>px;
+				height: <?php echo $paramssld["thumb_image_height"]; ?>px !important;
 			<?php } ?>
 				border: <?php echo $paramssld["thumb_image_border_width"]; ?>px solid #<?php echo $paramssld["thumb_image_border_color"]; ?>;
 				border-radius: <?php echo $paramssld["thumb_image_border_radius"]; ?>px;
