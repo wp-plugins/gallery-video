@@ -328,7 +328,8 @@ jQuery(function() {
 										}else if (strpos($rowimages->image_url,'vimeo') !== false) {	
 											$liclass="vimeo";
 											$vimeo = $rowimages->image_url;
-											$imgid =  end(explode( "/", $vimeo ));
+											$imgid =  explode( "/", $vimeo );
+											$imgid =  end($imgid);
 											$hash = unserialize(file_get_contents("http://vimeo.com/api/v2/video/".$imgid.".php"));
 											$imgsrc=$hash[0]['thumbnail_large'];
 											$thumburl ='<img src="'.$imgsrc.'" alt="" />';
@@ -700,7 +701,7 @@ function html_videogallery_video(){
 				window.parent.uploadID.val(ID1);
 				
 				tb_remove();
-				$("#save-buttom").click();
+				jQuery("#save-buttom").click();
 			});
 			
 			jQuery('#huge_it_add_video_input').change(function(){
@@ -719,7 +720,7 @@ function html_videogallery_video(){
 					
 			jQuery('.updated').css({"display":"none"});
 		<?php	if($_GET["closepop"] == 1){ ?>
-			$("#closepopup").click();
+			jQuery("#closepopup").click();
 			self.parent.location.reload();
 		<?php	} ?>
 		

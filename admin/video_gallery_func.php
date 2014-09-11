@@ -272,10 +272,8 @@ INSERT INTO
 			   
 	 }
 	 }
-	
-	$query=$wpdb->prepare("SELECT * FROM ".$wpdb->prefix."videogallery_huge_itslider_sliders WHERE id= %d",$id);
-	$rowslider=$wpdb->get_row($query);
-    Html_editvideogallery($ord_elem, $count_ord, $images, $row, $cat_row, $rowim, $rowsld, $paramssld, $rowsposts, $rowsposts8, $postsbycat, $rowslider);
+
+    Html_editvideogallery($ord_elem, $count_ord, $images, $row, $cat_row, $rowim, $rowsld, $paramssld, $rowsposts, $rowsposts8, $postsbycat);
   }
   
 function add_videogallery()
@@ -368,6 +366,7 @@ function apply_cat($id)
 {	
 
 		 global $wpdb;
+
 		 if(!is_numeric($id)){
 			 echo 'insert numerc id';
 		 	return '';
@@ -377,7 +376,7 @@ function apply_cat($id)
 			echo '';
 		 }
 		 $cat_row=$wpdb->get_results($wpdb->prepare("SELECT * FROM ".$wpdb->prefix."huge_it_videogallery_galleries WHERE id!= %d ", $id));
-		 $corent_ord=$wpdb->get_var($wpdb->prepare('SELECT `ordering` FROM '.$wpdb->prefix.'huge_it_videogallery_galleries WHERE id = %d AND sl_width=%d',$id,$_POST['sl_width']));
+
 		 $max_ord=$wpdb->get_var('SELECT MAX(ordering) FROM '.$wpdb->prefix.'huge_it_videogallery_galleries');
 	
             $query=$wpdb->prepare("SELECT sl_width FROM ".$wpdb->prefix."huge_it_videogallery_galleries WHERE id = %d", $id);
@@ -386,6 +385,7 @@ function apply_cat($id)
 	if(isset($_POST["content"])){
 	$script_cat = preg_replace('#<script(.*?)>(.*?)</script>#is', '', stripslashes($_POST["content"]));
 	}
+			if(isset($_POST["name"])){
 			if($_POST["name"] != ''){
 			$wpdb->query("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  name = '".$_POST["name"]."'  WHERE id = '".$id."' ");
 			$wpdb->query("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  sl_width = '".$_POST["sl_width"]."'  WHERE id = '".$id."' ");
@@ -398,6 +398,8 @@ function apply_cat($id)
 			$wpdb->query("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  huge_it_sl_effects = '".$_POST["huge_it_sl_effects"]."'  WHERE id = '".$id."' ");
 			$wpdb->query("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  ordering = '1'  WHERE id = '".$id."' ");
 			}
+			}
+			
 		
 	$query=$wpdb->prepare("SELECT * FROM ".$wpdb->prefix."huge_it_videogallery_galleries WHERE id = %d", $id);
 	   $row=$wpdb->get_row($query);
@@ -429,7 +431,7 @@ if (isset($_POST['params'])) {
     }
 	
 		
-	   
+	   if(isset($_POST["imagess"])){
 	   if($_POST["imagess"] != ''){
 				   		   $query=$wpdb->prepare("SELECT * FROM ".$wpdb->prefix."huge_it_videogallery_videos where videogallery_id = %d order by id ASC", $row->id);
 			   $rowim=$wpdb->get_results($query);
@@ -451,6 +453,7 @@ INSERT INTO
       $wpdb->query($sql_2);
 		}	
 	   }
+	  }
 	   
 	if(isset($_POST["posthuge-it-description-length"])){
 	 $wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  published = %d WHERE id = %d ", $_POST["posthuge-it-description-length"], $_GET['id']));

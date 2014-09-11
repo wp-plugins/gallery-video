@@ -5,7 +5,8 @@ function get_video_gallery_id_from_url($url){
 		if (stristr($url,'youtu.be/')){ preg_match('/(https:|http:|)(\/\/www\.|\/\/|)(.*?)\/(.{11})/i', $url, $final_ID); return array($final_ID[4],'youtube'); }
 		else{ preg_match('/(https:|http:|):(\/\/www\.|\/\/|)(.*?)\/(embed\/|watch\?v=|(.*?)&v=|v\/|e\/|.+\/|watch.*v=|)([a-z_A-Z0-9]{11})/i', $url, $IDD); return array($IDD[6],'youtube'); }
 	}else {
-		$vimeoid =  end(explode( "/", $url ));
+		$vimeoid =  explode( "/", $url );
+		$vimeoid =  end($vimeoid);
 		return array($vimeoid,'vimeo');
 	}
 }
@@ -17,7 +18,6 @@ function front_end_videogallery($images, $paramssld, $videogallery)
 	$videogallerytitle=$videogallery[0]->name;
 	$videogalleryheight=$videogallery[0]->sl_height;
 	$videogallerywidth=$videogallery[0]->sl_width;
-	$videogalleryurl=$videogallery[0]->sl_url;
 	$videogalleryeffect=$videogallery[0]->videogallery_list_effects_s;
 	$slidepausetime=($videogallery[0]->description+$videogallery[0]->param);
 	$videogallerypauseonhover=$videogallery[0]->pause_on_hover;
