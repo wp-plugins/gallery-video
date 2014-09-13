@@ -18,9 +18,9 @@ Video Gallery plugin was created and specifically designed to show your video fi
 
 Video Gallery plugin was created and specifically designed to show your videos from Vimeo and Youtube in unusual splendid ways. It has 5 good-looking views. Each are made in different taste so that you can choose any of them, according to the style of your website.
 
-* 1) Upload the video in your Video Gallery
-* 2) Wright a title
-* 3) Add description
+* 1) Upload the video in your Video Gallery.
+* 2) Wright a title.
+* 3) Add description.
 * 4) Give some link.
 
 Video gallery gives you the choice between 5 unrepeatable views. Tt has a view to show your videos with it’s information next to it in a beautiful popup, or the same view can be slide, in the second view, then you can choose to demonstrate  the videos in lightbox, or only slide the videos, in the next view, set up the way to slide and have fun, the last view is to show your videos in a little box which can be opened in lightbox and be slide at a time. So the choice are huge. You can provide all the information as from uploader panel, as after inserting in the Video Gallery panel.
