@@ -29,6 +29,22 @@ Each of the view has changeable options in ‘General Options’ section of Vide
 
 The  Video Gallery allows you to add video from 2 kind of sources, it is Vimeo and Youtube. From time to time we will make all kind of updates, and add many other even better view to our Video Gallery, so that to be competitive among the other Video plugins in WordPress. So we have an aim to be the best Video Gallery and we will achieve our goal. Now it time for you to install and just try how nice it works!
 
+### Video Gallery / Content popup - Video Gallery
+This view has been made for showing your videos in popup with the information, that is given to the videos and the title, In the popup you can also find a Link button which takes to another page. The front image of your video will be settled be in compact box with zoom icon on it. Clicking on them and open the video in popup.
+
+### Content video slider - Video Gallery
+This view will introduce your video with it’s description and title next to it, in a wonderful slider. Choose the way to change the slides,m and enjoy sliding each video with the content.
+
+### LIghtbox Video Gallery - Video Gallery
+This view shows only the videos, without any text in a boxes, which will open in lightbox while clicking on them, it is also possible to adjust the style of the lightbox, in Lightbox Options section.
+
+### Video Slider - Video Gallery
+Show your videos in unique way by using Slider view. Here you can put the title and description straight on the video, choose the manner of sliding your videos, change styles and enjoy sliding your videos.
+
+### Thumbnails - Video Gallery
+Breathe new life to your site, show videos using thumbnails view. Pick a background image for the video. Open them in Lightbox and enjoy the show.
+
+
 == Installation ==
 
 ### First download the ZIP file ,
