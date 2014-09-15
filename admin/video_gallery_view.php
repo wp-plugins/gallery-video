@@ -9,8 +9,6 @@ if(!function_exists('current_user_can')){
 
 function html_showvideogallerys( $rows,  $pageNav,$sort,$cat_row){
 	global $wpdb;
-
-
 	?>
     <script language="javascript">
 		function ordering(name,as_or_desc)

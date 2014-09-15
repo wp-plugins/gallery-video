@@ -4,7 +4,7 @@ Donate link: http://huge-it.com/video-gallery/
 Tags: video gallery, gallery, video, youtube, vimeo, wp gallery, media gallery, thumbnail video player, video plugin, vimeo gallery, youtube gallery, embed videos, youtube player, vimeo player, Video Player plugin, videos, wordpress, wordpress gallery, wordpress youtube, wordpress video, video portfolio, plugin, megavideo, video slider, video slideshow, free video gallery, mobile responsive, post, posts,
 Requires at least: 3.0.1
 Tested up to: 4.0
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,10 +18,10 @@ Video Gallery plugin was created and specifically designed to show your video fi
 
 Video Gallery plugin was created and specifically designed to show your videos from Vimeo and Youtube in unusual splendid ways. It has 5 good-looking views. Each are made in different taste so that you can choose any of them, according to the style of your website.
 
-* 1) Upload the video in your Video Gallery.
-* 2) Wright a title.
-* 3) Add description.
-* 4) Give some link.
+* Upload the video in your Video Gallery.
+* Wright a title.
+* Add description.
+* Give some link.
 
 Video gallery gives you the choice between 5 unrepeatable views. Tt has a view to show your videos with it’s information next to it in a beautiful popup, or the same view can be slide, in the second view, then you can choose to demonstrate  the videos in lightbox, or only slide the videos, in the next view, set up the way to slide and have fun, the last view is to show your videos in a little box which can be opened in lightbox and be slide at a time. So the choice are huge. You can provide all the information as from uploader panel, as after inserting in the Video Gallery panel.
 
@@ -68,6 +68,9 @@ Now you can set your Video Gallery options, images and use our Video Gallery.
 7.  WordPress Video Gallery view 5 - Video Gallery - Thumbnails
     
 == Changelog ==
+
+= 1.0.2 =
+*  Video Gallery bag fixed.
 
 = 1.0.1 =
 *  Video Gallery bag fixed.

@@ -48,7 +48,6 @@ jQuery(document).ready(function () {
 		</div>
 	</div>
 	<div style="clear: both;"></div>
-	<div style="clear:both;"></div>
 	<div id="poststuff">
 	<div id="post-body-content" class="videogallery-options">
 			<div id="post-body-heading">

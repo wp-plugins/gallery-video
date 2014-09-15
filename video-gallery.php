@@ -4,7 +4,7 @@
 Plugin Name: Huge IT Video Gallery
 Plugin URI: http://huge-it.com/video-allery/
 Description: Video Gallery plugin was created and specifically designed to show your video files in unusual splendid ways.
-Version: 1.0.1
+Version: 1.0.2
 Author: http://huge-it.com/
 License: GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
 */
@@ -368,8 +368,8 @@ class Huge_it_videogallery_Widget extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 	 		'Huge_it_videogallery_Widget', 
-			'Huge IT videogallery', 
-			array( 'description' => __( 'Huge IT videogallery', 'huge_it_videogallery' ), ) 
+			'Huge IT Video Gallery', 
+			array( 'description' => __( 'Huge IT Video Gallery', 'huge_it_videogallery' ), ) 
 		);
 	}
 
@@ -433,7 +433,7 @@ class Huge_it_videogallery_Widget extends WP_Widget {
 				$rowwidget=$wpdb->get_results($query);
 				foreach($rowwidget as $rowwidgetecho){
 				
-				selected
+				
 				?>
 					<option <?php if($rowwidgetecho->id == $instance['videogallery_id']){ echo 'selected'; } ?> value="<?php echo $rowwidgetecho->id; ?>"><?php echo $rowwidgetecho->name; ?></option>
 

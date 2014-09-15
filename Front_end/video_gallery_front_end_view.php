@@ -443,9 +443,9 @@ jQuery(document).ready(function(){
 	overflow: hidden; 
 	white-space:nowrap;
 	font-weight:normal;
-	font-size: <?php echo $paramssld["ht_view2_popup_title_font_size"];?>px !important;
-	line-height: <?php echo $paramssld["ht_view2_popup_title_font_size"];?>px !important;
-	color:#<?php echo $paramssld["ht_view2_popup_title_font_color"];?>;
+	font-size: <?php echo $paramssld["ht_view2_element_title_font_size"];?>px !important;
+	line-height: <?php echo $paramssld["ht_view2_element_title_font_size"];?>px !important;
+	color:#<?php echo $paramssld["ht_view2_element_title_font_color"];?>;
 }
 
 .element .title-block .button-block {
@@ -659,7 +659,7 @@ jQuery(document).ready(function(){
 	padding:6px 12px;
 	background:#<?php echo $paramssld["ht_view2_popup_linkbutton_background_color"];?>;
 	color:#<?php echo $paramssld["ht_view2_popup_linkbutton_color"];?>;
-	font-size:<?php echo $paramssld["ht_view2_popup_linkbutton_font_size"];?>;
+	font-size:<?php echo $paramssld["ht_view2_popup_linkbutton_font_size"];?>px;
 	text-decoration:none;
 }
 
@@ -884,7 +884,7 @@ jQuery(document).ready(function(){
 
 #main-slider div.slider-content {
 	position:relative;
-	width:100%;localhost
+	width:100%;
 	padding:0px 0px 0px 0px;
 	position:relative;
 	background:#<?php echo $paramssld["ht_view5_slider_background_color"];?>;
@@ -970,7 +970,7 @@ jQuery(document).ready(function(){
 	text-align:justify;
 	font-size:<?php echo $paramssld["ht_view5_description_font_size"];?>px !important;
 	line-height:<?php echo $paramssld["ht_view5_description_font_size"];?>px !important;
-	color:#<?php echo $paramssld["ht_view5_description_font_color"];?>;
+	color:#<?php echo $paramssld["ht_view5_description_color"];?>;
 }
 
 #main-slider .slider-content-wrapper .right-block .description h1,
@@ -2500,8 +2500,8 @@ jQuery(function(){
 			bottom:0px;
 			<?php }else if($paramssld['slider_dots_position']=="none"){?>
 			display:none;
-			<?
-			}else{ ?>
+			
+			}else{
 			top:0px; <?php } ?>
 		}
 		
@@ -2515,7 +2515,7 @@ jQuery(function(){
 		
 		<?php
 		
-		$arrowfolder=plugins_url('video-gallery/Front_images/arrows');
+		$arrowfolder=plugins_url('gallery-video/Front_images/arrows');
 		switch ($paramssld['slider_navigation_type']) {
 			case 1:
 				?>
@@ -3058,9 +3058,9 @@ jQuery(function(){
 		
 		<style>
 			section #huge_it_videogallery {
-				padding: 0px !important;
-				min-width: 100%;
-				width: 100%;
+				padding: <?php echo $paramssld["thumb_box_padding"]."px"; ?>;
+				min-width: 69%;
+				display: block;
 				min-height: 100%;
 				text-align: center;
 				margin-bottom: 30px;
@@ -3074,6 +3074,7 @@ jQuery(function(){
 				width: <?php echo $paramssld["thumb_image_width"]; ?>px;	
 				height: <?php echo $paramssld["thumb_image_height"]; ?>px;
 				margin: <?php echo $paramssld["thumb_margin_image"]; ?>px !important;
+                                border: <?php echo $paramssld["thumb_image_border_width"]; ?>px solid #<?php echo $paramssld["thumb_image_border_color"]; ?>;
 				border-radius: <?php echo $paramssld["thumb_image_border_radius"]; ?>px;
 				padding:0px !important
 			}
@@ -3112,6 +3113,7 @@ jQuery(function(){
 				top: 0px;
 				left: 0;
 				z-index: 4;
+                                border-radius: <?php echo $paramssld["thumb_image_border_radius"]; ?>px;
 			}
 			
 			
@@ -3167,7 +3169,7 @@ jQuery(function(){
 			<ul id="huge_it_videogallery">
 				<li id="fullPreview"></li>
 				
-				<?php  foreach($images as $key=>$row) { 
+				<?php  foreach($images as $key=>$row) {
 				$imgurl=explode(";",$row->image_url); ?>
 				<li class="huge_it_big_li">
 				<?php 
@@ -3177,7 +3179,7 @@ jQuery(function(){
 					switch($imagerowstype){
 						case 'image': 
 					?>									
-						<a class="group1" href="<?php echo $row->image_url; ?>"></a>
+                                    <a class="group1" href="<?php echo $row->image_url; ?>"></a>
 						<img src="<?php echo $row->image_url; ?>" alt="<?php echo $row->name; ?>" />
 					<?php 
 						break;
@@ -3186,14 +3188,14 @@ jQuery(function(){
 							<?php
 								$videourl=get_video_gallery_id_from_url($row->image_url);
 								if($videourl[1]=='youtube'){?>
-									<a class="youtube huge_it_videogallery_item group1"  href="https://www.youtube.com/embed/<?php echo $videourl[0]; ?>"></a>
+									<a title="<?php echo $row->name; ?>" class="youtube huge_it_videogallery_item group1"  href="https://www.youtube.com/embed/<?php echo $videourl[0]; ?>"></a>
 									<img src="http://img.youtube.com/vi/<?php echo $videourl[0]; ?>/mqdefault.jpg" alt="" />				
 								<?php
 								}else {
 									$hash = unserialize(file_get_contents("http://vimeo.com/api/v2/video/".$videourl[0].".php"));
 									$imgsrc=$hash[0]['thumbnail_large'];
 								?>
-									<a class="vimeo huge_it_videogallery_item group1" href="http://player.vimeo.com/video/<?php echo $videourl[0]; ?>"></a>
+									<a title="<?php echo $row->name; ?>" class="vimeo huge_it_videogallery_item group1" href="http://player.vimeo.com/video/<?php echo $videourl[0]; ?>"></a>
 									<img src="<?php echo $imgsrc; ?>" alt="" />
 								<?php
 								}

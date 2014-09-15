@@ -48,7 +48,6 @@ jQuery(document).ready(function () {
 		</div>
 	</div>
 	<div style="clear: both;"></div>
-	<div style="clear:both;"></div>
 <div id="poststuff">
 		<?php $path_site = plugins_url("/../Front_images", __FILE__); ?>
 
@@ -187,13 +186,13 @@ jQuery(document).ready(function () {
 					<div>					
 						<h3>Popup Title</h3>
 						<div class="has-background">
-							<label for="ht_view2_element_title_font_size">Popup Title Font Size</label>
-							<input type="text" name="params[ht_view2_element_title_font_size]" id="ht_view2_element_title_font_size" value="<?php echo $param_values['ht_view2_element_title_font_size']; ?>" class="text" />
+							<label for="ht_view2_popup_title_font_size">Popup Title Font Size</label>
+							<input type="text" name="params[ht_view2_popup_title_font_size]" id="ht_view2_element_title_font_size" value="<?php echo $param_values['ht_view2_popup_title_font_size']; ?>" class="text" />
 							<span>px</span>
 						</div>
 						<div>
-							<label for="ht_view2_element_title_font_color">Popup Title Font Color</label>
-							<input name="params[ht_view2_element_title_font_color]" type="text" class="color" id="ht_view2_element_title_font_color" value="#<?php echo $param_values['ht_view2_element_title_font_color']; ?>" size="10" />
+							<label for="ht_view2_popup_title_font_color">Popup Title Font Color</label>
+							<input name="params[ht_view2_popup_title_font_color]" type="text" class="color" id="ht_view2_element_title_font_color" value="#<?php echo $param_values['ht_view2_popup_title_font_color']; ?>" size="10" />
 						</div>
 					</div>
 					<div>
@@ -415,7 +414,7 @@ jQuery(document).ready(function () {
 							<input type="text" name="params[slider_slideshow_border_radius]" id="slider_slideshow_border_radius" value="<?php echo $param_values['slider_slideshow_border_radius']; ?>" class="text" />
 						</div>
 					</div>
-					<div class="options-block" id="options-block-title">
+                                    <div class="options-block" id="options-block-title" style="display: none;">
 						<h3>Title</h3>
 						<div class="has-background">
 							<label for="title-container-width">Title Width</label>
@@ -498,7 +497,7 @@ jQuery(document).ready(function () {
 								</div>
 						</div>
 					</div>
-					<div class="options-block" style="margin-top:-270px;">
+                                    <div class="options-block" style="margin-top:-270px;display: none;">
 						<h3>Description</h3>
 						<div class="has-background">
 							<label for="description-container-width">Description Width</label>
@@ -581,7 +580,7 @@ jQuery(document).ready(function () {
 								</div>
 						</div>
 					</div>
-					<div class="options-block" id="options-block-navigation">
+                                    <div class="options-block" id="options-block-navigation" style="">
 						<h3>Navigation</h3>
 						<div  class="has-background">
 							<label for="slider_show_arrows">Show Navigation Arrows </label>
