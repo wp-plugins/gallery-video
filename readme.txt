@@ -77,3 +77,23 @@ Now you can set your Video Gallery options, images and use our Video Gallery.
 
 = 1.0.0 =
 *  Video Gallery added.
+
+==Wordpress Adding a Video Gallery==
+
+### Step 1 Creating a Video-Gallery
+
+Huge-IT Gallery > Add New Gallery
+
+* Add video link. Video links can be add from Youtube and Vimeo.
+* Title. Wright a title to the video
+* Description. Wright some information about video content
+* URL.You can add a link to another page that is related to the video
+
+### Inserting Created Video Gallery.
+
+After you created Video Gallery on the right side find 3 blocks.
+
+* 1. Views. In this block you can choose one from 5 unrepeatable views.
+* 1. Usage. Here is located the shortcode Of your Video Gallery. By Copy&Paset up this shortcode can be inserted wherever you need in your post. Or it is possible to add the shortcode automaticly. On post window just pressing on add video gallery button the shortcode will be inserted into post.
+* 1. Template include. Insert this code into your template,to make the inserting the video gallery easy for using in custom location within theme.
+
