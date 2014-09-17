@@ -93,7 +93,22 @@ Huge-IT Gallery > Add New Gallery
 
 After you created Video Gallery on the right side find 3 blocks.
 
-* 1. Views. In this block you can choose one from 5 unrepeatable views.
-* 1. Usage. Here is located the shortcode Of your Video Gallery. By Copy&Paset up this shortcode can be inserted wherever you need in your post. Or it is possible to add the shortcode automaticly. On post window just pressing on add video gallery button the shortcode will be inserted into post.
-* 1. Template include. Insert this code into your template,to make the inserting the video gallery easy for using in custom location within theme.
+* 1.Views. In this block you can choose one from 5 unrepeatable views.
+* 2.Usage. Here is located the shortcode Of your Video Gallery. By Copy&Paset up this shortcode can be inserted wherever you need in your post. Or it is possible to add the shortcode automaticly. On post window just pressing on add video gallery button the shortcode will be inserted into post.
+* 3.Template include. Insert this code into your template,to make the inserting the video gallery easy for using in custom location within theme.
 
+### Step 2. General Options of Video Gallery
+
+In this section you can modify your Video Gallery in more details. That will change the features of each view you choose.
+
+### 2.1 Video Gallery/Content popup
+
+Video-element Styles
+
+Video Video-element Width. Specify preferable width of your videos
+Video-element Height. Specify desired high of posted videos.
+Video-element Border Width. Specify preferable width for surrounded border of the Video-element
+Video-element Border colour. Select preferable colour for surrounded border
+Video-element's Video-image Overlay colour. Select a colour for the overlay on the video as you hold the mouse arrow on it
+Video-element's Video-image Overlay Transparency. Determine preferable transparency degree for the video overlay
+Zoom image Style. Determine black or white colour for zoom icon
