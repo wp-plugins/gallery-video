@@ -106,9 +106,180 @@ In this section you can modify your Video Gallery in more details. That will cha
 Video-element Styles
 
 Video Video-element Width. Specify preferable width of your videos
+
 Video-element Height. Specify desired high of posted videos.
+
 Video-element Border Width. Specify preferable width for surrounded border of the Video-element
+
 Video-element Border colour. Select preferable colour for surrounded border
+
 Video-element's Video-image Overlay colour. Select a colour for the overlay on the video as you hold the mouse arrow on it
+
 Video-element's Video-image Overlay Transparency. Determine preferable transparency degree for the video overlay
+
 Zoom image Style. Determine black or white colour for zoom icon
+
+**Popup Styles**
+
+* Popup Background color. Edit to set preferable background colour of popup in your 
+* Popup Overlay color.Choose preferable colour for popup overlay in your
+* Popup Overlay Transparency. Specify preferable degree of background transparency in your 
+* Popup Close Button Style. Edit what  colour for  “X” icon would you like 					
+* Show Separator Lines. Select to show separation lines between title and text in popup.
+
+**Popup Description**
+
+* Show Description. Select to show the description of the video. 
+* Description Font Size. Determine preferable size of description font.
+* Description Font color. Set preferable colour of description text.
+
+**Video-element Title**
+
+* Video-element Title Font Size. Edit preferable size of title font in 
+* Video-element Title Font color. Edit preferable colour of title 
+* Video-element Title Background color. Determine preferable colour of title’s background
+
+**Video-element Link button**
+
+* Show Link button on Video-element. Select to show “View More” button on the video
+* Link button Text. You can change the “View More” button text
+* Link button Font Size. Choose preferable size of Link-button 
+* Link button Font color. Determine preferable colour of link font 
+* Link button Background color. Determine preferable colour for link background 
+
+**Popup Title**
+
+* Popup Title Font Size. Determine title size of the letters of popup
+* Popup Title Font color. Configure preferable colour for title in popup
+
+**Popup Link button**
+
+* Show Link button. Choose to make Link-button visible in popup 
+* Link button Text. Edit the text of Link-button in popup 
+* Link button Font Size. Set preferable size of the letters of Link-button in popup 
+* Link button Font color. Configure the preferable colour for Link-button in popup
+* Link button Font Hover color. Determine preferable colour of Link-button when you hover the mouse on it 
+* Link button Background color. Specify preferable background colour of the Link-button in popup 
+* Link button Background Hover color. Specify preferable background colour of the link as you hover the mouse on it.
+
+### 2.2 Content video slider 
+
+**Slider Container**
+
+* Main image Width. This fixes the margin of the main image
+* Slider Background color. You can choose preferable colour for slider field
+* Arrow Icons Style. Specify black/white colour of arrows in slider 
+* Show Separator Lines. Choose to make the lines between text, title, and link visible
+
+**Title**
+
+* Title Font Size. Configure the preferable size of the letters of the title 
+* Title Font color. Configure the preferable colour of the font 
+
+**Link button**
+
+* Show Link button. Click to show the Link-button 
+* Link button Text. Write a text on link button
+* Link button Font Size. Edit the size of the letters of the link text 
+* Link button Font color. Edit the colour of the link text
+* Link button Font Hover color. Edit the colour of the link text while hovering the mouse on it
+* Link button Background color. Determine preferable colour for link field
+* Link button Background Hover color. Choose a colour for your link background while hovering on it
+
+**Description**
+
+* Show Description. Click to show the description of the text 
+* Description Font Size. Specify preferable size of the letters of description 
+* Description Font color. Choose a colour for description text in your “content video slider” view
+
+### 2.3 LIghtbox-Video Gallery
+
+**Video-image**
+
+* Video-image Width. Specify preferable size of the video 
+* Video-image Border Width. Specify preferable width of surrounded borders
+* Video-image Border color. Configure your preferable the colour for border 
+* Border Radius. Determine prefered radius of border corners
+
+**Title**
+
+* Title Font Size. Specify the size for font of the title
+* Title Font color. Configure the preferable colour for title
+* Title Font Hover color. Configure the preferable of the title while hovering on it 
+* Title Background color. Change title background colour, which comes up in closed position
+* Title Background Transparency. Set level for title background transparency
+
+### 2.4 Video Slider
+
+**Video Slider**
+
+Video Behaviour. Choose “resized” to stretch and fit your videos to the size of Slider. 
+Slider Background color. Set preferable color of the vacant part of slider field while images has its natural size 
+Slideshow Border Size. Specify the size of the border in your slider
+Slideshow Border color. Choose your prefered colour for border
+Slideshow Border radius Determine preferable radius for slider border 
+
+**Description**
+
+* Description Width. Select the width of description text box
+* Description Has Margin. Determine if description need to have margin 
+* Description Font Size. Specify the size of the letters in description
+* Description Text color. Determine preferable color of the description text 
+* Description Text Align. Specify the location of the description in the box	
+* Description Background Transparency. Determine background transparency degree for description.
+* Description Background colour. Determine the colour for description field
+* Description Border Size. Specify preferable size for the description border. 
+* Description Border color. Specify preferable colour of description border 
+* Description Border Radius . Specify preferable corner’s radius of the description box 
+* Description Position. Specify where to posite the description on the slider view
+
+**Title**
+
+* Title Width. Determine the width for title box
+* Title Has Margin. Click if you'd like the title to have margin 
+* Title Font Size. Edit to set preferable size of the letters for the title 
+* Title Text color. Edit to set preferable colour for the title
+* Title Text Align. Specify the place of the title in the box	
+* Title Background Transparency. 
+* Title Background color. Determine preferable colour of title background
+* Title Border Size. Specify preferable size of the title border 
+* Title Border color. Determine preferable colour for the title border
+* Title Border Radius. Specify preferable radius for border corners 
+* Title Position. Specify preferable position of the title
+
+**Navigation**
+
+* Show Navigation Arrows. Click to show navigation arrows in slider
+* Navigation Dots Position / Hide Dots. Choose where to locate the dots, or choose to remove them
+* Navigation Dots color. Choose the colour for navigation dots of slider
+* Navigation Active Dot colour. Determine preferable colour of moving dots in slider
+* Navigation Type.  Determine preferable type of your navigation arrows.
+
+### 2.5 Thumbnails
+
+**Image**
+
+* Video-image Behavior. Click to Determine behavior of video image
+* Video-image Width. Allows to specify preferable width of thumbs 
+* Video-image Height. Allows to specify preferable height of thumbs 
+* Video-image Border Width. Allows to specify preferable width of the border between thumbs
+* Video-image Border color.  Determine preferable colour of the border between thumbs 
+* Border Radius. Allows to specify preferable radius of the border 
+* Margin Video. Allows to specify the distance between each thumb
+
+
+**Container Style**
+
+* Presence of a background. Click to have background for thumbs
+* Box background color. Specify desired colour of surrounded box
+* Box shadow. Click if you'd like to have shadows in the box
+* Box padding. Specify desired distance between box and video 
+
+**Title**
+
+* Title Font Size. Specify preferable size of the text font 
+* Title Font color. determine preferable colour of text 
+* Overlay Background color. Determine the overlay colour of the title 
+* Title Background Transparency. Specify the degree of background transparency 
+* Link text. Wright desired text for the link.
+
