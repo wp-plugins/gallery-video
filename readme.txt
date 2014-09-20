@@ -4,7 +4,7 @@ Donate link: http://huge-it.com/video-gallery/
 Tags: video gallery, gallery, video, youtube, vimeo, wp gallery, media gallery, thumbnail video player, video plugin, vimeo gallery, youtube gallery, embed videos, youtube player, vimeo player, Video Player plugin, videos, wordpress, wordpress gallery, wordpress youtube, wordpress video, video portfolio, plugin, megavideo, video slider, video slideshow, free video gallery, mobile responsive, post, posts, video player, player, seo, video lightbox, widget, widget video,
 Requires at least: 3.0.1
 Tested up to: 4.0
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,6 +71,9 @@ Now you can set your Video Gallery options, images and use our Video Gallery.
 7.  WordPress Video Gallery view 5 - Video Gallery - Thumbnails
     
 == Changelog ==
+
+= 1.0.3 =
+*  SQL injection bag fixed in Video Gallery.
 
 = 1.0.2 =
 *  Video Gallery bag fixed.
