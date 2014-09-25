@@ -80,7 +80,7 @@ function html_showvideogallerys( $rows,  $pageNav,$sort,$cat_row){
 				 <input type="button" value="Reset" onclick="window.location.href=\'admin.php?page=videogallerys_huge_it_videogallery\'" class="button-secondary action">
 			</div>';
 
-			 print_html_nav($pageNav['total'],$pageNav['limit'],$serch_fields);
+			
 			?>
 			<table class="wp-list-table widefat fixed pages" style="width:95%">
 				<thead>

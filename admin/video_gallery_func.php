@@ -10,27 +10,29 @@ if(!function_exists('current_user_can')){
 function showvideogallery() 
   {
 	  
-  global $wpdb;
+	global $wpdb;
 	$limit=0;
 
+	if(isset($_POST['search_events_by_title'])){
 	$search_tag=esc_html(stripslashes($_POST['search_events_by_title']));
+	}
+	else {
+	$search_tag ='';
+	}
 	$cat_row_query="SELECT id,name FROM ".$wpdb->prefix."huge_it_videogallery_galleries WHERE sl_width=0";
 	$cat_row=$wpdb->get_results($cat_row_query);
 	
-
 	$query = $wpdb->prepare("SELECT COUNT(*) FROM ".$wpdb->prefix."huge_it_videogallery_galleries WHERE name LIKE %s" , "%{$search_tag}}%");
 	
 	$total = $wpdb->get_var($query);
 
-	if(!($cat_id)){
-	 $query =$wpdb->prepare("SELECT  a.* ,  COUNT(b.id) AS count, g.par_name AS par_name FROM ".$wpdb->prefix."huge_it_videogallery_galleries  AS a LEFT JOIN ".$wpdb->prefix."huge_it_videogallery_galleries AS b ON a.id = b.sl_width 
+	$query =$wpdb->prepare("SELECT  a.* ,  COUNT(b.id) AS count, g.par_name AS par_name FROM ".$wpdb->prefix."huge_it_videogallery_galleries  AS a LEFT JOIN ".$wpdb->prefix."huge_it_videogallery_galleries AS b ON a.id = b.sl_width 
 LEFT JOIN (SELECT  ".$wpdb->prefix."huge_it_videogallery_galleries.ordering as ordering,".$wpdb->prefix."huge_it_videogallery_galleries.id AS id, COUNT( ".$wpdb->prefix."huge_it_videogallery_videos.videogallery_id ) AS prod_count
 FROM ".$wpdb->prefix."huge_it_videogallery_videos, ".$wpdb->prefix."huge_it_videogallery_galleries
 WHERE ".$wpdb->prefix."huge_it_videogallery_videos.videogallery_id = ".$wpdb->prefix."huge_it_videogallery_galleries.id
 GROUP BY ".$wpdb->prefix."huge_it_videogallery_videos.videogallery_id) AS c ON c.id = a.id LEFT JOIN
 (SELECT ".$wpdb->prefix."huge_it_videogallery_galleries.name AS par_name,".$wpdb->prefix."huge_it_videogallery_galleries.id FROM ".$wpdb->prefix."huge_it_videogallery_galleries) AS g
  ON a.sl_width=g.id WHERE a.name LIKE %s  group by a.id  ","%".$search_tag."%");
-}
 
 $rows = $wpdb->get_results($query);
 
@@ -53,6 +55,8 @@ foreach($rows as $row)
 	}
 }
 	$cat_row=open_cat_in_tree($cat_row);
+	$pageNav='';
+	$sort='';
 		html_showvideogallerys( $rows, $pageNav,$sort,$cat_row);
   }
 
