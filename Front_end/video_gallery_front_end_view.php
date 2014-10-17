@@ -1,9 +1,9 @@
 <?php
 function get_video_gallery_id_from_url($url){
-
-	if(strpos($url,'youtube') !== false){
-		if (stristr($url,'youtu.be/')){ preg_match('/(https:|http:|)(\/\/www\.|\/\/|)(.*?)\/(.{11})/i', $url, $final_ID); return array($final_ID[4],'youtube'); }
-		else{ preg_match('/(https:|http:|):(\/\/www\.|\/\/|)(.*?)\/(embed\/|watch\?v=|(.*?)&v=|v\/|e\/|.+\/|watch.*v=|)([a-z_A-Z0-9]{11})/i', $url, $IDD); return array($IDD[6],'youtube'); }
+	if(strpos($url,'youtube') !== false || strpos($url,'youtu') !== false){	
+		if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match)) {
+			return array ($match[1],'youtube');
+		}
 	}else {
 		$vimeoid =  explode( "/", $url );
 		$vimeoid =  end($vimeoid);

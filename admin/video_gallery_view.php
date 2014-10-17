@@ -295,11 +295,10 @@ jQuery(function() {
 					<ul id="images-list">
 					<?php
 					
-					function get_youtube_id_from_url($url){
-						if (stristr($url,'youtu.be/'))
-							{ preg_match('/(https:|http:|)(\/\/www\.|\/\/|)(.*?)\/(.{11})/i', $url, $final_ID); return $final_ID[4]; }
-						else 
-							{ preg_match('/(https:|http:|):(\/\/www\.|\/\/|)(.*?)\/(embed\/|watch\?v=|(.*?)&v=|v\/|e\/|.+\/|watch.*v=|)([a-z_A-Z0-9]{11})/i', $url, $IDD); return $IDD[6]; }
+					function get_youtube_id_from_url($url){						
+						if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match)) {
+							return $match[1];
+						}
 					}
 					
 					$i=2;
@@ -311,7 +310,7 @@ jQuery(function() {
 							
 							<li <?php if($i%2==0){echo "class='has-background'";}$i++; ?>  >
 							<input class="order_by" type="hidden" name="order_by_<?php echo $rowimages->id; ?>" value="<?php echo $rowimages->ordering; ?>" />
-								<?php 	if(strpos($rowimages->image_url,'youtube') !== false) {
+								<?php 	if(strpos($rowimages->image_url,'youtube') !== false || strpos($rowimages->image_url,'youtu') !== false) {
 											$liclass="youtube";
 											$video_thumb_url=get_youtube_id_from_url($rowimages->image_url);
 											$thumburl='<img src="http://img.youtube.com/vi/'.$video_thumb_url.'/mqdefault.jpg" alt="" />';
@@ -409,18 +408,6 @@ jQuery(function() {
 									<option <?php if($row->videogallery_list_effects_s == 'cubeH'){ echo 'selected'; } ?>   value="cubeH">Cube Horizontal</option>
 									<option <?php if($row->videogallery_list_effects_s == 'cubeV'){ echo 'selected'; } ?>  value="cubeV">Cube Vertical</option>
 									<option <?php if($row->videogallery_list_effects_s == 'fade'){ echo 'selected'; } ?>  value="fade">Fade</option>
-									<option <?php if($row->videogallery_list_effects_s == 'sliceH'){ echo 'selected'; } ?>  value="sliceH">Slice Horizontal</option>
-									<option <?php if($row->videogallery_list_effects_s == 'sliceV'){ echo 'selected'; } ?>  value="sliceV">Slice Vertical</option>
-									<option <?php if($row->videogallery_list_effects_s == 'slideH'){ echo 'selected'; } ?>  value="slideH">Slide Horizontal</option>
-									<option <?php if($row->videogallery_list_effects_s == 'slideV'){ echo 'selected'; } ?>  value="slideV">Slide Vertical</option>
-									<option <?php if($row->videogallery_list_effects_s == 'scaleOut'){ echo 'selected'; } ?>  value="scaleOut">Scale Out</option>
-									<option <?php if($row->videogallery_list_effects_s == 'scaleIn'){ echo 'selected'; } ?>  value="scaleIn">Scale In</option>
-									<option <?php if($row->videogallery_list_effects_s == 'blockScale'){ echo 'selected'; } ?>  value="blockScale">Block Scale</option>
-									<option <?php if($row->videogallery_list_effects_s == 'kaleidoscope'){ echo 'selected'; } ?>  value="kaleidoscope">Kaleidoscope</option>
-									<option <?php if($row->videogallery_list_effects_s == 'fan'){ echo 'selected'; } ?>  value="fan">Fan</option>
-									<option <?php if($row->videogallery_list_effects_s == 'blindH'){ echo 'selected'; } ?>  value="blindH">Blind Horizontal</option>
-									<option <?php if($row->videogallery_list_effects_s == 'blindV'){ echo 'selected'; } ?>  value="blindV">Blind Vertical</option>
-									<option <?php if($row->videogallery_list_effects_s == 'random'){ echo 'selected'; } ?>  value="random">Random</option>
 							</select>
 						</li>
 
