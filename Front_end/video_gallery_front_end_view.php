@@ -55,8 +55,12 @@ function front_end_videogallery($images, $paramssld, $videogallery)
 	var lightbox_innerHeight = '<?php echo $paramssld['light_box_innerheight'];?>';
 	var lightbox_initialWidth = '<?php echo $paramssld['light_box_initialwidth'];?>';
 	var lightbox_initialHeight = '<?php echo $paramssld['light_box_initialheight'];?>';
-	var lightbox_maxWidth = "";
-	var lightbox_maxHeight = "";
+	
+        var maxwidth=jQuery(window).width();
+        if(maxwidth><?php echo $paramssld['light_box_maxwidth'];?>){maxwidth=<?php echo $paramssld['light_box_maxwidth'];?>;}
+        var lightbox_maxWidth = <?php if($paramssld['light_box_size_fix'] == 'true'){ echo '"100%"';} else { echo 'maxwidth'; } ?>;
+        var lightbox_maxHeight = <?php if($paramssld['light_box_size_fix'] == 'true'){ echo '"100%"';} else { echo $paramssld['light_box_maxheight']; } ?>;
+        
 	var lightbox_slideshow = <?php echo $paramssld['light_box_slideshow'];?>;
 	var lightbox_slideshowSpeed = <?php echo $paramssld['light_box_slideshowspeed'];?>;
 	var lightbox_slideshowAuto = <?php echo $paramssld['light_box_slideshowauto'];?>;
