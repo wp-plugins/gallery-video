@@ -101,9 +101,9 @@ Now you can set your Video Gallery options, images and use our Video Gallery.
 
 ==Wordpress Adding a Video Gallery==
 
-### Step 1 Creating a Video-Gallery
+### Step 1 Creating a Video Gallery
 
-Huge-IT Gallery > Add New Gallery
+Huge-IT Video Gallery > Add New Video Gallery
 
 * Add video link. Video links can be add from Youtube and Vimeo.
 * Title. Wright a title to the video
@@ -124,23 +124,23 @@ In this section you can modify your Video Gallery in more details. That will cha
 
 ### 2.1 Video Gallery/Content popup
 
-Video-element Styles
+Video element Styles
 
 Video Video-element Width. Specify preferable width of your videos
 
-Video-element Height. Specify desired high of posted videos.
+Video element Height. Specify desired high of posted videos.
 
-Video-element Border Width. Specify preferable width for surrounded border of the Video-element
+Video element Border Width. Specify preferable width for surrounded border of the Video-element
 
-Video-element Border colour. Select preferable colour for surrounded border
+Video element Border colour. Select preferable colour for surrounded border
 
-Video-element's Video-image Overlay colour. Select a colour for the overlay on the video as you hold the mouse arrow on it
+Video element's Video-image Overlay colour. Select a colour for the overlay on the video as you hold the mouse arrow on it
 
-Video-element's Video-image Overlay Transparency. Determine preferable transparency degree for the video overlay
+Video element's Video-image Overlay Transparency. Determine preferable transparency degree for the video overlay
 
 Zoom image Style. Determine black or white colour for zoom icon
 
-**Popup Styles**
+**Popup Styles - Video Gallery**
 
 * Popup Background color. Edit to set preferable background colour of popup in your 
 * Popup Overlay color.Choose preferable colour for popup overlay in your
@@ -148,19 +148,19 @@ Zoom image Style. Determine black or white colour for zoom icon
 * Popup Close Button Style. Edit what  colour for  “X” icon would you like 					
 * Show Separator Lines. Select to show separation lines between title and text in popup.
 
-**Popup Description**
+**Popup Description - Video Gallery**
 
 * Show Description. Select to show the description of the video. 
 * Description Font Size. Determine preferable size of description font.
 * Description Font color. Set preferable colour of description text.
 
-**Video-element Title**
+**Video-element Title - Video Gallery**
 
 * Video-element Title Font Size. Edit preferable size of title font in 
 * Video-element Title Font color. Edit preferable colour of title 
 * Video-element Title Background color. Determine preferable colour of title’s background
 
-**Video-element Link button**
+**Video-element Link button - Video Gallery**
 
 * Show Link button on Video-element. Select to show “View More” button on the video
 * Link button Text. You can change the “View More” button text
@@ -168,12 +168,12 @@ Zoom image Style. Determine black or white colour for zoom icon
 * Link button Font color. Determine preferable colour of link font 
 * Link button Background color. Determine preferable colour for link background 
 
-**Popup Title**
+**Popup Title - Video Gallery**
 
 * Popup Title Font Size. Determine title size of the letters of popup
 * Popup Title Font color. Configure preferable colour for title in popup
 
-**Popup Link button**
+**Popup Link button - Video Gallery**
 
 * Show Link button. Choose to make Link-button visible in popup 
 * Link button Text. Edit the text of Link-button in popup 
@@ -183,21 +183,21 @@ Zoom image Style. Determine black or white colour for zoom icon
 * Link button Background color. Specify preferable background colour of the Link-button in popup 
 * Link button Background Hover color. Specify preferable background colour of the link as you hover the mouse on it.
 
-### 2.2 Content video slider 
+### 2.2 Content video slider - Video Gallery
 
-**Slider Container**
+**Slider Container - Video Gallery**
 
 * Main image Width. This fixes the margin of the main image
 * Slider Background color. You can choose preferable colour for slider field
 * Arrow Icons Style. Specify black/white colour of arrows in slider 
 * Show Separator Lines. Choose to make the lines between text, title, and link visible
 
-**Title**
+**Title - Video Gallery**
 
 * Title Font Size. Configure the preferable size of the letters of the title 
 * Title Font color. Configure the preferable colour of the font 
 
-**Link button**
+**Link button - Video Gallery**
 
 * Show Link button. Click to show the Link-button 
 * Link button Text. Write a text on link button
@@ -207,7 +207,7 @@ Zoom image Style. Determine black or white colour for zoom icon
 * Link button Background color. Determine preferable colour for link field
 * Link button Background Hover color. Choose a colour for your link background while hovering on it
 
-**Description**
+**Description - Video Gallery**
 
 * Show Description. Click to show the description of the text 
 * Description Font Size. Specify preferable size of the letters of description 
@@ -215,14 +215,14 @@ Zoom image Style. Determine black or white colour for zoom icon
 
 ### 2.3 LIghtbox-Video Gallery
 
-**Video-image**
+**Video image - Video Gallery**
 
 * Video-image Width. Specify preferable size of the video 
 * Video-image Border Width. Specify preferable width of surrounded borders
 * Video-image Border color. Configure your preferable the colour for border 
 * Border Radius. Determine prefered radius of border corners
 
-**Title**
+**Title - Video Gallery**
 
 * Title Font Size. Specify the size for font of the title
 * Title Font color. Configure the preferable colour for title
@@ -232,7 +232,7 @@ Zoom image Style. Determine black or white colour for zoom icon
 
 ### 2.4 Video Slider
 
-**Video Slider**
+**Video Slider - Video Gallery**
 
 Video Behaviour. Choose “resized” to stretch and fit your videos to the size of Slider. 
 Slider Background color. Set preferable color of the vacant part of slider field while images has its natural size 
@@ -240,7 +240,7 @@ Slideshow Border Size. Specify the size of the border in your slider
 Slideshow Border color. Choose your prefered colour for border
 Slideshow Border radius Determine preferable radius for slider border 
 
-**Description**
+**Description - Video Gallery**
 
 * Description Width. Select the width of description text box
 * Description Has Margin. Determine if description need to have margin 
@@ -254,7 +254,7 @@ Slideshow Border radius Determine preferable radius for slider border
 * Description Border Radius . Specify preferable corner’s radius of the description box 
 * Description Position. Specify where to posite the description on the slider view
 
-**Title**
+**Title - Video Gallery**
 
 * Title Width. Determine the width for title box
 * Title Has Margin. Click if you'd like the title to have margin 
@@ -268,7 +268,7 @@ Slideshow Border radius Determine preferable radius for slider border
 * Title Border Radius. Specify preferable radius for border corners 
 * Title Position. Specify preferable position of the title
 
-**Navigation**
+**Navigation - Video Gallery**
 
 * Show Navigation Arrows. Click to show navigation arrows in slider
 * Navigation Dots Position / Hide Dots. Choose where to locate the dots, or choose to remove them
@@ -278,7 +278,7 @@ Slideshow Border radius Determine preferable radius for slider border
 
 ### 2.5 Thumbnails
 
-**Image**
+**Image - Video Gallery**
 
 * Video-image Behavior. Click to Determine behavior of video image
 * Video-image Width. Allows to specify preferable width of thumbs 
@@ -289,14 +289,14 @@ Slideshow Border radius Determine preferable radius for slider border
 * Margin Video. Allows to specify the distance between each thumb
 
 
-**Container Style**
+**Container Style - Video Gallery**
 
 * Presence of a background. Click to have background for thumbs
 * Box background color. Specify desired colour of surrounded box
 * Box shadow. Click if you'd like to have shadows in the box
 * Box padding. Specify desired distance between box and video 
 
-**Title**
+**Title - Video Gallery**
 
 * Title Font Size. Specify preferable size of the text font 
 * Title Font color. determine preferable colour of text 
