@@ -186,18 +186,12 @@ function front_end_videogallery($images, $paramssld, $videogallery)
 	<!--Huge IT videogallery START-->
 	<!-- videogallery CONTENT POPUP -->
 	<?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-		if ( !(is_plugin_active( 'lightbox/lightbox.php' ) )) { 
+		if ( !(is_plugin_active( 'lightbox/lightbox.php' ) )) {
 		?>
 	<link href="<?php echo plugins_url('../style/colorbox-'.$paramssld['light_box_style'].'.css', __FILE__);?>" rel="stylesheet" type="text/css" />
-	<?php } ?>
-	<link href="<?php echo plugins_url('../style/videogallery-all.css', __FILE__);?>" rel="stylesheet" type="text/css" />
+	<?php } ?>	
 	<script src="<?php echo plugins_url('../js/jquery.colorbox.js', __FILE__);?>"></script>
-	<script src="<?php echo plugins_url('../js/video_gallery-all.js', __FILE__);?>"></script>
-	<link rel="stylesheet" href="<?php echo plugins_url('../style/style2-os.css', __FILE__);?>" />
 	<script src="<?php echo plugins_url('../js/jquery.hugeitmicro.min.js', __FILE__);?>"></script>
-	<link href="<?php echo plugins_url('../style/lightbox.css', __FILE__);?>" rel="stylesheet" type="text/css" />
-	
-	
 	<?php
 		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 		if ( !(is_plugin_active( 'wp-lightbox-2/wp-lightbox-2.php' ) )) { ?>
@@ -215,10 +209,10 @@ function front_end_videogallery($images, $paramssld, $videogallery)
 jQuery(function(){
     var defaultBlockHeight=<?php echo $paramssld['ht_view2_element_height']+37; ?>;
 	var defaultBlockWidth=<?php echo $paramssld['ht_view2_element_width']; ?>;
-    var $container = jQuery('#huge_it_videogallery_container');
+    var $container = jQuery('#huge_it_videogallery_container_<?php echo $videogalleryID; ?>');
 
       // add randomish size classes
-      $container.find('.element').each(function(){
+      $container.find('.element_<?php echo $videogalleryID; ?>').each(function(){
         var $this = jQuery(this),
             number = parseInt( $this.find('.number').text(), 10 );
 			//alert(number);
@@ -231,7 +225,7 @@ jQuery(function(){
       });
     
     $container.hugeitmicro({
-      itemSelector : '.element',
+      itemSelector : '.element_<?php echo $videogalleryID; ?>',
       masonry : {
         columnWidth : defaultBlockWidth+20
       },
@@ -330,24 +324,24 @@ jQuery(function(){
 
 jQuery(document).ready(function(){
 
-	jQuery('.element .image-block .image-overlay a').on('click',function(){
+	jQuery('.element_<?php echo $videogalleryID; ?> .image-block_<?php echo $videogalleryID; ?> .image-overlay a').on('click',function(){
 		var strid = jQuery(this).attr('href').replace('#','');
 		jQuery('body').append('<div id="huge-popup-overlay"></div>');
-		jQuery('#huge_it_videogallery_popup_list').insertBefore('#huge-popup-overlay');
+		jQuery('#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?>').insertBefore('#huge-popup-overlay');
 		var height = jQuery(window).height();
 		var width=jQuery(window).width();
 		if(width<=767){
 			jQuery('body').scrollTop(0);
-			jQuery('#huge_it_videogallery_popup_list .popup-wrapper .image-block iframe').height(jQuery('body').width()*0.5);
-		}else {jQuery('#huge_it_videogallery_popup_list .popup-wrapper .image-block iframe').height(jQuery('body').width()*0.23);}
+			jQuery('#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .image-block_<?php echo $videogalleryID; ?> iframe').height(jQuery('body').width()*0.5);
+		}else {jQuery('#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .image-block_<?php echo $videogalleryID; ?> iframe').height(jQuery('body').width()*0.23);}
 		jQuery('#huge_it_videogallery_pupup_element_'+strid).addClass('active').css({height:height*0.7});
-		jQuery('#huge_it_videogallery_popup_list').addClass('active');
+		jQuery('#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?>').addClass('active');
 		
 		return false;
 	});
 	
 	
-	jQuery('#huge_it_videogallery_popup_list .heading-navigation .close').on('click',function(){
+	jQuery('#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .heading-navigation .close').on('click',function(){
 		closePopup();
 		return false;
 	});
@@ -359,16 +353,16 @@ jQuery(document).ready(function(){
 	
 	function closePopup() {
 		jQuery('#huge-popup-overlay').remove();
-		var videsrc=jQuery('#huge_it_videogallery_popup_list li.active iframe').attr('src');
-		jQuery('#huge_it_videogallery_popup_list li.active iframe').attr('src','');
-		jQuery('#huge_it_videogallery_popup_list li.active iframe').attr('src',videsrc);
-		jQuery('#huge_it_videogallery_popup_list li').removeClass('active');
-		jQuery('#huge_it_videogallery_popup_list').removeClass('active');
+		var videsrc=jQuery('#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> li.active iframe').attr('src');
+		jQuery('#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> li.active iframe').attr('src','');
+		jQuery('#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> li.active iframe').attr('src',videsrc);
+		jQuery('#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> li').removeClass('active');
+		jQuery('#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?>').removeClass('active');
 		
 	}
 
 	jQuery(window).resize(function(){
-		jQuery('#huge_it_videogallery_popup_list .popup-wrapper .image-block iframe').height(jQuery('#huge_it_videogallery_popup_list .popup-wrapper .image-block').width()*0.5);
+		jQuery('#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .image-block_<?php echo $videogalleryID; ?> iframe').height(jQuery('#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .image-block_<?php echo $videogalleryID; ?>').width()*0.5);
 	});
 
 	
@@ -377,7 +371,7 @@ jQuery(document).ready(function(){
 
 <style type="text/css"> 
 
-.element {
+.element_<?php echo $videogalleryID; ?> {
 	width:<?php echo $paramssld['ht_view2_element_width']; ?>px;
 	height:<?php echo $paramssld['ht_view2_element_height']+45; ?>px;
 	margin:0px 0px 10px 0px;
@@ -386,12 +380,12 @@ jQuery(document).ready(function(){
 	outline:none;
 }
 
-.element .image-block {
+.element_<?php echo $videogalleryID; ?> .image-block_<?php echo $videogalleryID; ?> {
 	position:relative;
 	width:100%;
 }
 
-.element .image-block img {
+.element_<?php echo $videogalleryID; ?> .image-block_<?php echo $videogalleryID; ?> img {
 	width:<?php echo $paramssld['ht_view2_element_width']; ?>px !important;
 	height:<?php echo $paramssld['ht_view2_element_height']; ?>px !important;
 	display:block;
@@ -399,7 +393,7 @@ jQuery(document).ready(function(){
 	box-shadow: 0 0px 0px rgba(0, 0, 0, 0) !important; 
 }
 
-.element .image-block .image-overlay {
+.element_<?php echo $videogalleryID; ?> .image-block_<?php echo $videogalleryID; ?> .image-overlay {
 	position:absolute;
 	top:0px;
 	left:0px;
@@ -413,11 +407,11 @@ jQuery(document).ready(function(){
 	display:none;
 }
 
-.element:hover .image-block  .image-overlay {
+.element_<?php echo $videogalleryID; ?>:hover .image-block_<?php echo $videogalleryID; ?>  .image-overlay {
 	display:block;
 }
 
-.element .image-block .image-overlay a {
+.element_<?php echo $videogalleryID; ?> .image-block_<?php echo $videogalleryID; ?> .image-overlay a {
 	position:absolute;
 	top:0px;
 	left:0px;
@@ -427,7 +421,7 @@ jQuery(document).ready(function(){
 	background:url('<?php echo  plugins_url( '../images/zoom.'.$paramssld["ht_view2_zoombutton_style"].'.png' , __FILE__ ); ?>') center center no-repeat;
 }
 
-.element .title-block {
+.element_<?php echo $videogalleryID; ?> .title-block_<?php echo $videogalleryID; ?> {
 	position:relative;
 	height: 30px;
 	margin: 0;
@@ -436,7 +430,7 @@ jQuery(document).ready(function(){
 	box-shadow: inset 0 1px 0 rgba(0,0,0,.1);
 }
 
-.element .title-block h3 {
+.element_<?php echo $videogalleryID; ?> .title-block_<?php echo $videogalleryID; ?> h3 {
 	position:relative;
 	margin:0px !important;
 	padding:0px 1% 0px 1% !important;
@@ -450,7 +444,7 @@ jQuery(document).ready(function(){
 	color:#<?php echo $paramssld["ht_view2_element_title_font_color"];?>;
 }
 
-.element .title-block .button-block {
+.element_<?php echo $videogalleryID; ?> .title-block_<?php echo $videogalleryID; ?> .button-block {
 	position:absolute;
 	right:0px;
 	top:0px;
@@ -465,10 +459,10 @@ jQuery(document).ready(function(){
 	?>;
 	border-left: 1px solid rgba(0,0,0,.05);
 }
-.element:hover .title-block .button-block {display:block;}
+.element_<?php echo $videogalleryID; ?>:hover .title-block_<?php echo $videogalleryID; ?> .button-block {display:block;}
 
-.element .title-block a,.element .title-block a:link,.element .title-block a:visited,
-.element .title-block a:hover,.element .title-block a:focus,.element .title-block a:active {
+.element_<?php echo $videogalleryID; ?> .title-block_<?php echo $videogalleryID; ?> a,.element_<?php echo $videogalleryID; ?> .title-block_<?php echo $videogalleryID; ?> a:link,.element_<?php echo $videogalleryID; ?> .title-block_<?php echo $videogalleryID; ?> a:visited,
+.element_<?php echo $videogalleryID; ?> .title-block_<?php echo $videogalleryID; ?> a:hover,.element_<?php echo $videogalleryID; ?> .title-block_<?php echo $videogalleryID; ?> a:focus,.element_<?php echo $videogalleryID; ?> .title-block_<?php echo $videogalleryID; ?> a:active {
 	position:relative;
 	display:block;
 	vertical-align:middle;
@@ -482,7 +476,7 @@ jQuery(document).ready(function(){
 
 /*#####POPUP#####*/
 
-#huge_it_videogallery_popup_list {
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> {
 	position:fixed;
 	display:table;
 	width:80%;
@@ -496,9 +490,9 @@ jQuery(document).ready(function(){
 	height:85%;
 }
 
-#huge_it_videogallery_popup_list.active {display:table;}
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?>.active {display:table;}
 
-#huge_it_videogallery_popup_list li.pupup-element {
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> li.pupup-element {
 	position:relative;
 	display:none;
 	width:100%;
@@ -508,11 +502,11 @@ jQuery(document).ready(function(){
 	background:#<?php echo $paramssld["ht_view2_popup_background_color"];?>;
 }
 
-#huge_it_videogallery_popup_list li.pupup-element.active {
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> li.pupup-element.active {
 	display:block;
 }
 
-#huge_it_videogallery_popup_list .heading-navigation {
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .heading-navigation {
 	position:absolute;
 	width:100%;
 	height:40px;
@@ -522,7 +516,7 @@ jQuery(document).ready(function(){
 	background:url('<?php echo  plugins_url( '../images/divider.line.png' , __FILE__ ); ?>') center bottom repeat-x;
 }
 
-#huge_it_videogallery_popup_list .heading-navigation .close,#huge_it_videogallery_popup_list .heading-navigation .close:link, #huge_it_videogallery_popup_list .heading-navigation .close:visited {
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .heading-navigation .close,#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .heading-navigation .close:link, #huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .heading-navigation .close:visited {
 	position:relative;
 	float:right;
 	width:40px;
@@ -533,10 +527,10 @@ jQuery(document).ready(function(){
 	opacity:.65;
 }
 
-#huge_it_videogallery_popup_list .heading-navigation .close:hover, #huge_it_videogallery_popup_list .heading-navigation .close:focus, #huge_it_videogallery_popup_list .heading-navigation .close:active {opacity:1;}
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .heading-navigation .close:hover, #huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .heading-navigation .close:focus, #huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .heading-navigation .close:active {opacity:1;}
 
 
-#huge_it_videogallery_popup_list li.pupup-element .popup-wrapper {
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> li.pupup-element .popup-wrapper_<?php echo $videogalleryID; ?> {
 	overflow-y:scroll;
 	position:relative;
 	width:96%;
@@ -544,7 +538,7 @@ jQuery(document).ready(function(){
 	padding:2% 2% 0% 2%;
 }
 
-#huge_it_videogallery_popup_list .popup-wrapper .image-block {
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .image-block_<?php echo $videogalleryID; ?> {
 	width:60%;
 	position:relative;
 	float:left;
@@ -553,35 +547,35 @@ jQuery(document).ready(function(){
 	min-width:200px;
 }
 
-#huge_it_videogallery_popup_list .popup-wrapper .image-block img {
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .image-block_<?php echo $videogalleryID; ?> img {
 	width:100% !important;
 	display:block;
 }
 
-#huge_it_videogallery_popup_list .popup-wrapper .image-block iframe  {
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .image-block_<?php echo $videogalleryID; ?> iframe  {
 	width:100% !important;
 	height:100%;
 	display:block;
 
 }
 
-#huge_it_videogallery_popup_list .popup-wrapper .right-block {
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .right-block {
 	width:37%;
 	position:relative;
 	float:left;
 }
 
-#huge_it_videogallery_popup_list li.pupup-element .popup-wrapper .right-block > div {
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> li.pupup-element .popup-wrapper_<?php echo $videogalleryID; ?> .right-block > div {
 	padding-top:10px;
 	margin-bottom:10px;
 	<?php if($paramssld['ht_view2_show_separator_lines']=="on") {?>
 		background:url('<?php echo  plugins_url( '../images/divider.line.png' , __FILE__ ); ?>') center top repeat-x;
 	<?php } ?>
 }
-#huge_it_videogallery_popup_list li.pupup-element .popup-wrapper .right-block > div:last-child {background:none;}
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> li.pupup-element .popup-wrapper_<?php echo $videogalleryID; ?> .right-block > div:last-child {background:none;}
 
 
-#huge_it_videogallery_popup_list .popup-wrapper .right-block .title {
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .right-block .title {
 	position:relative;
 	display:block;
 	margin:0px 0px 10px 0px !important;
@@ -590,7 +584,7 @@ jQuery(document).ready(function(){
 	color:#<?php echo $paramssld["ht_view2_popup_title_font_color"];?>;
 }
 
-#huge_it_videogallery_popup_list .popup-wrapper .right-block .description {
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .right-block .description {
 	clear:both;
 	position:relative;
 	font-weight:normal;
@@ -599,26 +593,26 @@ jQuery(document).ready(function(){
 	color:#<?php echo $paramssld["ht_view2_description_font_color"];?>;
 }
 
-#huge_it_videogallery_popup_list .popup-wrapper .right-block .description h1,
-#huge_it_videogallery_popup_list .popup-wrapper .right-block .description h2,
-#huge_it_videogallery_popup_list .popup-wrapper .right-block .description h3,
-#huge_it_videogallery_popup_list .popup-wrapper .right-block .description h4,
-#huge_it_videogallery_popup_list .popup-wrapper .right-block .description h5,
-#huge_it_videogallery_popup_list .popup-wrapper .right-block .description h6,
-#huge_it_videogallery_popup_list .popup-wrapper .right-block .description p, 
-#huge_it_videogallery_popup_list .popup-wrapper .right-block .description strong,
-#huge_it_videogallery_popup_list .popup-wrapper .right-block .description span {
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .right-block .description h1,
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .right-block .description h2,
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .right-block .description h3,
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .right-block .description h4,
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .right-block .description h5,
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .right-block .description h6,
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .right-block .description p, 
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .right-block .description strong,
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .right-block .description span {
 	padding:2px !important;
 	margin:0px !important;
 }
 
-#huge_it_videogallery_popup_list .popup-wrapper .right-block .description ul,
-#huge_it_videogallery_popup_list .popup-wrapper .right-block .description li {
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .right-block .description ul,
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .right-block .description li {
 	padding:2px 0px 2px 5px;
 	margin:0px 0px 0px 8px;
 }
 
-#huge_it_videogallery_popup_list .popup-wrapper .right-block ul.thumbs-list {
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .right-block ul.thumbs-list {
 	list-style:none;
 	display:table;
 	position:relative;
@@ -628,7 +622,7 @@ jQuery(document).ready(function(){
 	padding:0px;
 }
 
-#huge_it_videogallery_popup_list .popup-wrapper .right-block ul.thumbs-list li {
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .right-block ul.thumbs-list li {
 	display:block;
 	float:left;
 	width:<?php echo $paramssld["ht_view2_thumbs_width"];?>px;
@@ -637,15 +631,15 @@ jQuery(document).ready(function(){
 	opacity:0.45;
 }
 
-#huge_it_videogallery_popup_list .popup-wrapper .right-block ul.thumbs-list li.active,#huge_it_videogallery_popup_list .popup-wrapper .right-block ul.thumbs-list li:hover {
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .right-block ul.thumbs-list li.active,#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .right-block ul.thumbs-list li:hover {
 	opacity:1;
 }
 
-#huge_it_videogallery_popup_list .popup-wrapper .right-block ul.thumbs-list li a {
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .right-block ul.thumbs-list li a {
 	display:block;
 }
 
-#huge_it_videogallery_popup_list .popup-wrapper .right-block ul.thumbs-list li img {
+#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .right-block ul.thumbs-list li img {
 	width:<?php echo $paramssld["ht_view2_thumbs_width"];?>px !important;
 	height:<?php echo $paramssld["ht_view2_thumbs_height"];?>px !important;
 }
@@ -688,7 +682,7 @@ jQuery(document).ready(function(){
 
 @media only screen and (max-width: 767px) {
 	
-	#huge_it_videogallery_popup_list {
+	#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> {
 		position:absolute;
 		left:0px;
 		top:0px;
@@ -697,7 +691,7 @@ jQuery(document).ready(function(){
 		left:0px;
 	}
 	
-	#huge_it_videogallery_popup_list li.pupup-element {
+	#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> li.pupup-element {
 		margin:0px;
 		height:auto !important;
 		position:absolute;
@@ -705,13 +699,13 @@ jQuery(document).ready(function(){
 		top:0px;
 	}
 
-	#huge_it_videogallery_popup_list li.pupup-element .popup-wrapper {
+	#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> li.pupup-element .popup-wrapper_<?php echo $videogalleryID; ?> {
 		height:auto !important;
 		overflow-y:auto;
 	}
 
 
-	#huge_it_videogallery_popup_list .popup-wrapper .image-block {
+	#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .image-block_<?php echo $videogalleryID; ?> {
 		width:100%;
 		float:none;
 		clear:both;
@@ -719,7 +713,7 @@ jQuery(document).ready(function(){
 		border-right:0px;
 	}
 
-	#huge_it_videogallery_popup_list .popup-wrapper .right-block {
+	#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .right-block {
 		width:100%;
 		float:none;
 		clear:both;
@@ -738,8 +732,8 @@ jQuery(document).ready(function(){
 
 }
 </style>
-<section id="huge_it_videogallery_content">
-  <div id="huge_it_videogallery_container" class="super-list variable-sizes clearfix">
+<section id="huge_it_videogallery_content_<?php echo $videogalleryID; ?>">
+  <div id="huge_it_videogallery_container_<?php echo $videogalleryID; ?>" class="super-list variable-sizes clearfix">
   	<?php
 	
 	foreach($images as $key=>$row)
@@ -748,8 +742,8 @@ jQuery(document).ready(function(){
 		$descnohtml=strip_tags($row->description);
 		$result = substr($descnohtml, 0, 50);
 		?>
-		<div class="element" tabindex="0" data-symbol="<?php echo $row->name; ?>" data-category="alkaline-earth">
-			<div class="image-block">
+		<div class="element_<?php echo $videogalleryID; ?>" tabindex="0" data-symbol="<?php echo $row->name; ?>" data-category="alkaline-earth">
+			<div class="image-block_<?php echo $videogalleryID; ?>">
 			<?php 
 					$imagerowstype=$row->sl_type;
 					if($row->sl_type == ''){$imagerowstype='image';}
@@ -788,7 +782,7 @@ jQuery(document).ready(function(){
 			
 				<div class="image-overlay"><a href="#<?php echo $row->id; ?>"></a></div>
 			</div>
-			<div class="title-block">
+			<div class="title-block_<?php echo $videogalleryID; ?>">
 				<h3><?php echo $row->name; ?></h3>
 				<?php if($paramssld["ht_view2_element_show_linkbutton"]=='on'){?>
 					<div class="button-block"><a href="<?php echo $row->sl_url; ?>" <?php if ($row->link_target=="on"){echo 'target="_blank"';}?> ><?php echo $paramssld["ht_view2_element_linkbutton_text"]; ?></a></div>
@@ -800,7 +794,7 @@ jQuery(document).ready(function(){
 	<div style="clear:both;"></div>
   </div>
 </section>
-<ul id="huge_it_videogallery_popup_list">
+<ul id="huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?>">
 	<?php
 	foreach($images as $key=>$row)
 	{
@@ -814,8 +808,8 @@ jQuery(document).ready(function(){
 				<a href="#close" class="close"></a>
 				<div style="clear:both;"></div>
 			</div>
-			<div class="popup-wrapper">
-				<div class="image-block">					
+			<div class="popup-wrapper_<?php echo $videogalleryID; ?>">
+				<div class="image-block_<?php echo $videogalleryID; ?>">					
 					<?php 
 						$imagerowstype=$row->sl_type;
 						if($row->sl_type == ''){$imagerowstype='image';}
@@ -882,9 +876,9 @@ jQuery(document).ready(function(){
  
 <style>
 * {outline:none;}
-#main-slider {background:#<?php echo $paramssld["ht_view5_slider_background_color"];?>;}
+#main-slider_<?php echo $videogalleryID; ?> {background:#<?php echo $paramssld["ht_view5_slider_background_color"];?>;}
 
-#main-slider div.slider-content {
+#main-slider_<?php echo $videogalleryID; ?> div.slider-content {
 	position:relative;
 	width:100%;
 	padding:0px 0px 0px 0px;
@@ -902,18 +896,18 @@ jQuery(document).ready(function(){
 	background:url(<?php echo plugins_url('../images/menu.'.$paramssld["ht_view5_icons_style"].'.png', __FILE__);?>) right center no-repeat #<?php echo $paramssld["ht_view5_slider_background_color"];?>;
 }
 
-#main-slider-nav-select {
+#main-slider_<?php echo $videogalleryID; ?>-nav-select {
 	color:#<?php echo $paramssld["ht_view5_title_font_color"];?>;
 }
 
-#main-slider div.slider-content .slider-content-wrapper {
+#main-slider_<?php echo $videogalleryID; ?> div.slider-content .slider-content-wrapper {
 	position:relative;
 	width:100%;
 	padding:0px;
 	display:block;
 }
 
-#main-slider .slider-content-wrapper .image-block {
+#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .image-block_<?php echo $videogalleryID; ?> {
 	position:relative;
 	width:<?php echo $paramssld["ht_view5_main_image_width"];?>px;
 	display:table-cell;
@@ -921,7 +915,7 @@ jQuery(document).ready(function(){
 	float:left;
 }
 
-#main-slider .slider-content-wrapper .image-block img.main-image {
+#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .image-block_<?php echo $videogalleryID; ?> img.main-image {
 	position:relative;
 	width:100%;
 	height:auto;
@@ -929,34 +923,34 @@ jQuery(document).ready(function(){
 }
 
 
-#main-slider .slider-content-wrapper .image-block .play-icon {
+#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .image-block_<?php echo $videogalleryID; ?> .play-icon {
 	position:absolute;
 	top:0px;
 	left:0px;
 	width:100%;
 	height:100%;	
 }
-#main-slider .slider-content-wrapper .image-block  .play-icon.youtube-icon {background:url(<?php echo plugin_dir_url( __FILE__ ); ?>../images/play.youtube.png) center center no-repeat;}
-#main-slider .slider-content-wrapper .image-block  .play-icon.vimeo-icon {background:url(<?php echo plugin_dir_url( __FILE__ ); ?>../images/play.vimeo.png) center center no-repeat;}
+#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .image-block_<?php echo $videogalleryID; ?>  .play-icon.youtube-icon {background:url(<?php echo plugin_dir_url( __FILE__ ); ?>../images/play.youtube.png) center center no-repeat;}
+#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .image-block_<?php echo $videogalleryID; ?>  .play-icon.vimeo-icon {background:url(<?php echo plugin_dir_url( __FILE__ ); ?>../images/play.vimeo.png) center center no-repeat;}
 
 
 
 
-#main-slider .slider-content-wrapper .right-block {
+#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .right-block {
 	display:table-cell;
 }
 
-#main-slider .slider-content-wrapper .right-block > div {
+#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .right-block > div {
 	padding-bottom:10px;
 	margin-top:10px;
 	<?php if($paramssld['ht_view5_show_separator_lines']=="on") {?>
 		background:url('<?php echo  plugins_url( '../images/divider.line.png' , __FILE__ ); ?>') center bottom repeat-x;
 	<?php } ?>
 }
-#main-slider .slider-content-wrapper .right-block > div:last-child {background:none;}
+#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .right-block > div:last-child {background:none;}
 
 
-#main-slider .slider-content-wrapper .right-block .title {
+#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .right-block .title {
 	position:relative;
 	display:block;
 	margin:-10px 0px 0px 0px;
@@ -965,7 +959,7 @@ jQuery(document).ready(function(){
 	color:#<?php echo $paramssld["ht_view5_title_font_color"];?>;
 }
 
-#main-slider .slider-content-wrapper .right-block .description {
+#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .right-block .description {
 	clear:both;
 	position:relative;
 	font-weight:normal;
@@ -975,32 +969,32 @@ jQuery(document).ready(function(){
 	color:#<?php echo $paramssld["ht_view5_description_color"];?>;
 }
 
-#main-slider .slider-content-wrapper .right-block .description h1,
-#main-slider .slider-content-wrapper .right-block .description h2,
-#main-slider .slider-content-wrapper .right-block .description h3,
-#main-slider .slider-content-wrapper .right-block .description h4,
-#main-slider .slider-content-wrapper .right-block .description h5,
-#main-slider .slider-content-wrapper .right-block .description h6,
-#main-slider .slider-content-wrapper .right-block .description p, 
-#main-slider .slider-content-wrapper .right-block .description strong,
-#main-slider .slider-content-wrapper .right-block .description span {
+#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .right-block .description h1,
+#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .right-block .description h2,
+#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .right-block .description h3,
+#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .right-block .description h4,
+#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .right-block .description h5,
+#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .right-block .description h6,
+#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .right-block .description p, 
+#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .right-block .description strong,
+#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .right-block .description span {
 	padding:2px !important;
 	margin:0px !important;
 }
 
-#main-slider .slider-content-wrapper .right-block .description ul,
-#main-slider .slider-content-wrapper .right-block .description li {
+#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .right-block .description ul,
+#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .right-block .description li {
 	padding:2px 0px 2px 5px;
 	margin:0px 0px 0px 8px;
 }
 
 
 
-#main-slider .slider-content-wrapper .button-block {
+#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .button-block {
 	position:relative;
 }
 
-#main-slider .slider-content-wrapper .button-block a,#main-slider .slider-content-wrapper .button-block a:link,#main-slider .slider-content-wrapper .button-block a:visited{
+#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .button-block a,#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .button-block a:link,#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .button-block a:visited{
 	position:relative;
 	display:inline-block;
 	padding:6px 12px;
@@ -1010,20 +1004,20 @@ jQuery(document).ready(function(){
 	text-decoration:none;
 }
 
-#main-slider .slider-content-wrapper .button-block a:hover,#main-slider .slider-content-wrapper .button-block a:focus,#main-slider .slider-content-wrapper .button-block a:active {
+#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .button-block a:hover,#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .button-block a:focus,#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .button-block a:active {
 	background:#<?php echo $paramssld["ht_view5_linkbutton_background_hover_color"];?>;
 	color:#<?php echo $paramssld["ht_view5_linkbutton_font_hover_color"];?>;
 }
 
 @media only screen and (min-width:500px) {
-	#main-slider-nav-ul {
+	#main-slider_<?php echo $videogalleryID; ?>-nav-ul {
 		visibility:hidden !important;
 		height:1px;
 	}
 }
 
 @media only screen and (max-width:500px) {
-	#main-slider .slider-content-wrapper .image-block,#main-slider .slider-content-wrapper .right-block {
+	#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .image-block_<?php echo $videogalleryID; ?>,#main-slider_<?php echo $videogalleryID; ?> .slider-content-wrapper .right-block {
 		width:100%;
 		display:block;
 		float:none;
@@ -1032,7 +1026,7 @@ jQuery(document).ready(function(){
 }
 
 </style>
-<div id="main-slider" class="liquid-slider">
+<div id="main-slider_<?php echo $videogalleryID; ?>" class="liquid-slider">
 	<?php
 	
 	foreach($images as $key=>$row)
@@ -1046,7 +1040,7 @@ jQuery(document).ready(function(){
 		<div class="slider-content">
 			
 			<div class="slider-content-wrapper">
-				<div class="image-block">
+				<div class="image-block_<?php echo $videogalleryID; ?>">
 					
 
 					<?php 
@@ -1111,10 +1105,10 @@ jQuery(document).ready(function(){
    
     /**
      * If you need to access the internal property or methods, use this:
-     * var api = $.data( jQuery('#main-slider')[0], 'liquidSlider');
+     * var api = $.data( jQuery('#main-slider_<?php echo $videogalleryID; ?>')[0], 'liquidSlider');
      * console.log(api);
      */
-	 jQuery('#main-slider').liquidSlider();
+	 jQuery('#main-slider_<?php echo $videogalleryID; ?>').liquidSlider();
   </script>
 <?php  
         break;
@@ -1125,7 +1119,7 @@ jQuery(document).ready(function(){
 
 <style type="text/css"> 
 
-.element {
+.element_<?php echo $videogalleryID; ?> {
 	width:<?php echo $paramssld['ht_view6_width']; ?>px;
 	margin:0px 0px 10px 0px;
 	border:<?php echo $paramssld['ht_view6_border_width']; ?>px solid #<?php echo $paramssld['ht_view6_border_color']; ?>;
@@ -1134,14 +1128,14 @@ jQuery(document).ready(function(){
 	overflow:hidden;
 }
 
-.element .image-block {
+.element_<?php echo $videogalleryID; ?> .image-block_<?php echo $videogalleryID; ?> {
 	position:relative;
 	width:<?php echo $paramssld['ht_view6_width']; ?>px;
 }
 
-.element .image-block a {display:block;}
+.element_<?php echo $videogalleryID; ?> .image-block_<?php echo $videogalleryID; ?> a {display:block;}
 
-.element .image-block img {
+.element_<?php echo $videogalleryID; ?> .image-block_<?php echo $videogalleryID; ?> img {
 	width:<?php echo $paramssld['ht_view6_width']; ?>px !important;
 	height:auto;
 	display:block;
@@ -1149,11 +1143,11 @@ jQuery(document).ready(function(){
 	box-shadow: 0 0px 0px rgba(0, 0, 0, 0) !important; 
 }
 
-.element .image-block img:hover {
+.element_<?php echo $videogalleryID; ?> .image-block_<?php echo $videogalleryID; ?> img:hover {
 	cursor: -webkit-zoom-in; cursor: -moz-zoom-in;
 }
 
-.element .image-block .play-icon {
+.element_<?php echo $videogalleryID; ?> .image-block_<?php echo $videogalleryID; ?> .play-icon {
 	position:absolute;
 	top:0px;
 	left:0px;
@@ -1162,12 +1156,12 @@ jQuery(document).ready(function(){
 	
 }
 
-.element .image-block  .play-icon.youtube-icon {background:url(<?php echo plugin_dir_url( __FILE__ ); ?>../images/play.youtube.png) center center no-repeat;}
+.element_<?php echo $videogalleryID; ?> .image-block_<?php echo $videogalleryID; ?>  .play-icon.youtube-icon {background:url(<?php echo plugin_dir_url( __FILE__ ); ?>../images/play.youtube.png) center center no-repeat;}
 
-.element .image-block  .play-icon.vimeo-icon {background:url(<?php echo plugin_dir_url( __FILE__ ); ?>../images/play.vimeo.png) center center no-repeat;}
+.element_<?php echo $videogalleryID; ?> .image-block_<?php echo $videogalleryID; ?>  .play-icon.vimeo-icon {background:url(<?php echo plugin_dir_url( __FILE__ ); ?>../images/play.vimeo.png) center center no-repeat;}
 
 
-.element .title-block {
+.element_<?php echo $videogalleryID; ?> .title-block_<?php echo $videogalleryID; ?> {
 	position:absolute;
 	
 	left:0px;
@@ -1186,9 +1180,9 @@ jQuery(document).ready(function(){
      transition: bottom 0.3s ease-out 0.1s;
 }
 
-.element:hover .title-block {bottom:0px;}
+.element_<?php echo $videogalleryID; ?>:hover .title-block_<?php echo $videogalleryID; ?> {bottom:0px;}
 
-.element .title-block a, .element .title-block a:link, .element .title-block a:visited {
+.element_<?php echo $videogalleryID; ?> .title-block_<?php echo $videogalleryID; ?> a, .element_<?php echo $videogalleryID; ?> .title-block_<?php echo $videogalleryID; ?> a:link, .element_<?php echo $videogalleryID; ?> .title-block_<?php echo $videogalleryID; ?> a:visited {
 	position:relative;
 	margin:0px;
 	padding:0px 1% 0px 2%;
@@ -1205,14 +1199,14 @@ jQuery(document).ready(function(){
 
 
 
-.element .title-block a:hover, .element .title-block a:focus, .element .title-block a:active {
+.element_<?php echo $videogalleryID; ?> .title-block_<?php echo $videogalleryID; ?> a:hover, .element_<?php echo $videogalleryID; ?> .title-block_<?php echo $videogalleryID; ?> a:focus, .element_<?php echo $videogalleryID; ?> .title-block_<?php echo $videogalleryID; ?> a:active {
 	color:#<?php echo $paramssld["ht_view6_title_font_hover_color"];?>;
 	text-decoration:none;
 }
 
 </style>
-<section id="huge_it_videogallery_content">
-  <div id="huge_it_videogallery_container" class="super-list variable-sizes clearfix">
+<section id="huge_it_videogallery_content_<?php echo $videogalleryID; ?>">
+  <div id="huge_it_videogallery_container_<?php echo $videogalleryID; ?>" class="super-list variable-sizes clearfix">
   	<?php
 	
 	foreach($images as $key=>$row)
@@ -1221,8 +1215,8 @@ jQuery(document).ready(function(){
 		$descnohtml=strip_tags($row->description);
 		$result = substr($descnohtml, 0, 50);
 		?>
-		<div class="element" tabindex="0" data-symbol="<?php echo $row->name; ?>" data-category="alkaline-earth">
-			<div class="image-block">
+		<div class="element_<?php echo $videogalleryID; ?>" tabindex="0" data-symbol="<?php echo $row->name; ?>" data-category="alkaline-earth">
+			<div class="image-block_<?php echo $videogalleryID; ?>">
 				<?php 
 					$imagerowstype=$row->sl_type;
 					if($row->sl_type == ''){$imagerowstype='image';}
@@ -1266,7 +1260,7 @@ jQuery(document).ready(function(){
 				?>
 			</div>
 			<?php if($row->name!=""){?>
-			<div class="title-block">
+			<div class="title-block_<?php echo $videogalleryID; ?>">
 				<a href="<?php echo $link; ?>" <?php if ($row->link_target=="on"){echo 'target="_blank"';}?>><?php echo $row->name; ?></a>
 			</div>
 			<?php } ?>
@@ -1280,11 +1274,11 @@ jQuery(document).ready(function(){
 <script> 
  jQuery(function(){
 	var defaultBlockWidth=<?php echo $paramssld['ht_view6_width']; ?>+20+<?php echo $paramssld['ht_view6_width']*2; ?>;
-    var $container = jQuery('#huge_it_videogallery_container');
+    var $container = jQuery('#huge_it_videogallery_container_<?php echo $videogalleryID; ?>');
     
     
       // add randomish size classes
-      $container.find('.element').each(function(){
+      $container.find('.element_<?php echo $videogalleryID; ?>').each(function(){
         var $this = jQuery(this),
             number = parseInt( $this.find('.number').text(), 10 );
 			//alert(number);
@@ -1297,7 +1291,7 @@ jQuery(document).ready(function(){
       });
     
 $container.hugeitmicro({
-  itemSelector : '.element',
+  itemSelector : '.element_<?php echo $videogalleryID; ?>',
   masonry : {
 	columnWidth : <?php echo $paramssld['ht_view6_width']; ?>+10+<?php echo $paramssld['ht_view6_border_width']*2; ?>
   },
@@ -1408,7 +1402,7 @@ $container.hugeitmicro({
 break;
 /////////////////////////////// VIEW 3 videogallery Huge IT Slider /////////////////////////////
 		
-		case 3:
+	case 3:
 	$sliderID=$videogallery[0]->id;
 	$slidertitle=$videogallery[0]->name;
 	$sliderheight=$videogallery[0]->sl_height;
@@ -1446,7 +1440,7 @@ jQuery(function(){
 	
 		froogaloop = $f(player_id);
 	
-		function setupEventListeners() {			
+		function setupEventListeners() {
 			function onPlay() {
 				froogaloop.addEvent('play',
 				function(){
@@ -1480,12 +1474,16 @@ jQuery(function(){
 <script src="<?php echo plugins_url( 'js/youtube.lib.js' , __FILE__ ) ?>"></script>
 <script> 
   <?php
-  function get_youtube_id_from_url($url){
+  
+	if (!function_exists('get_youtube_id_from_url')) {
+		function get_youtube_id_from_url($url){
 		if (stristr($url,'youtu.be/'))
 			{ preg_match('/(https:|http:|)(\/\/www\.|\/\/|)(.*?)\/(.{11})/i', $url, $final_ID); return $final_ID[4]; }
 		else 
 			{ preg_match('/(https:|http:|):(\/\/www\.|\/\/|)(.*?)\/(embed\/|watch\?v=|(.*?)&v=|v\/|e\/|.+\/|watch.*v=|)([a-z_A-Z0-9]{11})/i', $url, $IDD); return $IDD[6]; }
+		}	
 	}
+  
 			
 	$i=0;
 	 foreach ($images as $key => $image_row) {
@@ -1543,7 +1541,6 @@ jQuery(function(){
 		  }
 <?php 
 	    }else{continue;}
-		
 	}
 ?>
 	function stopYoutubeVideo() {

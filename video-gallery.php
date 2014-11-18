@@ -4,7 +4,7 @@
 Plugin Name: Huge IT Video Gallery
 Plugin URI: http://huge-it.com/video-allery/
 Description: Video Gallery plugin was created and specifically designed to show your video files in unusual splendid ways.
-Version: 1.0.8
+Version: 1.0.9
 Author: http://huge-it.com/
 License: GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
 */
@@ -204,6 +204,25 @@ function huge_it_videogallery_ShowTinyMCE()
     do_action('admin_print_styles');
 }
 
+
+function all_videogallery_frontend_scripts_and_styles() {
+    wp_register_script('videogallery_jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', __FILE__ ); 
+    wp_enqueue_script('videogallery_jquery');
+//    wp_register_script('colorbox-js', plugins_url('/js/jquery.colorbox.js', __FILE__)); 
+//    wp_enqueue_script('colorbox-js');
+//    wp_register_script('hugeitmicro-js', plugins_url('/js/jquery.hugeitmicro.min.js', __FILE__)); 
+//    wp_enqueue_script('hugeitmicro-js');
+    wp_register_script('video_gallery-all-js', plugins_url('/js/video_gallery-all.js', __FILE__)); 
+    wp_enqueue_script('video_gallery-all-js' );
+    
+    wp_register_style( 'style2-os-css', plugins_url('/style/style2-os.css', __FILE__) );
+    wp_enqueue_style( 'style2-os-css' );
+    wp_register_style( 'lightbox-css', plugins_url('/style/lightbox.css', __FILE__) );   
+    wp_enqueue_style( 'lightbox-css' );
+    wp_register_style( 'videogallery-all-css', plugins_url('/style/videogallery-all.css', __FILE__) );   
+    wp_enqueue_style( 'videogallery-all-css');
+}
+add_action('wp_enqueue_scripts', 'all_videogallery_frontend_scripts_and_styles');
 
 add_action('admin_menu', 'huge_it_videogallery_options_panel');
 function huge_it_videogallery_options_panel()
