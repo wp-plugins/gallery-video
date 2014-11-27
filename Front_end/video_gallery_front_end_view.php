@@ -1419,7 +1419,7 @@ break;
 	$hasyoutube=false;
 	$hasvimeo=false;
 	foreach ($images as $key => $image_row) {
-		if(strpos($image_row->image_url,'youtube') !== false){$hasyoutube=true;}
+		if(strpos($image_row->image_url,'youtu') !== false){$hasyoutube=true;}
 		if(strpos($image_row->image_url,'vimeo') !== false){$hasvimeo=true;}
 	}
 ?>
@@ -1473,21 +1473,20 @@ jQuery(function(){
 
 <script src="<?php echo plugins_url( 'js/youtube.lib.js' , __FILE__ ) ?>"></script>
 <script> 
-  <?php
-  
+  <?php  
 	if (!function_exists('get_youtube_id_from_url')) {
-		function get_youtube_id_from_url($url){
+	  function get_youtube_id_from_url($url){
 		if (stristr($url,'youtu.be/'))
 			{ preg_match('/(https:|http:|)(\/\/www\.|\/\/|)(.*?)\/(.{11})/i', $url, $final_ID); return $final_ID[4]; }
 		else 
 			{ preg_match('/(https:|http:|):(\/\/www\.|\/\/|)(.*?)\/(embed\/|watch\?v=|(.*?)&v=|v\/|e\/|.+\/|watch.*v=|)([a-z_A-Z0-9]{11})/i', $url, $IDD); return $IDD[6]; }
-		}	
+		}                                    
 	}
   
 			
 	$i=0;
 	 foreach ($images as $key => $image_row) {
-		if($image_row->sl_type=="video" and strpos($image_row->image_url,'youtube') !== false){	
+		if($image_row->sl_type=="video" and strpos($image_row->image_url,'youtu') !== false){	
   ?> 
 		var player_<?php echo $image_row->id; ?>;
 <?php
@@ -1498,12 +1497,12 @@ jQuery(function(){
 		$i++;
 	}
 ?>
-		 video_is_playing_videogallery_<?php echo $sliderID; ?>=false;
+		video_is_playing_videogallery_<?php echo $sliderID; ?>=false;
 		function onYouTubeIframeAPIReady() {
 			<?php
 			foreach ($images as $key => $image_row) {?>
 							
-				<?php if($image_row->sl_type=="video" and strpos($image_row->image_url,'youtube') !== false){
+				<?php if($image_row->sl_type=="video" and strpos($image_row->image_url,'youtu') !== false){
 			?> 
 				player_<?php echo $image_row->id; ?> = new YT.Player('video_id_videogallery_<?php echo $sliderID; ?>_<?php echo $key;?>', {
 				  height: '<?php echo $sliderheight; ?>',
@@ -1527,7 +1526,7 @@ jQuery(function(){
 		
 <?php			
 	foreach ($images as $key => $image_row) {
-		if($image_row->sl_type=="video" and strpos($image_row->image_url,'youtube') !== false){
+		if($image_row->sl_type=="video" and strpos($image_row->image_url,'youtu') !== false){
 ?>
 		 function onPlayerStateChange_<?php echo $image_row->id; ?>(event) {
 			//(event.data);
@@ -1547,7 +1546,7 @@ jQuery(function(){
 		<?php 
 		$i=0;
 		foreach ($images as $key => $image_row) {
-			if($image_row->sl_type=="video" and strpos($image_row->image_url,'youtube') !== false){	
+			if($image_row->sl_type=="video" and strpos($image_row->image_url,'youtu') !== false){	
 		?>
 			player_<?php echo $image_row->id; ?>.pauseVideo();
 		<?php
@@ -2878,58 +2877,15 @@ jQuery(function(){
 				$current_pos =0;
 				$current_key=0;
 				$stri=0;
-				foreach ($images as $key => $image_row) {
-			  	$imagerowstype=$image_row->sl_type;
-				if($image_row->sl_type == ''){
-				$imagerowstype='image';
-				}
-				switch($imagerowstype){
-							
-							case 'image':
-											
-							  if ($image_row->id == $current_image_id) {
-								$current_pos = $stri;
-								$current_key = $stri;
-							  }
-							
-							?>
-								<div id="huge_it_dots_<?php echo $stri; ?>_videogallery_<?php echo $sliderID; ?>" class="huge_it_slideshow_dots_videogallery_<?php echo $sliderID; ?> <?php echo (($key==$current_image_id) ? 'huge_it_slideshow_dots_active_videogallery_'. $sliderID : 'huge_it_slideshow_dots_deactive_videogallery_' . $sliderID); ?>" onclick="huge_it_change_image_videogallery_<?php echo $sliderID; ?>(parseInt(jQuery('#huge_it_current_image_key_videogallery_<?php echo $sliderID; ?>').val()), '<?php echo $stri; ?>', data_videogallery_<?php echo $sliderID; ?>,false,true);return false;" image_id="<?php echo $image_row->id; ?>" image_key="<?php echo $stri; ?>"></div>
-							<?php
-							  $stri++;
-							break;
-							case 'video':
-											
-							  if ($image_row->id == $current_image_id) {
-								$current_pos = $stri;
-								$current_key = $stri;
-							  }
-							
-							?>
-								<div id="huge_it_dots_<?php echo $stri; ?>_videogallery_<?php echo $sliderID; ?>" class="huge_it_slideshow_dots_videogallery_<?php echo $sliderID; ?> <?php echo (($key==$current_image_id) ? 'huge_it_slideshow_dots_active_videogallery_' . $sliderID : 'huge_it_slideshow_dots_deactive_videogallery_' . $sliderID); ?>" onclick="huge_it_change_image_videogallery_<?php echo $sliderID; ?>(parseInt(jQuery('#huge_it_current_image_key_videogallery_<?php echo $sliderID; ?>').val()), '<?php echo $stri; ?>', data_videogallery_<?php echo $sliderID; ?>,false,true);return false;" image_id="<?php echo $image_row->id; ?>" image_key="<?php echo $stri; ?>"></div>
-							<?php
-							  $stri++;
-							break;
-							case 'last_posts':
-							
-							foreach($recent_posts as $lkeys => $last_posts){
-							if($lkeys < $image_row->sl_url){
-							if(get_the_post_thumbnail($last_posts["ID"], 'thumbnail') != ''){
-							$imagethumb = wp_get_attachment_image_src( get_post_thumbnail_id($last_posts["ID"]), 'thumbnail-size', true );
-											
-							  if ($image_row->id == $current_image_id) {
-								$current_pos = $stri;
-								$current_key = $stri;
-							  }
-							?>
-								<div id="huge_it_dots_<?php echo $stri; ?>_videogallery_<?php echo $sliderID; ?>" class="huge_it_slideshow_dots_videogallery_<?php echo $sliderID; ?> <?php echo (($stri==$current_image_id) ? 'huge_it_slideshow_dots_active_videogallery_' . $sliderID : 'huge_it_slideshow_dots_deactive_videogallery_' . $sliderID); ?>" onclick="huge_it_change_image_videogallery_<?php echo $sliderID; ?>(parseInt(jQuery('#huge_it_current_image_key_videogallery_<?php echo $sliderID; ?>').val()), '<?php echo $stri; ?>', data_videogallery_<?php echo $sliderID; ?>,false,true);return false;" image_id="<?php echo $image_row->id; ?>" image_key="<?php echo $stri; ?>"></div>
-							<?php
-							  $stri++;
-							}
-							}
-							}
-							
-							break;
-					}
+				foreach ($images as $key => $image_row) {				
+					  if ($image_row->id == $current_image_id) {
+						$current_pos = $stri;
+						$current_key = $stri;
+					  }
+					?>
+						<div id="huge_it_dots_<?php echo $stri; ?>_videogallery_<?php echo $sliderID; ?>" class="huge_it_slideshow_dots_videogallery_<?php echo $sliderID; ?> <?php echo (($key==$current_image_id) ? 'huge_it_slideshow_dots_active_videogallery_' . $sliderID : 'huge_it_slideshow_dots_deactive_videogallery_' . $sliderID); ?>" onclick="huge_it_change_image_videogallery_<?php echo $sliderID; ?>(parseInt(jQuery('#huge_it_current_image_key_videogallery_<?php echo $sliderID; ?>').val()), '<?php echo $stri; ?>', data_videogallery_<?php echo $sliderID; ?>,false,true);return false;" image_id="<?php echo $image_row->id; ?>" image_key="<?php echo $stri; ?>"></div>
+					<?php
+					  $stri++;
 				}
 				?>
 			  </div>
@@ -2958,82 +2914,23 @@ jQuery(function(){
 			<?php
 				$i=0;
 				foreach ($images as $key => $image_row) {
-					$imagerowstype=$image_row->sl_type;
-					if($image_row->sl_type == ''){
-					$imagerowstype='image';
-					}
-					switch($imagerowstype){
-						case 'image':
-						$target="";
-						?>
-						  <li class="huge_it_slideshow_image<?php if ($i != $current_image_id) {$current_key = $key; echo '_second';} ?>_item_videogallery_<?php echo $sliderID; ?>" id="image_id_videogallery_<?php echo $sliderID.'_'.$i ?>">      
-							<?php if($image_row->sl_url!=""){ 
-								if ($image_row->link_target=="on"){$target='target="_blank'.$image_row->link_target.'"';}
-								echo '<a href="'.$image_row->sl_url.'" '.$target.'>';
-							} ?>
-							<img id="huge_it_slideshow_image_videogallery_<?php echo $sliderID; ?>" class="huge_it_slideshow_image_videogallery_<?php echo $sliderID; ?>" src="<?php echo $image_row->image_url; ?>" image_id="<?php echo $image_row->id; ?>" />
-							<?php if($image_row->sl_url!=""){ echo '</a>'; }?>		
-							<div class="huge_it_slideshow_title_text_videogallery_<?php echo $sliderID; ?> <?php if(trim($image_row->name)=="") echo "none"; ?>">
-								<?php echo $image_row->name; ?>
-							</div>
-							<div class="huge_it_slideshow_description_text_videogallery_<?php echo $sliderID; ?> <?php if(trim($image_row->description)=="") echo "none"; ?>">
-								<?php echo $image_row->description; ?>
-							</div>
-						  </li>
-						  <?php
-						$i++;
-						break;
-						
-						case 'last_posts':
-						foreach($recent_posts as $lkeys => $last_posts){
-							if($lkeys < $image_row->sl_url){
-								$imagethumb = wp_get_attachment_image_src( get_post_thumbnail_id($last_posts["ID"]), 'thumbnail-size', true );
-								if(get_the_post_thumbnail($last_posts["ID"], 'thumbnail') != ''){
-								$target="";
+					?>
+						<li  class="huge_it_slideshow_image<?php if ($i != $current_image_id) {$current_key = $key; echo '_second';} ?>_item_videogallery_<?php echo $sliderID; ?>" id="image_id_videogallery_<?php echo $sliderID.'_'.$i ?>">      
+							<?php 
+								if(strpos($image_row->image_url,'youtu') !== false){
+									$video_thumb_url=get_youtube_id_from_url($image_row->image_url); 
 								?>
-								  <li class="huge_it_slideshow_image<?php if ($i != $current_image_id) {$current_key = $key; echo '_second';} ?>_item_videogallery_<?php echo $sliderID; ?>" id="image_id_videogallery_<?php echo $sliderID.'_'.$i ?>">      
-									<?php if ($image_row->sl_postlink=="1"){
-											if ($image_row->link_target=="on"){$target='target="_blank'.$image_row->link_target.'"';}
-											echo '<a href="'.$last_posts["guid"].'" '.$target.'>';
-									} ?>
-									<img id="huge_it_slideshow_image_videogallery_<?php echo $sliderID; ?>" class="huge_it_slideshow_image_videogallery_<?php echo $sliderID; ?>" src="<?php echo $imagethumb[0]; ?>" image_id="<?php echo $image_row->id; ?>" />
-									<?php if($image_row->sl_postlink=="1"){ echo '</a>'; }?>		
-									<div class="huge_it_slideshow_title_text_videogallery_<?php echo $sliderID; ?> <?php if(trim($last_posts["post_title"])=="") echo "none";  if($image_row->sl_stitle!="1") echo " hidden"; ?>">
-											<?php echo $last_posts["post_title"]; ?>
-									</div>
-									<div class="huge_it_slideshow_description_text_videogallery_<?php echo $sliderID; ?> <?php if(trim($last_posts["post_content"])=="") echo "none"; if($image_row->sl_sdesc!="1") echo " hidden"; ?>">
-										<?php 
-										echo substr_replace($last_posts["post_content"], "", $image_row->description); ?>
-									</div>
-								 </li>
-								  <?php
-								$i++;
-								}
-							}
-						}
-						break;
-						case 'video':
-
-							?>
-							<li  class="huge_it_slideshow_image<?php if ($i != $current_image_id) {$current_key = $key; echo '_second';} ?>_item_videogallery_<?php echo $sliderID; ?>" id="image_id_videogallery_<?php echo $sliderID.'_'.$i ?>">      
-								<?php 
-									if(strpos($image_row->image_url,'youtube') !== false){
-										$video_thumb_url=get_youtube_id_from_url($image_row->image_url); 
-									?>
-										
-										<div id="video_id_videogallery_<?php echo $sliderID;?>_<?php echo $key ;?>" class="huge_it_video_frame_videogallery_<?php echo $sliderID; ?>"></div>
-								<?php }else {
-										$vimeo = $image_row->image_url;
-										$imgid =  end(explode( "/", $vimeo ));
-										
-								?>					
-									<iframe id="player_<?php echo $key ;?>"  class="huge_it_video_frame_videogallery_<?php echo $sliderID; ?>" src="//player.vimeo.com/video/<?php echo $imgid; ?>?api=1&player_id=player_<?php echo $key ;?>&showinfo=0&controls=0" frameborder="0" allowfullscreen></iframe>
-								<?php } ?>
-							</li>
-						<?php
-						$i++;
-						break;
-					} 
+									<div id="video_id_videogallery_<?php echo $sliderID;?>_<?php echo $key ;?>" class="huge_it_video_frame_videogallery_<?php echo $sliderID; ?>"></div>
+							<?php }else {
+									$vimeo = $image_row->image_url;
+									$imgid =  end(explode( "/", $vimeo ));
+									
+							?>		
+								<iframe id="player_<?php echo $key ;?>"  class="huge_it_video_frame_videogallery_<?php echo $sliderID; ?>" src="//player.vimeo.com/video/<?php echo $imgid; ?>?api=1&player_id=player_<?php echo $key ;?>&showinfo=0&controls=0" frameborder="0" allowfullscreen></iframe>
+							<?php } ?>
+						</li>
+					<?php
+					$i++;
 				} 
 			?>
 			   <input type="hidden" id="huge_it_current_image_key_videogallery_<?php echo $sliderID; ?>" value="0" />
