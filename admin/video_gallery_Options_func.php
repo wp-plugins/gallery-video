@@ -3,9 +3,7 @@ function showStyles($op_type = "0")
 {
     global $wpdb;
     $query = "SELECT *  from " . $wpdb->prefix . "huge_it_videogallery_params ";
-
     $rows = $wpdb->get_results($query);
-
     $param_values = array();
     foreach ($rows as $row) {
         $key = $row->name;

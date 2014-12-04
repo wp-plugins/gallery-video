@@ -1,10 +1,8 @@
 <?php	
 function showvideogallery() 
   {
-	  
 	global $wpdb;
 	$limit=0;
-
 	if(isset($_POST['search_events_by_title'])){
 	$search_tag=esc_html(stripslashes($_POST['search_events_by_title']));
 	}
@@ -68,7 +66,6 @@ foreach($catt as $local_cat){
 return $trr_cat;
 
 }
-
 function editvideogallery($id)
   {
 	  
@@ -79,11 +76,8 @@ function editvideogallery($id)
 	
 	$idfordelete = $_GET["removeslide"];
 	$wpdb->query($wpdb->prepare("DELETE FROM ".$wpdb->prefix."huge_it_videogallery_videos  WHERE id = %d ", $idfordelete));
-
-	
 	   }
 	   }
-
 	   $query=$wpdb->prepare("SELECT * FROM ".$wpdb->prefix."huge_it_videogallery_galleries WHERE id= %d",$id);
 	   $row=$wpdb->get_row($query);
 	   if(!isset($row->videogallery_list_effects_s))
@@ -117,8 +111,6 @@ INSERT INTO
 	   }
 	   }
 	   
-	
-	   
 	   $query="SELECT * FROM ".$wpdb->prefix."huge_it_videogallery_galleries order by id ASC";
 			   $rowsld=$wpdb->get_results($query);
 			  
@@ -142,9 +134,6 @@ INSERT INTO
 	 	  $query=$wpdb->prepare("SELECT * FROM ".$wpdb->prefix."term_relationships where term_taxonomy_id = %d order by object_id ASC",$_POST["iframecatid"]);
 		$rowsposts8=$wpdb->get_results($query);
 
-
-	 
-
 			   foreach($rowsposts8 as $rowsposts13){
 	 $query=$wpdb->prepare("SELECT * FROM ".$wpdb->prefix."posts where post_type = 'post' and post_status = 'publish' and ID = %d  order by ID ASC",$rowsposts13->object_id);
 			   $rowsposts1=$wpdb->get_results($query);
@@ -159,20 +148,14 @@ INSERT INTO
 function add_videogallery()
 {
 	global $wpdb;
-	
-	$query="SELECT name,ordering FROM ".$wpdb->prefix."huge_it_videogallery_galleries WHERE sl_width=0 ORDER BY `ordering`";
-	$ord_elem=$wpdb->get_results($query); ///////ordering elements list
-	$cat_row=$wpdb->get_results("SELECT * FROM ".$wpdb->prefix."huge_it_videogallery_galleries where sl_width=0");
-	$cat_row=open_cat_in_tree($cat_row);
-	
+
 	$table_name = $wpdb->prefix . "huge_it_videogallery_galleries";
     $sql_2 = "
 INSERT INTO 
 
-`" . $table_name . "` ( `name`, `sl_height`, `sl_width`, `pause_on_hover`, `videogallery_list_effects_s`, `description`, `param`, `ordering`, `published`, `huge_it_sl_effects`) VALUES
-( 'New Video Gallery', '375', '600', 'on', 'cubeH', '4000', '1000', '1', '300', '4')";
+`" . $table_name . "` ( `name`, `sl_height`, `sl_width`, `pause_on_hover`, `videogallery_list_effects_s`, `description`, `param`, `sl_position`, `ordering`, `published`, `huge_it_sl_effects`) VALUES
+( 'New Video Gallery', '375', '600', 'on', 'cubeH', '4000', '1000', 'center', '1', '300', '4')";
 
-    $wpdb->query($sql_huge_it_videogallery_galleries);
 
       $wpdb->query($sql_2);
 
@@ -185,13 +168,8 @@ INSERT INTO
 		if($last_key == $key){
 			header('Location: admin.php?page=videogallerys_huge_it_videogallery&id='.$rowsldccs->id.'&task=apply');
 		}
-	}
-	
-	html_add_videogallery($ord_elem, $cat_row);
-	
+	}	
 }
-
-
 
 
 function videogallery_video($id)
