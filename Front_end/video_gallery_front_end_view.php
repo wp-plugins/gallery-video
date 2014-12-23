@@ -1530,6 +1530,7 @@ jQuery(function(){
 ?>
 		 function onPlayerStateChange_<?php echo $image_row->id; ?>(event) {
 			//(event.data);
+                        <?php $images[$key]->name = htmlspecialchars($images[$key]->name, ENT_QUOTES); ?>
 			if (event.data == YT.PlayerState.PLAYING) {
 				event.target.setPlaybackQuality('<?php echo $images[$key]->name; ?>');
 				video_is_playing_videogallery_<?php echo $sliderID; ?>=true;

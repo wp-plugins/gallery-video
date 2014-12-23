@@ -4,7 +4,7 @@ Donate link: http://huge-it.com/video-gallery/
 Tags: video gallery, gallery, video, youtube, vimeo, wp gallery, media gallery, thumbnail video player, video plugin, vimeo gallery, youtube gallery, embed videos, youtube player, vimeo player, Video Player plugin, videos, wordpress, wordpress gallery, wordpress youtube, wordpress video, video portfolio, plugin, megavideo, video slider, video slideshow, free video gallery, gallery video, mobile responsive, post, posts, video player, player, seo, video lightbox, widget, widget video, shortcode, admin, free video, free gallery, free, slideshow, videos, demo,
 Requires at least: 3.0.1
 Tested up to: 4.0
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -97,6 +97,9 @@ For example, if you have personal version and need to upgrade to Multi Site, jus
 ### If you think, that you found a bug in our [WordPress Video Gallery](http://huge-it.com/wordpress-video-gallery/) plugin or have any question contact us at [info@huge-it.com](mailto:info@huge-it.com).
     
 == Changelog ==
+
+= 1.1.2 =
+*  Bugs have been fixed on Video Gallery.
 
 = 1.1.1 =
 *  Bugs have been fixed on Video Gallery.
