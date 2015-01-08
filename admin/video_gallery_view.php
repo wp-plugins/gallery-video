@@ -56,7 +56,7 @@ function html_showvideogallerys( $rows,  $pageNav,$sort,$cat_row){
 	<div id="poststuff">
 		<div id="videogallerys-list-page">
 			<form method="post"  onkeypress="doNothing()" action="admin.php?page=videogallerys_huge_it_videogallery" id="admin_form" name="admin_form">
-			<h2>Huge-IT Galleries
+			<h2>Huge-IT Video Galleries
 				<a onclick="window.location.href='admin.php?page=videogallerys_huge_it_videogallery&task=add_cat'" class="add-new-h2" >Add New Video Gallery</a>
 			</h2>
 			<?php
@@ -289,7 +289,7 @@ jQuery(function() {
 					<div id="post-body-heading">
 						<h3>Projects/Videos</h3>					
 						<a href="admin.php?page=videogallerys_huge_it_videogallery&task=videogallery_video&id=<?php echo $_GET['id']; ?>&TB_iframe=1" class="button button-primary add-video-slide thickbox"  id="slideup3s" value="iframepop">
-							<span class="wp-media-buttons-icon"></span>Add Video Slide
+							<span class="wp-media-buttons-icon"></span>Add Video / Project
 						</a>
 					</div>
 					<ul id="images-list">

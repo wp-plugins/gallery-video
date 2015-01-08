@@ -24,7 +24,6 @@ function front_end_videogallery($images, $paramssld, $videogallery)
 	$videogalleryposition=$videogallery[0]->sl_position;
 	$slidechangespeed=$videogallery[0]->param;
 	$videogallerychangeview=$videogallery[0]->huge_it_sl_effects;
-
 ?>
 <script>
 	var lightbox_transition = '<?php echo $paramssld['light_box_transition'];?>';
@@ -158,7 +157,6 @@ function front_end_videogallery($images, $paramssld, $videogallery)
 				jQuery(document).ready(function(){
 				jQuery("#huge_it_videogallery_content a[href$='.jpg'], #huge_it_videogallery_content a[href$='.png'], #huge_it_videogallery_content a[href$='.gif']").addClass('group1');
 				
-				
 				jQuery(".group1").colorbox({rel:'group1'});
 				jQuery(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390});
 				jQuery(".vimeo").colorbox({iframe:true, innerWidth:640, innerHeight:390});
@@ -175,7 +173,6 @@ function front_end_videogallery($images, $paramssld, $videogallery)
 				jQuery('.non-retina').colorbox({rel:'group5', transition:'none'})
 				jQuery('.retina').colorbox({rel:'group5', transition:'none', retinaImage:true, retinaUrl:true});
 				
-
 				jQuery("#click").click(function(){ 
 					jQuery('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
 					return false;
@@ -211,11 +208,9 @@ jQuery(function(){
 	var defaultBlockWidth=<?php echo $paramssld['ht_view2_element_width']; ?>;
     var $container = jQuery('#huge_it_videogallery_container_<?php echo $videogalleryID; ?>');
 
-      // add randomish size classes
       $container.find('.element_<?php echo $videogalleryID; ?>').each(function(){
         var $this = jQuery(this),
             number = parseInt( $this.find('.number').text(), 10 );
-			//alert(number);
         if ( number % 7 % 2 === 1 ) {
           $this.addClass('width2');
         }

@@ -41,7 +41,7 @@ jQuery(document).ready(function () {
 		</div>
 	</div>
 	<div style="clear: both;"></div>
-<div id="poststuff">
+	<div id="poststuff">
 		<?php $path_site = plugins_url("/../Front_images", __FILE__); ?>
 
 		<div id="post-body-content" class="videogallery-options">

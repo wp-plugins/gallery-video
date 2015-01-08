@@ -41,7 +41,6 @@ jQuery(document).ready(function () {
 	</div>
 	<div style="clear: both;"></div>
 	<div id="poststuff">
-	<div id="post-body-content" class="videogallery-options">
 			<div id="post-body-heading">
 				<h3>Lightbox Options</h3>
 				<a class="save-videogallery-options button-primary">Save</a>
@@ -217,7 +216,6 @@ jQuery(document).ready(function () {
 <input type="hidden" name="controller" value="options"/>
 <input type="hidden" name="op_type" value="styles"/>
 <input type="hidden" name="boxchecked" value="0"/>
-</div>
 </div>
 </div>
 
