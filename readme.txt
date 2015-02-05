@@ -19,6 +19,8 @@ Video Gallery plugin was created and specifically designed to show your video fi
 [Demo Video Gallery](http://huge-it.com/wordpress-video-gallery-demo-1-content-popup/)  
 [User Manual Video Gallery](http://huge-it.com/wordpress-plugins-video-gallery-user-manual/)  
 
+https://www.youtube.com/watch?v=Re16ci9iGVU
+
 Video Gallery plugin was created and specifically designed to show your videos from Vimeo and Youtube in unusual splendid ways. It has 5 good-looking views. Each are made in different taste so that you can choose any of them, according to the style of your website.
 
 * Upload the video in your Video Gallery.
