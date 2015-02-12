@@ -1,7 +1,7 @@
 === Video Gallery ===
 Contributors: Huge-IT
 Donate link: http://huge-it.com/video-gallery/
-Tags: video gallery, gallery, video, youtube, vimeo, wp gallery, media gallery, thumbnail video player, video plugin, vimeo gallery, youtube gallery, embed videos, youtube player, vimeo player, Video Player plugin, videos, wordpress, wordpress gallery, wordpress youtube, wordpress video, video portfolio, plugin, megavideo, video slider, video slideshow, free video gallery, gallery video, mobile responsive, post, posts, video player, player, seo, video lightbox, widget, widget video, shortcode, admin, free video, free gallery, free, slideshow, videos, video galleri, responsive gallery, art gallery, drag-and-drop,
+Tags: video gallery, gallery, video, youtube, vimeo, wp gallery, media gallery, thumbnail video player, video plugin, vimeo gallery, youtube gallery, embed videos, youtube player, vimeo player, Video Player plugin, videos, wordpress, wordpress gallery, wordpress youtube, wordpress video, video portfolio, plugin, megavideo, video slider, video slideshow, free video gallery, gallery video, mobile responsive, post, posts, video player, player, video lightbox, widget, widget video, shortcode, admin, free video, free gallery, free, slideshow, videos, video galleri, responsive gallery, art gallery, drag-and-drop,
 Requires at least: 3.0.1
 Tested up to: 4.0
 Stable tag: 1.1.5
@@ -99,9 +99,8 @@ For example, if you have personal version and need to upgrade to Multi Site, jus
 **I’ve bought the commercial license,  installed the file but the Plugin seems to be still in free version, what to do?**
 After installation of pro version, in General Options all your changes will be saved!
 If you still see "free version" notification after installation of pro version
-1) try to clean your cache files
-if this will not help
-2) delete, and install the plugin again
+* 1) try to clean your cache files if this will not help
+* 2) delete, and install the plugin again
 
 ### If you think, that you found a bug in our [WordPress Video Gallery](http://huge-it.com/wordpress-video-gallery/) plugin or have any question contact us at [info@huge-it.com](mailto:info@huge-it.com).
     
