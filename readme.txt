@@ -1,7 +1,7 @@
 === Video Gallery ===
 Contributors: Huge-IT
 Donate link: http://huge-it.com/video-gallery/
-Tags: video gallery, gallery, video, youtube, vimeo, wp gallery, media gallery, thumbnail video player, video plugin, vimeo gallery, youtube gallery, embed videos, youtube player, vimeo player, Video Player plugin, videos, wordpress, wordpress gallery, wordpress youtube, wordpress video, video portfolio, plugin, megavideo, video slider, video slideshow, free video gallery, gallery video, mobile responsive, post, posts, video player, player, video lightbox, widget, widget video, shortcode, admin, free video, free gallery, free, slideshow, videos, video galleri, responsive gallery, art gallery, drag-and-drop,
+Tags: video gallery, gallery, video, youtube, vimeo, wp gallery, media gallery, thumbnail video player, video plugin, vimeo gallery, youtube gallery, embed videos, youtube player, vimeo player, Video Player plugin, videos, wordpress, wordpress gallery, wordpress youtube, wordpress video, video portfolio, plugin, megavideo, video slider, video slideshow, free video gallery, gallery video, mobile responsive, post, posts, video player, player, video lightbox, widget, widget video, shortcode, admin, free video, free gallery, free, slideshow, videos, video galleri, responsive gallery, art gallery, drag-and-drop, best video,
 Requires at least: 3.0.1
 Tested up to: 4.1
 Stable tag: 1.1.5
@@ -101,6 +101,13 @@ After installation of pro version, in General Options all your changes will be s
 If you still see "free version" notification after installation of pro version
 * 1) try to clean your cache files if this will not help
 * 2) delete, and install the plugin again
+
+**I have multy sites, and the plugin works only on one, but not other sites, why?**
+If you use multy site (have number of sites) when you install a plugin in main page, it will not work on other pages. 
+In order it could work there too, you should. 
+1) deactivate the plugin from main page
+2) go to the other pages and activate it there one by one 
+3) after all will be activated, go back to your main page and activate it
 
 ### If you think, that you found a bug in our [WordPress Video Gallery](http://huge-it.com/wordpress-video-gallery/) plugin or have any question contact us at [info@huge-it.com](mailto:info@huge-it.com).
     
