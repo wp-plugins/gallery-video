@@ -1,7 +1,7 @@
 === Video Gallery ===
 Contributors: Huge-IT
 Donate link: http://huge-it.com/video-gallery/
-Tags: video gallery, gallery, video, youtube, vimeo, wp gallery, media gallery, thumbnail video player, video plugin, vimeo gallery, youtube gallery, embed videos, youtube player, vimeo player, Video Player plugin, videos, wordpress, wordpress gallery, wordpress youtube, wordpress video, video portfolio, plugin, megavideo, video slider, video slideshow, free video gallery, gallery video, mobile responsive, video player, player, video lightbox, widget, widget video, shortcode, admin, free video, free gallery, free, slideshow, videos, video galleri, responsive gallery, art gallery, drag-and-drop, best video,
+Tags: video gallery, gallery, video, youtube, vimeo, wp gallery, media gallery, thumbnail video player, video plugin, vimeo gallery, youtube gallery, embed videos, youtube player, vimeo player, Video Player plugin, videos, wordpress, wordpress gallery, wordpress youtube, wordpress video, video portfolio, megavideo, video slider, video slideshow, free video gallery, gallery video, mobile responsive, video player, player, video lightbox, widget, widget video, shortcode, admin, free video, free gallery, free, slideshow, videos, video galleri, responsive gallery, art gallery, drag-and-drop, best video, post, posts,
 Requires at least: 3.0.1
 Tested up to: 4.1
 Stable tag: 1.1.5
