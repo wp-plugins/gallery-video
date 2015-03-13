@@ -157,7 +157,7 @@ function front_end_videogallery($images, $paramssld, $videogallery)
 	var lightbox_retinaSuffix = "<?php echo $paramssld['light_box_retinasuffix'];?>";
 	
 				jQuery(document).ready(function(){
-				jQuery("#huge_it_videogallery_content a[href$='.jpg'], #huge_it_videogallery_content a[href$='.png'], #huge_it_videogallery_content a[href$='.gif']").addClass('group1');
+				jQuery("#huge_it_videogallery_content a[href$='.jpg'], #huge_it_videogallery_content a[href$='.jpeg'], #huge_it_videogallery_content a[href$='.png'], #huge_it_videogallery_content a[href$='.gif']").addClass('group1');
 				
 				jQuery(".group1").colorbox({rel:'group1'});
 				jQuery(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390});
