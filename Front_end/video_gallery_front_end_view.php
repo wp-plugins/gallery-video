@@ -1160,12 +1160,14 @@ jQuery(document).ready(function(){
 
 .element_<?php echo $videogalleryID; ?> .title-block_<?php echo $videogalleryID; ?> {
 	position:absolute;
-	
+	text-overflow: ellipsis;
+	overflow: hidden; 	
 	left:0px;
 	width:100%;
 	padding-top:5px;
 	height:30px;
 	bottom:-35px;
+	color:#<?php echo $paramssld["ht_view6_title_font_color"];?>;
 	background: <?php
 			list($r,$g,$b) = array_map('hexdec',str_split($paramssld['ht_view6_title_background_color'],2));
 				$titleopacity=$paramssld["ht_view6_title_background_transparency"]/100;						
@@ -1409,9 +1411,10 @@ break;
 	$sliderpauseonhover=$videogallery[0]->pause_on_hover;
 	$sliderposition=$videogallery[0]->sl_position;
 	$slidechangespeed=$videogallery[0]->param;
-
-	$slideshow_title_position = explode('-', trim($paramssld['slider_title_position']));
-	$slideshow_description_position = explode('-', trim($paramssld['slider_description_position']));
+	$trim_slider_title_position = trim($paramssld['slider_title_position']);
+	$slideshow_title_position = explode('-', $trim_slider_title_position);
+	$trim_slider_description_position = trim($paramssld['slider_description_position']);
+	$slideshow_description_position = explode('-', $trim_slider_description_position);
 	
 	$hasyoutube=false;
 	$hasvimeo=false;
@@ -2976,7 +2979,7 @@ jQuery(function(){
 			
 			
 			section #huge_it_videogallery li .infoLayer ul li {
-				height:50px;
+				max-height:80px;
 				overflow:hidden;
 			}
 			
