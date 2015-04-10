@@ -113,17 +113,7 @@ INSERT INTO
 	   
 	   $query="SELECT * FROM ".$wpdb->prefix."huge_it_videogallery_galleries order by id ASC";
 			   $rowsld=$wpdb->get_results($query);
-			  
-			    $query = "SELECT *  from " . $wpdb->prefix . "huge_it_videogallery_params ";
 
-    $rowspar = $wpdb->get_results($query);
-
-    $paramssld = array();
-    foreach ($rowspar as $rowpar) {
-        $key = $rowpar->name;
-        $value = $rowpar->value;
-        $paramssld[$key] = $value;
-    }
 	
 	 $query="SELECT * FROM ".$wpdb->prefix."posts where post_type = 'post' and post_status = 'publish' order by id ASC";
 			   $rowsposts=$wpdb->get_results($query);
@@ -142,7 +132,7 @@ INSERT INTO
 	 }
 	 }
 
-    Html_editvideogallery($ord_elem, $count_ord, $images, $row, $cat_row, $rowim, $rowsld, $paramssld, $rowsposts, $rowsposts8, $postsbycat);
+    Html_editvideogallery($ord_elem, $count_ord, $images, $row, $cat_row, $rowim, $rowsld, $rowsposts, $rowsposts8, $postsbycat);
   }
   
 function add_videogallery()

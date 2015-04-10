@@ -184,7 +184,7 @@ function html_showvideogallerys( $rows,  $pageNav,$sort,$cat_row){
     <?php
 
 }
-function Html_editvideogallery($ord_elem, $count_ord,$images,$row,$cat_row, $rowim, $rowsld, $paramssld, $rowsposts, $rowsposts8, $postsbycat)
+function Html_editvideogallery($ord_elem, $count_ord,$images,$row,$cat_row, $rowim, $rowsld, $rowsposts, $rowsposts8, $postsbycat)
 
 {
  global $wpdb;
