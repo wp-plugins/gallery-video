@@ -65,12 +65,13 @@ Now you can set your Video Gallery options, images and use our Video Gallery.
 == Screenshots ==
 
 1.  WordPress Video Gallery view 1 - Video Gallery / Content Popup
-2.  WordPress Video Gallery view 1 - Video Gallery / Content Popup
-3.  WordPress Video Gallery view 2 - Content Video Slider
-4.  WordPress Video Gallery view 3 - Lightbox Video Gallery
-5.  WordPress Video Gallery view 4 - Video Slider
-6.  WordPress Video Gallery view 5 - Video Gallery - Thumbnails
-7.  WordPress Video Gallery view 5 - Video Gallery - Thumbnails
+11.  WordPress Video Gallery view 1 - Video Gallery / Content Popup
+2.  WordPress Video Gallery view 2 - Content Video Slider
+3.  WordPress Video Gallery view 3 - Lightbox Video Gallery
+4.  WordPress Video Gallery view 4 - Video Slider
+5.  WordPress Video Gallery view 5 - Video Gallery - Thumbnails
+51.  WordPress Video Gallery view 5 - Video Gallery - Thumbnails
+52.  WordPress Video Gallery view 5 - Video Gallery - Thumbnails
 
 == Frequently Asked Questions ==
 
