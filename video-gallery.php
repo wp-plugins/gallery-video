@@ -4,7 +4,7 @@
 Plugin Name: Huge IT Video Gallery
 Plugin URI: http://huge-it.com/video-allery/
 Description: Video Gallery plugin was created and specifically designed to show your video files in unusual splendid ways.
-Version: 1.2.1
+Version: 1.2.2
 Author: http://huge-it.com/
 License: GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
 */
@@ -227,7 +227,7 @@ add_action('wp_enqueue_scripts', 'all_videogallery_frontend_scripts_and_styles')
 add_action('admin_menu', 'huge_it_videogallery_options_panel');
 function huge_it_videogallery_options_panel()
 {
-    $page_cat = add_menu_page('Theme page title', 'Video Gallery', 'manage_options', 'videogallerys_huge_it_videogallery', 'videogallerys_huge_it_videogallery', plugins_url('images/video_gallery_icon.png', __FILE__));
+    $page_cat = add_menu_page('Theme page title', 'Video Gallery', 'delete_pages', 'videogallerys_huge_it_videogallery', 'videogallerys_huge_it_videogallery', plugins_url('images/video_gallery_icon.png', __FILE__));
     $page_option = add_submenu_page('videogallerys_huge_it_videogallery', 'General Options', 'General Options', 'manage_options', 'Options_videogallery_styles', 'Options_videogallery_styles');
     $lightbox_options = add_submenu_page('videogallerys_huge_it_videogallery', 'Lightbox Options', 'Lightbox Options', 'manage_options', 'Options_videogallery_lightbox_styles', 'Options_videogallery_lightbox_styles');
 	add_submenu_page( 'videogallerys_huge_it_videogallery', 'Licensing', 'Licensing', 'manage_options', 'huge_it_video_gallery_Licensing', 'huge_it_video_gallery_Licensing');
