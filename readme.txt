@@ -72,6 +72,8 @@ Now you can set your Video Gallery options, images and use our Video Gallery.
 5.  WordPress Video Gallery view 5 - Video Gallery - Thumbnails
 51.  WordPress Video Gallery view 5 - Video Gallery - Thumbnails
 52.  WordPress Video Gallery view 5 - Video Gallery - Thumbnails
+6.  WordPress Video Gallery Admin Page
+62.  WordPress Video Gallery Admin Page
 
 == Frequently Asked Questions ==
 
