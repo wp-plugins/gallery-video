@@ -299,7 +299,7 @@ jQuery(function() {
 					<div id="post-body-heading">
 						<h3>Projects/Videos</h3>					
 						<a href="admin.php?page=videogallerys_huge_it_videogallery&task=videogallery_video&id=<?php echo $_GET['id']; ?>&TB_iframe=1" class="button button-primary add-video-slide thickbox"  id="slideup3s" value="iframepop">
-							<span class="wp-media-buttons-icon"></span>Add Video / Project
+							<span class="wp-media-buttons-icon"></span>Add Video 
 						</a>
 					</div>
 					<ul id="images-list">
