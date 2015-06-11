@@ -71,7 +71,9 @@ function html_showvideogallerys( $rows,  $pageNav,$sort,$cat_row){
 			</h2>
 			<?php
 			$serch_value='';
-			if(isset($_POST['serch_or_not'])) {if($_POST['serch_or_not']=="search"){ $serch_value=esc_html(stripslashes($_POST['search_events_by_title'])); }else{$serch_value="";}} 
+			if(isset($_POST['serch_or_not'])) {
+				$_POST['serch_or_not'] = esc_html($_POST['serch_or_not']);
+				if($_POST['serch_or_not']=="search"){ $serch_value=esc_html(stripslashes($_POST['search_events_by_title'])); }else{$serch_value="";}} 
 			$serch_fields='<div class="alignleft actions"">
 				<label for="search_events_by_title" style="font-size:14px">Filter: </label>
 					<input type="text" name="search_events_by_title" value="'.$serch_value.'" id="search_events_by_title" onchange="clear_serch_texts()">
@@ -178,7 +180,9 @@ function html_showvideogallerys( $rows,  $pageNav,$sort,$cat_row){
 				</tbody>
 			</table>
 			 <input type="hidden" name="oreder_move" id="oreder_move" value="" />
-			 <input type="hidden" name="asc_or_desc" id="asc_or_desc" value="<?php if(isset($_POST['asc_or_desc'])) echo $_POST['asc_or_desc'];?>"  />
+			 <input type="hidden" name="asc_or_desc" id="asc_or_desc" value="<?php if(isset($_POST['asc_or_desc'])){
+			$_POST['asc_or_desc'] = esc_html($_POST['asc_or_desc']);
+			 echo $_POST['asc_or_desc']; } ?>"  />
 			 <input type="hidden" name="order_by" id="order_by" value="<?php if(isset($_POST['order_by'])) echo $_POST['order_by'];?>"  />
 			 <input type="hidden" name="saveorder" id="saveorder" value="" />
 
@@ -297,7 +301,8 @@ jQuery(function() {
 
 				<div id="post-body">
 					<div id="post-body-heading">
-						<h3>Projects/Videos</h3>					
+						<h3>Projects/Videos</h3>			
+						<?php $_GET['id'] = esc_html($_GET['id']); ?>
 						<a href="admin.php?page=videogallerys_huge_it_videogallery&task=videogallery_video&id=<?php echo $_GET['id']; ?>&TB_iframe=1" class="button button-primary add-video-slide thickbox"  id="slideup3s" value="iframepop">
 							<span class="wp-media-buttons-icon"></span>Add Video 
 						</a>
@@ -331,6 +336,7 @@ jQuery(function() {
 											$imgid =  end($imgid);
 											$hash = unserialize(file_get_contents("http://vimeo.com/api/v2/video/".$imgid.".php"));
 											$imgsrc=$hash[0]['thumbnail_large'];
+											$imgsrc=esc_html($imgsrc);
 											$thumburl ='<img src="'.$imgsrc.'" alt="" />';
 										}
 										?> 
