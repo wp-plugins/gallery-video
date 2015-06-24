@@ -177,22 +177,22 @@ In order it could work there too, you should.
 *  Bugs have been fixed on Video Gallery's lightbox.
 
 = 1.0.6 =
-*  Youtube links bags has been fixed in Video Gallery .
+*  Youtube links bugs has been fixed in Video Gallery .
 
 = 1.0.5 =
-*  Video Gallery bag fixed.
+*  Video Gallery bug fixed.
 
 = 1.0.4 =
 *  Notices errors has been fixed in Video Gallery.
 
 = 1.0.3 =
-*  SQL injection bag fixed in Video Gallery.
+*  SQL injection bug fixed in Video Gallery.
 
 = 1.0.2 =
-*  Video Gallery bag fixed.
+*  Video Gallery bug fixed.
 
 = 1.0.1 =
-*  Video Gallery bag fixed.
+*  Video Gallery bug fixed.
 
 = 1.0.0 =
 *  Video Gallery added.
