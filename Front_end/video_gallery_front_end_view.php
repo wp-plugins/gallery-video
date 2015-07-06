@@ -1025,11 +1025,11 @@ jQuery(document).ready(function(){
 								<?php
 									$videourl=get_video_gallery_id_from_url($row->image_url);
 									if($videourl[1]=='youtube'){?>
-										<iframe src="//www.youtube.com/embed/<?php echo $videourl[0]; ?>" frameborder="0" allowfullscreen></iframe>
+										<iframe src="//www.youtube.com/embed/<?php echo $videourl[0]; ?>" style="border: 0;" allowfullscreen></iframe>
 									<?php
 									}else {
 									?>
-										<iframe src="//player.vimeo.com/video/<?php echo $videourl[0]; ?>?title=0&amp;byline=0&amp;portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+										<iframe src="//player.vimeo.com/video/<?php echo $videourl[0]; ?>?title=0&amp;byline=0&amp;portrait=0" style="border: 0;"></iframe>
 									<?php
 									}
 								?>
@@ -2208,7 +2208,7 @@ jQuery(function(){
             // Change image key.
             jQuery("#huge_it_current_image_key_videogallery_<?php echo $sliderID; ?>").val(key);
              // if (current_key == '-2') { /* Dots.*/
-				current_key = jQuery(".huge_it_slideshow_dots_active_videogallery_<?php echo $sliderID; ?>").attr("image_key");
+				current_key = jQuery(".huge_it_slideshow_dots_active_videogallery_<?php echo $sliderID; ?>").attr("data-image_key");
 			//  }
           }
 
@@ -2231,7 +2231,7 @@ jQuery(function(){
       
           huge_it_current_key_videogallery_<?php echo $sliderID; ?> = key;
           //Change image id, title, description.
-          jQuery("#huge_it_slideshow_image_videogallery_<?php echo $sliderID; ?>").attr('image_id', data_videogallery_<?php echo $sliderID; ?>[key]["id"]);
+          jQuery("#huge_it_slideshow_image_videogallery_<?php echo $sliderID; ?>").attr('data-image_id', data_videogallery_<?php echo $sliderID; ?>[key]["id"]);
 		  
 		  
 		  jQuery(".huge_it_slideshow_title_text_videogallery_<?php echo $sliderID; ?>").html(data_videogallery_<?php echo $sliderID; ?>[key]["alt"]);
@@ -3082,7 +3082,7 @@ jQuery(function(){
 						$current_key = $stri;
 					  }
 					?>
-						<div id="huge_it_dots_<?php echo $stri; ?>_videogallery_<?php echo $sliderID; ?>" class="huge_it_slideshow_dots_videogallery_<?php echo $sliderID; ?> <?php echo (($key==$current_image_id) ? 'huge_it_slideshow_dots_active_videogallery_' . $sliderID : 'huge_it_slideshow_dots_deactive_videogallery_' . $sliderID); ?>" onclick="huge_it_change_image_videogallery_<?php echo $sliderID; ?>(parseInt(jQuery('#huge_it_current_image_key_videogallery_<?php echo $sliderID; ?>').val()), '<?php echo $stri; ?>', data_videogallery_<?php echo $sliderID; ?>,false,true);return false;" image_id="<?php echo $image_row->id; ?>" image_key="<?php echo $stri; ?>"></div>
+						<div id="huge_it_dots_<?php echo $stri; ?>_videogallery_<?php echo $sliderID; ?>" class="huge_it_slideshow_dots_videogallery_<?php echo $sliderID; ?> <?php echo (($key==$current_image_id) ? 'huge_it_slideshow_dots_active_videogallery_' . $sliderID : 'huge_it_slideshow_dots_deactive_videogallery_' . $sliderID); ?>" onclick="huge_it_change_image_videogallery_<?php echo $sliderID; ?>(parseInt(jQuery('#huge_it_current_image_key_videogallery_<?php echo $sliderID; ?>').val()), '<?php echo $stri; ?>', data_videogallery_<?php echo $sliderID; ?>,false,true);return false;" data-image_id="<?php echo $image_row->id; ?>" data-image_key="<?php echo $stri; ?>"></div>
 					<?php
 					  $stri++;
 				}
@@ -3098,7 +3098,7 @@ jQuery(function(){
 				</a>
 				
 				<a id="huge_it_slideshow_right_videogallery_<?php echo $sliderID; ?>" href="#" onclick="huge_it_change_image_videogallery_<?php echo $sliderID; ?>(parseInt(jQuery('#huge_it_current_image_key_videogallery_<?php echo $sliderID; ?>').val()), (parseInt(jQuery('#huge_it_current_image_key_videogallery_<?php echo $sliderID; ?>').val()) + iterator_videogallery_<?php echo $sliderID; ?>()) % data_videogallery_<?php echo $sliderID; ?>.length, data_videogallery_<?php echo $sliderID; ?>,false,true);return false;">
-					<div id="huge_it_slideshow_right-ico_<?php echo $sliderID;?> , data_<?php echo $sliderID;?>">
+					<div id="huge_it_slideshow_right-ico_<?php echo $sliderID;?>">
 					<div><i class="huge_it_slideshow_next_btn_videogallery_<?php echo $sliderID; ?> fa"></i></div></div>
 				</a>
 			<?php
@@ -3125,15 +3125,15 @@ jQuery(function(){
 									$imgid =  end(explode( "/", $vimeo ));
 									
 							?>		
-								<iframe id="player_<?php echo $key ;?>"  class="huge_it_video_frame_videogallery_<?php echo $sliderID; ?>" src="//player.vimeo.com/video/<?php echo $imgid; ?>?api=1&player_id=player_<?php echo $key ;?>&showinfo=0&controls=0" frameborder="0" allowfullscreen></iframe>
+								<iframe id="player_<?php echo $key ;?>"  class="huge_it_video_frame_videogallery_<?php echo $sliderID; ?>" src="//player.vimeo.com/video/<?php echo $imgid; ?>?api=1&amp;player_id=player_<?php echo $key ;?>&amp;showinfo=0&amp;controls=0" style="border: 0;" allowfullscreen></iframe>
 							<?php } ?>
 						</li>
 					<?php
 					$i++;
 				} 
 			?>
-			   <input type="hidden" id="huge_it_current_image_key_videogallery_<?php echo $sliderID; ?>" value="0" />
             </ul>
+			<input type="hidden" id="huge_it_current_image_key_videogallery_<?php echo $sliderID; ?>" value="0" />
           </div>
         </div>
       </div>
@@ -3283,14 +3283,14 @@ jQuery(function(){
 							<?php
 								$videourl=get_video_gallery_id_from_url($row->image_url);
 								if($videourl[1]=='youtube'){?>
-									<a title="<?php echo $row->name; ?>" class="youtube huge_it_videogallery_item group1"  href="https://www.youtube.com/embed/<?php echo $videourl[0]; ?>" title="<?php echo $row->name; ?>"></a>
+									<a  class="youtube huge_it_videogallery_item group1"  href="https://www.youtube.com/embed/<?php echo $videourl[0]; ?>" title="<?php echo $row->name; ?>"></a>
 									<img src="http://img.youtube.com/vi/<?php echo $videourl[0]; ?>/mqdefault.jpg" alt="<?php echo $row->name; ?>" />				
 								<?php
 								}else {
 									$hash = unserialize(file_get_contents("http://vimeo.com/api/v2/video/".$videourl[0].".php"));
 									$imgsrc=$hash[0]['thumbnail_large'];
 								?>
-									<a title="<?php echo $row->name; ?>" class="vimeo huge_it_videogallery_item group1" href="http://player.vimeo.com/video/<?php echo $videourl[0]; ?>" title="<?php echo $row->name; ?>"></a>
+									<a  class="vimeo huge_it_videogallery_item group1" href="http://player.vimeo.com/video/<?php echo $videourl[0]; ?>" title="<?php echo $row->name; ?>"></a>
 									<img src="<?php echo $imgsrc; ?>" alt="<?php echo $row->name; ?>" />
 								<?php
 								}
@@ -3460,7 +3460,7 @@ jQuery(function(){
                     ?>
                                 <?php 	if($row->image_url != ';'){ ?>
                                 <a class="group1" href="<?php echo $imgurl[0]; ?>" title="<?php echo $row->name; ?>">
-                                    <img alt="<?php echo $row->name; ?>" id="wd-cl-img<?php echo $key; ?>" alt="<?php echo $row->name; ?>" src="<?php echo get_huge_image($imgurl[0],$image_prefix); ?>"/>
+                                    <img alt="<?php echo $row->name; ?>" id="wd-cl-img<?php echo $key; ?>" src="<?php echo get_huge_image($imgurl[0],$image_prefix); ?>"/>
                                 </a>
                                 <?php } else { ?>
                                 <img alt="<?php echo $row->name; ?>" id="wd-cl-img<?php echo $key; ?>" src="images/noimage.jpg"  />
@@ -3473,7 +3473,7 @@ jQuery(function(){
                                 $videourl=get_video_gallery_id_from_url($row->image_url);
                                 if($videourl[1]=='youtube'){?>
                                         <a class="youtube huge_it_videogallery_item group1"  href="https://www.youtube.com/embed/<?php echo $videourl[0]; ?>" title="<?php echo $row->name; ?>">
-                                                <img alt="<?php echo $row->name; ?>" src="http://img.youtube.com/vi/<?php echo $videourl[0]; ?>/mqdefault.jpg" alt="<?php echo $row->name; ?>" />
+                                                <img alt="<?php echo $row->name; ?>" src="http://img.youtube.com/vi/<?php echo $videourl[0]; ?>/mqdefault.jpg" />
                                                 <div class="play-icon <?php echo $videourl[1]; ?>-icon"></div>
                                         </a>
                                 <?php }
@@ -3482,7 +3482,7 @@ jQuery(function(){
                                         $imgsrc=$hash[0]['thumbnail_large'];
                                 ?>
                                         <a class="vimeo huge_it_videogallery_item group1" href="http://player.vimeo.com/video/<?php echo $videourl[0]; ?>" title="<?php echo $row->name; ?>">
-                                                <img alt="<?php echo $row->name; ?>" src="<?php echo $imgsrc; ?>" alt="<?php echo $row->name; ?>" />
+                                                <img alt="<?php echo $row->name; ?>" src="<?php echo $imgsrc; ?>"  />
                                                 <div class="play-icon <?php echo $videourl[1]; ?>-icon"></div>
                                         </a>
                                 <?php
