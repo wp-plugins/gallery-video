@@ -371,7 +371,7 @@ jQuery(function() {
 							
 								</div>
 								<div class="remove-image-container">
-									<a class="button remove-image" href="admin.php?page=videogallerys_huge_it_videogallery&task=edit_cat&id=<?php echo $row->id; ?>&removeslide=<?php echo $rowimages->id; ?>">Remove Image</a>
+									<a class="button remove-image" href="admin.php?page=videogallerys_huge_it_videogallery&task=edit_cat&id=<?php echo $row->id; ?>&removeslide=<?php echo $rowimages->id; ?>">Remove Video</a>
 								</div>
 							</div>
 							<div class="clear"></div>
@@ -400,6 +400,7 @@ jQuery(function() {
 									<option <?php if($row->huge_it_sl_effects == '3'){ echo 'selected'; } ?>  value="3">Video Slider</option>
 									<option <?php if($row->huge_it_sl_effects == '4'){ echo 'selected'; } ?>  value="4">Thumbnails View</option>
 									<option <?php if($row->huge_it_sl_effects == '6'){ echo 'selected'; } ?>  value="6">Justified</option>
+									<option <?php if($row->huge_it_sl_effects == '7'){ echo 'selected'; } ?>  value="7">Block Style View</option>
 							</select>
 						</li>
 						
