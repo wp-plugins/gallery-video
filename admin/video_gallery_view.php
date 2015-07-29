@@ -230,6 +230,15 @@ function change_select()
 	
 }
 jQuery(function() {
+
+	jQuery('.def_thumb').on('click',(function (){
+		jQuery(this).parents('li').find('.image-container input+input').val('');
+		submitbutton('apply');
+	}))
+	;
+
+
+	
 	jQuery( "#images-list" ).sortable({
 	  stop: function() {
 			jQuery("#images-list > li").removeClass('has-background');
@@ -280,7 +289,7 @@ jQuery(function() {
 				<?php
 				}
 				else{ ?>
-					<li class="active" style="background-image:url(<?php echo plugins_url('../images/edit.png', __FILE__) ;?>)">
+					<li class="active" onclick='document.getElementById("name").style.width = ((document.getElementById("name").value.length + 1) * 8) + "px"' style="background-image:url(<?php echo plugins_url('../images/edit.png', __FILE__) ;?>)">
 						<input class="text_area" onfocus="this.style.width = ((this.value.length + 1) * 8) + 'px'" type="text" name="name" id="name" maxlength="250" value="<?php echo esc_html(stripslashes($row->name));?>" />
 					</li>
 				<?php	
@@ -325,7 +334,8 @@ jQuery(function() {
 							
 							<li <?php if($i%2==0){echo "class='has-background'";}$i++; ?>  >
 							<input class="order_by" type="hidden" name="order_by_<?php echo $rowimages->id; ?>" value="<?php echo $rowimages->ordering; ?>" />
-								<?php 	if(strpos($rowimages->image_url,'youtube') !== false || strpos($rowimages->image_url,'youtu') !== false) {
+								<?php if(empty($rowimages->thumb_url)){
+									if(strpos($rowimages->image_url,'youtube') !== false || strpos($rowimages->image_url,'youtu') !== false) {
 											$liclass="youtube";
 											$video_thumb_url=get_youtube_id_from_url($rowimages->image_url);
 											$thumburl='<img src="http://img.youtube.com/vi/'.$video_thumb_url.'/mqdefault.jpg" alt="" />';
@@ -339,14 +349,80 @@ jQuery(function() {
 											$imgsrc=esc_html($imgsrc);
 											$thumburl ='<img src="'.$imgsrc.'" alt="" />';
 										}
+									}else{
+									if(strpos($rowimages->image_url,'youtube') !== false || strpos($rowimages->image_url,'youtu') !== false) {
+										$liclass="youtube";
+									}else if (strpos($rowimages->image_url,'vimeo') !== false) {	
+										$liclass="vimeo";
+									}
+									$thumburl='<img src="'.$rowimages->thumb_url.'" alt="" />';
+								}
 										?> 
 									<div class="image-container">	
 										<?php echo $thumburl; ?>
 										<div class="play-icon <?php echo $liclass; ?>"></div>
 										
 										<div>
+											<script>
+jQuery(document).ready(function($){
+  var _custom_media = true,
+      _orig_send_attachment = wp.media.editor.send.attachment;
 
+  jQuery('.huge-it-editnewuploader .button<?php echo $rowimages->id; ?>').click(function(e) {
+    var send_attachment_bkp = wp.media.editor.send.attachment;
+    var button = jQuery(this);
+    var id = button.attr('id').replace('_button', '');
+    _custom_media = true;
+    wp.media.editor.send.attachment = function(props, attachment){
+      if ( _custom_media ) {
+        jQuery("#"+id).val(attachment.url);
+		jQuery("#save-buttom").click();
+      } else {
+        return _orig_send_attachment.apply( this, [props, attachment] );
+      };
+    }
+
+    wp.media.editor.open(button);
+    return false;
+  });
+
+
+
+
+
+
+
+
+
+
+
+  jQuery('.add_media').on('click', function(){
+    _custom_media = false;
+  });
+	jQuery(".huge-it-editnewuploader").click(function() {
+	});
+		jQuery(".wp-media-buttons-icon").click(function() {
+		jQuery(".wp-media-buttons-icon").click(function() {
+		jQuery(".media-menu .media-menu-item").css("display","none");
+		jQuery(".media-menu-item:first").css("display","block");
+		jQuery(".separator").next().css("display","none");
+		jQuery('.attachment-filters').val('image').trigger('change');
+		jQuery(".attachment-filters").css("display","none");
+
+	});
+});
+
+});
+</script>
 											<input type="hidden" name="imagess<?php echo $rowimages->id; ?>" value="<?php echo $rowimages->image_url; ?>" />
+											<input type="hidden" name="thumbs<?php echo $rowimages->id; ?>" id="thumb_id<?php echo $rowimages->id; ?>" value="<?php echo $rowimages->thumb_url; ?>" />
+										<div class="huge-it-editnewuploader uploader button<?php echo $rowimages->id; ?> add-new-image">
+												<input type="button" class="editimgbutton button<?php echo $rowimages->id; ?> wp-media-buttons-icon" name="thumb_id_button<?php echo $rowimages->id; ?>" id="thumb_id_button<?php echo $rowimages->id; ?>" value="" />
+											</div>
+											
+										</div>
+										<div class="button def_thumb">
+												Set Default Thumbnail
 										</div>
 									</div>
 									<div class="image-options">
@@ -400,7 +476,7 @@ jQuery(function() {
 									<option <?php if($row->huge_it_sl_effects == '3'){ echo 'selected'; } ?>  value="3">Video Slider</option>
 									<option <?php if($row->huge_it_sl_effects == '4'){ echo 'selected'; } ?>  value="4">Thumbnails View</option>
 									<option <?php if($row->huge_it_sl_effects == '6'){ echo 'selected'; } ?>  value="6">Justified</option>
-									<option <?php if($row->huge_it_sl_effects == '7'){ echo 'selected'; } ?>  value="7">Block Style View</option>
+									<option <?php if($row->huge_it_sl_effects == '7'){ echo 'selected'; } ?>  value="7">Block Style Gallery</option>
 							</select>
 						</li>
 						

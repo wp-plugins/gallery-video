@@ -11,20 +11,28 @@ jQuery(document).ready(function () {
 		jQuery('#videogallery-view-tabs > li > a[href="'+strliID+'"]').parent().addClass('active');
 	}else {
 		jQuery('#videogallery-view-tabs > li > a[href="#videogallery-view-options-0"]').parent().addClass('active');
-	}
+	}/*
 	jQuery('#videogallery-view-tabs-contents > li').removeClass('active');
 	strliID=strliID.replace("#","");
-	//alert(strliID);
-	if(jQuery('#videogallery-view-tabs-contents > li[data-id="'+strliID+'"]').length>0){
-		jQuery('#videogallery-view-tabs-contents > li[data-id="'+strliID+'"]').addClass('active');
+	//alert(strliID);*/
+	if(jQuery('#videogallery-view-tabs-contents > li a[href="'+strliID+'"]').length>0){
+		jQuery('#videogallery-view-tabs-contents > li a[href="'+strliID+'"]').addClass('active');
 	}else {
-		jQuery('#videogallery-view-tabs-contents > li[data-id="videogallery-view-options-0"]').addClass('active');
+		jQuery('#videogallery-view-tabs-contents > li a[href="videogallery-view-options-0"]').addClass('active');
 	}
+	
 	jQuery('input[data-slider="true"]').bind("slider:changed", function (event, data) {
 		 jQuery(this).parent().find('span').html(parseInt(data.value)+"%");
 		 jQuery(this).val(parseInt(data.value));
 	});	
-});
+	jQuery('#videogallery-view-tabs li a').on('click',function() {
+		var $href = jQuery(this).attr('href');
+		jQuery('#videogallery-view-tabs-contents li' ).removeClass('active');
+		jQuery('#videogallery-view-tabs-contents').find($href).addClass('active')	;
+		return false;
+	})
+	});	
+
 </script>
 <div class="wrap">
 <?php $path_site2 = plugins_url("../images", __FILE__); ?>
@@ -53,8 +61,47 @@ We please you to be understanding. The money we get for pro license is expended 
 				<h3>General Options</h3>
 				<a class="save-videogallery-options button-primary">Save</a>
 			</div>
+			<div style="clear: both;"></div>
+		<div id="videogallery-options-list">
+			
+			<ul id="videogallery-view-tabs">
+				<li><a href="#videogallery-view-options-0">Video Gallery/Content-Popup</a></li>
+				<li><a href="#videogallery-view-options-1">Content Video Slider</a></li>
+				<li><a href="#videogallery-view-options-2">Lightbox-Video Gallery</a></li>
+				<li><a href="#videogallery-view-options-3">Video Slider</a></li>
+				<li><a href="#videogallery-view-options-4">Thumbnails</a></li>
+				<li><a href="#videogallery-view-options-5">Justified</a></li>
+				<li><a href="#videogallery-view-options-6">Block Style Gallery</a></li>
+
+
+			</ul>
+			<ul class="options-block" id="videogallery-view-tabs-contents">				
+				
+				<li id="videogallery-view-options-0" class="active">
+					<img style="width: 100%;" src='<?php echo $path_site2; ?>/Content popup tab1.png' >	
+				</li>
+				<li id="videogallery-view-options-1">
+					<img style="width: 100%;" src='<?php echo $path_site2; ?>/Content-Video-slider-tab2.png' >	
+				</li>
+				<li id="videogallery-view-options-2">
+					<img style="width: 100%;" src='<?php echo $path_site2; ?>/Lightbox-tab3.png' >	
+				</li>
+				<li id="videogallery-view-options-3">
+					<img style="width: 100%;" src='<?php echo $path_site2; ?>/slider--tab4.png' >	
+				</li>
+				<li id="videogallery-view-options-4">
+					<img style="width: 100%;" src='<?php echo $path_site2; ?>/thumbnails-tab5.png' >	
+				</li>
+				<li id="videogallery-view-options-5">
+					<img style="width: 100%;" src='<?php echo $path_site2; ?>/justified-tab6.png' >	
+				</li>
+				<li id="videogallery-view-options-6">
+					<img style="width: 100%;" src='<?php echo $path_site2; ?>/blockstyle-tab7.png' >	
+				</li>
+			</ul>
+			</div>
 						
-			<img style="width: 100%;" src="<?php echo $path_site2; ?>/video.png">
+			<!-- <img style="width: 100%;" src="<?php echo $path_site2; ?>/video.png"> -->
 		</div>
 	</div>
 </div>

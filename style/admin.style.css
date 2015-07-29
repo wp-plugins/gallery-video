@@ -1,4 +1,17 @@
 /*#########videogalleryS LIST PAGE###########*/
+.editimgbutton {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  height: 20px;
+  border: 0px;
+  padding-top: 0px;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0px 20px 0px 0px;
+  background: url(../images/edit.png) right 5px no-repeat;
+  background-color: #fff;
+}
 #videogallerys-list-page  .add-new-h2 {
 	cursor:pointer;
 }
@@ -755,6 +768,10 @@
 	display: inline-block;
 	margin-top:13px;
 }
-
+.def_thumb{
+	
+  position: absolute;
+  margin-bottom: 15px !important;
+}
 
 

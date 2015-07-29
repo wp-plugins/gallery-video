@@ -273,6 +273,7 @@ $wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_it_videogallery_videos
 $wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_it_videogallery_videos SET  name = '".$_POST["titleimage".$rowimages->id.""]."'  WHERE ID = %d ", $rowimages->id));
 $wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_it_videogallery_videos SET  description = '".$_POST["im_description".$rowimages->id.""]."'  WHERE ID = %d ", $rowimages->id));
 $wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_it_videogallery_videos SET  image_url = '".$_POST["imagess".$rowimages->id.""]."'  WHERE ID = %d ", $rowimages->id));
+$wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_it_videogallery_videos SET  thumb_url = '".$_POST["thumbs".$rowimages->id.""]."'  WHERE ID = %d ", $rowimages->id));
 }
 }
 

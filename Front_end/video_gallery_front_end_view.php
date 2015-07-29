@@ -1,4 +1,5 @@
 <?php
+
 function get_video_gallery_id_from_url($url){
 	if(strpos($url,'youtube') !== false || strpos($url,'youtu') !== false){	
 		if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match)) {
@@ -9,6 +10,20 @@ function get_video_gallery_id_from_url($url){
 		$vimeoid =  end($vimeoid);
 		return array($vimeoid,'vimeo');
 	}
+}
+function youtube_or_vimeo($videourl){
+	if(strpos($videourl,'youtube') !== false || strpos($videourl,'youtu') !== false){	
+		if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $videourl, $match)) {
+			return 'youtube';
+		}
+	}
+	elseif(strpos($videourl,'vimeo') !== false) {
+		$explode = explode("/",$videourl);
+		$end = end($explode);
+		if(strlen($end) == 8 || strlen($end)  == 9)
+			return 'vimeo';
+	}
+	return 'image';
 }
 function front_end_videogallery($images, $paramssld, $videogallery)
 {
@@ -248,7 +263,7 @@ $paramssld["video_ht_view9_paginator_color"] = "1046B3";
 $paramssld["video_ht_view9_paginator_icon_color"] = "1046B3";
 $paramssld["video_ht_view9_paginator_icon_size"] = "18";
 $paramssld["video_view9_paginator_position"] = "center";
-$paramssld["video_ht_view9_video_width"] = "500";
+$paramssld["video_ht_view9_video_width"] = "720";
 $paramssld["video_ht_view9_video_height"] = "420";
 $paramssld["video_view9_video_position"] = "center";
 	?>
@@ -989,12 +1004,22 @@ jQuery(document).ready(function(){
 				?>
 							<?php
 								$videourl=get_video_gallery_id_from_url($row->image_url);
-								if($videourl[1]=='youtube'){?>
-										<img src="http://img.youtube.com/vi/<?php echo $videourl[0]; ?>/mqdefault.jpg" alt="<?php echo $row->name; ?>" />		
+								if($videourl[1]=='youtube'){
+									if(empty($row->thumb_url)){
+											$thumb_pic='http://img.youtube.com/vi/'.$videourl[0].'/mqdefault.jpg';
+										}else{
+											$thumb_pic=$row->thumb_url;
+										}
+									?>
+										<img src="<?php echo $thumb_pic; ?>" alt="<?php echo $row->name; ?>" />		
 								<?php
 									}else {
 									$hash = unserialize(file_get_contents("http://vimeo.com/api/v2/video/".$videourl[0].".php"));
-									$imgsrc=$hash[0]['thumbnail_large'];
+									if(empty($row->thumb_url)){
+										$imgsrc=$hash[0]['thumbnail_large'];
+									}else{
+										$imgsrc=$row->thumb_url;
+									}
 								?>
 										<img src="<?php echo $imgsrc; ?>" alt="<?php echo $row->name; ?>" />
 								<?php
@@ -1287,15 +1312,25 @@ jQuery(document).ready(function(){
 				?>
 						<?php
 							$videourl=get_video_gallery_id_from_url($row->image_url);
-							if($videourl[1]=='youtube'){?>
+							if($videourl[1]=='youtube'){
+								if(empty($row->thumb_url)){
+											$thumb_pic='http://img.youtube.com/vi/'.$videourl[0].'/mqdefault.jpg';
+										}else{
+											$thumb_pic=$row->thumb_url;
+										}
+								?>
 								<a class="youtube huge_it_videogallery_item"  href="https://www.youtube.com/embed/<?php echo $videourl[0]; ?>" title="<?php echo $row->name; ?>">
-									<img src="http://img.youtube.com/vi/<?php echo $videourl[0]; ?>/mqdefault.jpg" alt="<?php echo $row->name; ?>" />
+									<img src="<?php echo $thumb_pic; ?>" alt="<?php echo $row->name; ?>" />
 									<div class="play-icon <?php echo $videourl[1]; ?>-icon"></div>
 								</a>								
 							<?php
 								}else {
 								$hash = unserialize(file_get_contents("http://vimeo.com/api/v2/video/".$videourl[0].".php"));
-								$imgsrc=$hash[0]['thumbnail_large'];
+								if(empty($row->thumb_url)){
+										$imgsrc=$hash[0]['thumbnail_large'];
+									}else{
+										$imgsrc=$row->thumb_url;
+									}
 							?>
 								<a class="vimeo huge_it_videogallery_item" href="http://player.vimeo.com/video/<?php echo $videourl[0]; ?>" title="<?php echo $row->name; ?>">
 									<img src="<?php echo $imgsrc; ?>" alt="<?php echo $row->name; ?>" />
@@ -1464,15 +1499,25 @@ jQuery(document).ready(function(){
 				?>
 						<?php
 							$videourl=get_video_gallery_id_from_url($row->image_url);
-							if($videourl[1]=='youtube'){?>
+							if($videourl[1]=='youtube'){
+								if(empty($row->thumb_url)){
+											$thumb_pic='http://img.youtube.com/vi/'.$videourl[0].'/mqdefault.jpg';
+										}else{
+											$thumb_pic=$row->thumb_url;
+										}
+								?>
 								<a class="youtube huge_it_videogallery_item group1"  href="https://www.youtube.com/embed/<?php echo $videourl[0]; ?>" title="<?php echo $row->name; ?>">
-									<img src="http://img.youtube.com/vi/<?php echo $videourl[0]; ?>/mqdefault.jpg" alt="<?php echo $row->name; ?>" />
+									<img src="<?php echo $thumb_pic; ?>" alt="<?php echo $row->name; ?>" />
 									<div class="play-icon <?php echo $videourl[1]; ?>-icon"></div>
 								</a>								
 							<?php
 								}else {
 								$hash = unserialize(file_get_contents("http://vimeo.com/api/v2/video/".$videourl[0].".php"));
-								$imgsrc=$hash[0]['thumbnail_large'];
+								if(empty($row->thumb_url)){
+										$imgsrc=$hash[0]['thumbnail_large'];
+									}else{
+										$imgsrc=$row->thumb_url;
+									}
 							?>
 								<a class="vimeo huge_it_videogallery_item group1" href="http://player.vimeo.com/video/<?php echo $videourl[0]; ?>" title="<?php echo $row->name; ?>">
 									<img src="<?php echo $imgsrc; ?>" alt="<?php echo $row->name; ?>" />
@@ -1707,7 +1752,7 @@ jQuery(function(){
 		if (stristr($url,'youtu.be/'))
 			{ preg_match('/(https:|http:|)(\/\/www\.|\/\/|)(.*?)\/(.{11})/i', $url, $final_ID); return $final_ID[4]; }
 		else 
-			{ preg_match('/(https:|http:|):(\/\/www\.|\/\/|)(.*?)\/(embed\/|watch\?v=|(.*?)&v=|v\/|e\/|.+\/|watch.*v=|)([a-z_A-Z0-9]{11})/i', $url, $IDD); return $IDD[6]; }
+			{ preg_match('/(https:|http:|):(\/\/www\.|\/\/|)(.*?)\/(embed\/|watch\?v=|(.*?)&v=|v\/|e\/|.+\/|watch.*v=|)([a-z_A-Z0-9]{11})/i', $url, $IDD); /*var_dump($IDD);*/return $IDD[6]; }
 		}                                    
 	}
   
@@ -1794,7 +1839,7 @@ jQuery(function(){
 	var event_stack_videogallery_<?php echo $sliderID; ?> = [];
 	<?php
 	//	$images=array_reverse($images);
-		$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
+		//$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 
 		$i=0;
 		
@@ -1840,7 +1885,7 @@ jQuery(function(){
 					break;
 					
 					
-					case 'last_posts':
+					/*case 'last_posts':
 					
 					foreach($recent_posts as $keyl => $recentimage){
 					if(get_the_post_thumbnail($recentimage["ID"], 'thumbnail') != ''){
@@ -1865,6 +1910,7 @@ jQuery(function(){
 					}
 					
 					break;
+					*/
 			}
 			
 			
@@ -2713,7 +2759,9 @@ jQuery(function(){
 		width:100%;
 		height:100%;
 	  }
-		
+		.slide_thumb{
+			position: absolute;
+		}
 		
 		.huge_it_slideshow_image_wrap_videogallery_<?php echo $sliderID; ?> {
 			background:#<?php echo $paramssld['slider_slider_background_color']; ?>;
@@ -2739,6 +2787,13 @@ jQuery(function(){
 		.huge_it_slideshow_dots_active_videogallery_<?php echo $sliderID; ?> {
 			background:#<?php echo $paramssld['slider_active_dot_color']; ?>;
 		}
+		.youtube-icon {background:url(<?php echo plugin_dir_url( __FILE__ ); ?>../images/play.youtube.png) center center no-repeat;}
+	.vimeo-icon {background:url(<?php echo plugin_dir_url( __FILE__ ); ?>../images/play.vimeo.png) center center no-repeat;}
+	.playbutton{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+	}
 		
 		<?php
 		
@@ -3136,6 +3191,24 @@ jQuery(function(){
 			?>
 		</div>
 	  <!-- ##########################IMAGES######################### -->
+	  <script>
+
+	$(document).ready(function() {
+  $('.thumb_wrapper').on('click', function(ev) {
+  	var hugeid=$(this).parent().index();
+  	var myid=hugeid;
+  	myid=parseInt(myid);
+  	
+  	//alert(myid);
+  	
+ 	//console.log($(this).parent().parent().index());
+   $(".framvideo")[myid].src += "&autoplay=1";
+   ev.preventDefault();
+ 
+  });
+});
+//console.log($(".video_view9_img"));
+</script>
       <div id="huge_it_slideshow_image_container_videogallery_<?php echo $sliderID; ?>" class="huge_it_slideshow_image_container_videogallery_<?php echo $sliderID; ?>">        
         <div class="huge_it_slide_container_videogallery_<?php echo $sliderID; ?>">
           <div class="huge_it_slide_bg_videogallery_<?php echo $sliderID; ?>">
@@ -3143,20 +3216,42 @@ jQuery(function(){
 			<?php
 				$i=0;
 				foreach ($images as $key => $image_row) {
+					$video_thumb=$image_row->thumb_url;
+					$videourl=$image_row->image_url;
+					$icon=youtube_or_vimeo($videourl);
 					?>
 						<li  class="huge_it_slideshow_image<?php if ($i != $current_image_id) {$current_key = $key; echo '_second';} ?>_item_videogallery_<?php echo $sliderID; ?>" id="image_id_videogallery_<?php echo $sliderID.'_'.$i ?>">      
 							<?php 
 								if(strpos($image_row->image_url,'youtu') !== false){
 									$video_thumb_url=get_youtube_id_from_url($image_row->image_url); 
 								?>
-									<div id="video_id_videogallery_<?php echo $sliderID;?>_<?php echo $key ;?>" class="huge_it_video_frame_videogallery_<?php echo $sliderID; ?>"></div>
+								<div class="thumb_wrapper" onclick="thevid=document.getElementById('thevideo'); thevid.style.display='block'; this.style.display='none'">
+									<?php if($video_thumb != ''):?>
+									<div class="playbutton <?php echo $icon;?>-icon"></div>
+									<?php endif;?>
+									<img  src="<?php echo $image_row->thumb_url ?>">
+								</div>
+									<div id="thevideo" style="display: block;">
+										<div id="video_id_videogallery_<?php echo $sliderID;?>_<?php echo $key ;?>" class="huge_it_video_frame_videogallery_<?php echo $sliderID; ?> framvideo"></div>
+									</div>
 							<?php }else {
 									$vimeo = $image_row->image_url;
-									$imgid =  end(explode( "/", $vimeo ));
-									
+									$vimeo_explode = explode( "/", $vimeo );
+									$imgid =  end($vimeo_explode);
+									 //var_dump($image_row->thumb_url);
 							?>		
-								<iframe id="player_<?php echo $key ;?>"  class="huge_it_video_frame_videogallery_<?php echo $sliderID; ?>" src="//player.vimeo.com/video/<?php echo $imgid; ?>?api=1&amp;player_id=player_<?php echo $key ;?>&amp;showinfo=0&amp;controls=0" style="border: 0;" allowfullscreen></iframe>
-							<?php } ?>
+								<div class="thumb_wrapper" onclick="thevid=document.getElementById('thevideo'); thevid.style.display='block'; this.style.display='none'">
+									<?php if($video_thumb != ''):?>
+									<div class="playbutton <?php echo $icon;?>-icon"></div>
+									<?php endif;?>
+									<img  src="<?php echo $image_row->thumb_url ?>">
+								</div>
+								<div id="thevideo" style="display: block;">
+									<iframe id="player_<?php echo $key ;?>"  class="huge_it_video_frame_videogallery_<?php echo $sliderID; ?> framvideo" src="//player.vimeo.com/video/<?php echo $imgid; ?>?api=1&amp;player_id=player_<?php echo $key ;?>&amp;showinfo=0&amp;controls=0" style="border: 0;" allowfullscreen></iframe>
+								</div>	
+							<?php } 
+
+							?>
 						</li>
 					<?php
 					$i++;
@@ -3312,13 +3407,23 @@ jQuery(function(){
 					?>
 							<?php
 								$videourl=get_video_gallery_id_from_url($row->image_url);
-								if($videourl[1]=='youtube'){?>
+								if($videourl[1]=='youtube'){
+									if(empty($row->thumb_url)){
+											$thumb_pic='http://img.youtube.com/vi/'.$videourl[0].'/mqdefault.jpg';
+										}else{
+											$thumb_pic=$row->thumb_url;
+										}
+									?>
 									<a  class="youtube huge_it_videogallery_item group1"  href="https://www.youtube.com/embed/<?php echo $videourl[0]; ?>" title="<?php echo $row->name; ?>"></a>
-									<img src="http://img.youtube.com/vi/<?php echo $videourl[0]; ?>/mqdefault.jpg" alt="<?php echo $row->name; ?>" />				
+									<img src="<?php echo $thumb_pic; ?>" alt="<?php echo $row->name; ?>" />				
 								<?php
 								}else {
 									$hash = unserialize(file_get_contents("http://vimeo.com/api/v2/video/".$videourl[0].".php"));
-									$imgsrc=$hash[0]['thumbnail_large'];
+									if(empty($row->thumb_url)){
+										$imgsrc=$hash[0]['thumbnail_large'];
+									}else{
+										$imgsrc=$row->thumb_url;
+									}
 								?>
 									<a  class="vimeo huge_it_videogallery_item group1" href="http://player.vimeo.com/video/<?php echo $videourl[0]; ?>" title="<?php echo $row->name; ?>"></a>
 									<img src="<?php echo $imgsrc; ?>" alt="<?php echo $row->name; ?>" />
@@ -3501,15 +3606,25 @@ jQuery(function(){
                             case 'video':
                             
                                 $videourl=get_video_gallery_id_from_url($row->image_url);
-                                if($videourl[1]=='youtube'){?>
+                                if($videourl[1]=='youtube'){
+                                	if(empty($row->thumb_url)){
+											$thumb_pic='http://img.youtube.com/vi/'.$videourl[0].'/mqdefault.jpg';
+										}else{
+											$thumb_pic=$row->thumb_url;
+										}
+                                		?>
                                         <a class="youtube huge_it_videogallery_item group1"  href="https://www.youtube.com/embed/<?php echo $videourl[0]; ?>" title="<?php echo $row->name; ?>">
-                                                <img alt="<?php echo $row->name; ?>" src="http://img.youtube.com/vi/<?php echo $videourl[0]; ?>/mqdefault.jpg" />
+                                                <img alt="<?php echo $row->name; ?>" src="<?php echo $thumb_pic; ?>" />
                                                 <div class="play-icon <?php echo $videourl[1]; ?>-icon"></div>
                                         </a>
                                 <?php }
                                 else {
                                         $hash = unserialize(file_get_contents("http://vimeo.com/api/v2/video/".$videourl[0].".php"));
-                                        $imgsrc=$hash[0]['thumbnail_large'];
+                                        if(empty($row->thumb_url)){
+										$imgsrc=$hash[0]['thumbnail_large'];
+									}else{
+										$imgsrc=$row->thumb_url;
+									}
                                 ?>
                                         <a class="vimeo huge_it_videogallery_item group1" href="http://player.vimeo.com/video/<?php echo $videourl[0]; ?>" title="<?php echo $row->name; ?>">
                                                 <img alt="<?php echo $row->name; ?>" src="<?php echo $imgsrc; ?>"  />
@@ -3605,12 +3720,51 @@ jQuery(function(){
 		display:block;
 		margin: 0 auto;
 	}
+	.video_view9_vid_wrapper{
+		position: relative;
+	}
 	.video_view9_vid_wrapper iframe{
+		/*position: relative;*/
+		opacity: 1;
+		cursor: pointer;
 		float:<?php if($paramssld['video_view9_video_position'] == 'left') {echo 'left';} 
 			elseif ($paramssld['video_view9_video_position'] == 'center') { echo 'none'; }
 			elseif($paramssld['video_view9_video_position'] == 'right') { echo 'right'; }?>;
+
+
 	}
+	.thumb_image{
+		  position: absolute;
+		  width: 100%;
+		  height: 100%;
+	}
+	.youtube-icon {background:url(<?php echo plugin_dir_url( __FILE__ ); ?>../images/play.youtube.png) center center no-repeat;}
+	.vimeo-icon {background:url(<?php echo plugin_dir_url( __FILE__ ); ?>../images/play.vimeo.png) center center no-repeat;}
+	.playbutton{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+	}
+
 </style>
+<script>
+
+	$(document).ready(function() {
+  $('.thumb_wrapper').on('click', function(ev) {
+  	var hugeid=$(this).parent().parent().index();
+  	var myid=hugeid;
+  	myid=parseInt(myid)/2;
+  	
+  	//alert(myid);
+  	
+ 	//console.log($(this).parent().parent().index());
+   $(".video_view9_img")[myid].src += "?autoplay=1";
+   ev.preventDefault();
+ 
+  });
+});
+//console.log($(".video_view9_img"));
+</script>
 <div class="video_view9_cont_wrapper">
 
 	<?php
@@ -3638,16 +3792,28 @@ jQuery(function(){
 	foreach($page_images as $key=>$row)
 	{
 		$videourl=$row->image_url;
+		//var_dump($row);
 		$pattern='/watch\?v=/';
 		$videourl=preg_replace($pattern, 'embed/', $videourl);
+		$icon=youtube_or_vimeo($videourl);
+		//var_dump($icon);
 		$video_name=$row->name;
 		$video_desc=$row->description;
+		$video_thumb=$row->thumb_url;
 	if($paramssld['video_view9_image_position'] == 1) :
 		//var_dump($row);
 	?>
 	<div class="video_view9_container">
 		<div class="video_view9_vid_wrapper">
-		<iframe class="video_view9_img" width="<?php echo $paramssld['video_ht_view9_video_width']; ?>"  height="<?php echo $paramssld['video_ht_view9_video_height']; ?>" src="<?=$videourl;?>" frameborder="0" allowfullscreen></iframe>
+			<div class="thumb_wrapper" onclick="thevid=document.getElementById('thevideo'); thevid.style.display='block'; this.style.display='none'">
+				<img class="thumb_image" style="cursor: pointer;" src="<?php echo $video_thumb; ?>" alt="" />
+				<?php if($video_thumb != ''):?>
+					<div class="playbutton <?php echo $icon;?>-icon"></div>
+				<?php endif;?>
+			</div>
+			<div id="thevideo" style="display: block;">
+				<iframe class="video_view9_img" width="<?php echo $paramssld['video_ht_view9_video_width']; ?>" height="<?php echo $paramssld['video_ht_view9_video_height']; ?>" src="<?php echo $videourl;?>" frameborder="0" allowfullscreen></iframe>
+			</div>
 		</div>
 		<h1 class="video_new_view_title"><?php echo $video_name;?></h1>
 		<div class="video_new_view_desc"><?php echo $video_desc;?></div>
@@ -3659,7 +3825,17 @@ jQuery(function(){
 	<div class="video_view9_container">
 		<h1 class="video_new_view_title"><?php echo $video_name;?></h1>
 		<div class="video_view9_vid_wrapper">
-		<iframe class="video_view9_img" width="<?php echo $paramssld['video_ht_view9_video_width']; ?>" height="<?php echo $paramssld['video_ht_view9_video_height']; ?>" src="<?=$videourl;?>" frameborder="0" allowfullscreen></iframe>
+				<div class="thumb_wrapper" onclick="thevid=document.getElementById('thevideo'); thevid.style.display='block'; this.style.display='none'">
+					<img class="thumb_image" style="cursor: pointer;" src="<?php echo $video_thumb; ?>" alt="" />
+					<?php if($video_thumb != ''):?>
+					<div class="playbutton <?php echo $icon;?>-icon"></div>
+					<?php endif;?>
+				</div>
+				<div id="thevideo" style="display: block;">
+					<iframe class="video_view9_img" width="<?php echo $paramssld['video_ht_view9_video_width']; ?>" height="<?php echo $paramssld['video_ht_view9_video_height']; ?>" src="<?php echo $videourl;?>" frameborder="0" allowfullscreen>
+					
+		 		</iframe>
+				</div>
 		</div>
 		<div class="video_new_view_desc"><?php echo $video_desc;?></div>
 	
@@ -3672,7 +3848,17 @@ jQuery(function(){
 		<h1 class="video_new_view_title"><?php echo $video_name;?></h1>
 		<div class="video_new_view_desc"><?php echo $video_desc;?></div>
 		<div class="video_view9_vid_wrapper">
-		<iframe class="video_view9_img" width="<?php echo $paramssld['video_ht_view9_video_width']; ?>" height="<?php echo $paramssld['video_ht_view9_video_height']; ?>" src="<?=$videourl;?>" frameborder="0" allowfullscreen></iframe>
+				<div class="thumb_wrapper" onclick="thevid=document.getElementById('thevideo'); thevid.style.display='block'; this.style.display='none'">
+					<img class="thumb_image" style="cursor: pointer;" src="<?php echo $video_thumb; ?>" alt="" />
+					<?php if($video_thumb != ''):?>
+					<div class="playbutton <?php echo $icon;?>-icon"></div>
+					<?php endif;?>
+				</div>
+				<div id="thevideo" style="display: block;">
+					<iframe class="video_view9_img" width="<?php echo $paramssld['video_ht_view9_video_width']; ?>" height="<?php echo $paramssld['video_ht_view9_video_height']; ?>" src="<?php echo $videourl;?>" frameborder="0" allowfullscreen>
+					
+		 		</iframe>
+				</div>
 		</div>
 	</div>
 	<div class="clear"></div>
