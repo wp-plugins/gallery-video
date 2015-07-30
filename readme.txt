@@ -116,7 +116,7 @@ In order it could work there too, you should.
 == Changelog ==
 
 = 1.3.0 =
-*  Added thumbs on Video Gallery.
+*  With this version you can add custom thumbnail for each video.
 
 = 1.2.9 =
 *  Added new view on Video Gallery.
