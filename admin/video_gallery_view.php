@@ -476,10 +476,64 @@ jQuery(document).ready(function($){
 									<option <?php if($row->huge_it_sl_effects == '3'){ echo 'selected'; } ?>  value="3">Video Slider</option>
 									<option <?php if($row->huge_it_sl_effects == '4'){ echo 'selected'; } ?>  value="4">Thumbnails View</option>
 									<option <?php if($row->huge_it_sl_effects == '6'){ echo 'selected'; } ?>  value="6">Justified</option>
-									<option <?php if($row->huge_it_sl_effects == '7'){ echo 'selected'; } ?>  value="7">Block Style Gallery</option>
+									<option <?php if($row->huge_it_sl_effects == '7'){ echo 'selected'; } ?>  value="7">Blog Style Gallery</option>
 							</select>
 						</li>
+						<script>
+						jQuery(document).ready(function ($){
+							//alert('hi');
+							//$('div[id^="list_"]')
+								if($('select[name="display_type"]').val()== 2){
+								$('li[id="content_per_page"]').hide();
+							}else{
+								$('li[id="content_per_page"]').show();
+							}
+							$('select[name="display_type"]').on('change' ,function(){
+								if($(this).val()== 2){
+								$('li[id="content_per_page"]').hide();
+							}else{
+								$('li[id="content_per_page"]').show();
+							}
+							})
+							
+
+							$('#videogallery-unique-options').on('change',function(){
+								$( 'div[id^="videogallery-current-options"]').each(function(){
+								if(!$(this).hasClass( "active" )){
+									$(this).find('ul li input[name="content_per_page"]').attr('name', '');
+									$(this).find('ul li select[name="display_type"]').attr('name', '');
+									//$(this).find('ul li select').attr('name', '');
+								}else{
+									//alert('no');
+								}
+							})
+							})
+							
+						})
+					</script>
+						<div id="videogallery-current-options-0" class="videogallery-current-options <?php if($row->huge_it_sl_effects == 0){ echo ' active'; }  ?>">
+						<ul id="view4">
+							<?php //print_r($row);?>
+							<?php //var_dump($row->display_type);?>
+							  <li>
+								<label for="display_type">Displaying Content</label>
+								<select id="display_type" name="display_type">
+
+									  <option <?php if($row->display_type == 0){ echo 'selected'; } ?>  value="0">Pagination</option>
+										<option <?php if($row->display_type == 1){ echo 'selected'; } ?>   value="1">Load More</option>
+										<option <?php if($row->display_type == 2){ echo 'selected'; } ?>   value="2">Show All</option>
+							
+								</select>
+								</li>
+							<li id="content_per_page">
+								<label for="content_per_page">Content Per Page</label>
+								<input type="text" name="content_per_page" id="content_per_page" value="<?php echo $row->content_per_page; ?>" class="text_area" />
+							</li>
+							
+
 						
+						</ul>
+					</div>	
 					<div id="videogallery-current-options-3" class="videogallery-current-options <?php if($row->huge_it_sl_effects == 3){ echo ' active'; }  ?>">
 					<ul id="slider-unique-options-list">
 						<li>
@@ -521,6 +575,97 @@ jQuery(document).ready(function($){
 									<option <?php if($row->sl_position == 'center'){ echo 'selected'; } ?>  value="center">Center</option>
 							</select>
 						</li>
+					</ul>
+					</div>
+					<div id="videogallery-current-options-4" class="videogallery-current-options <?php if($row->huge_it_sl_effects == 4){ echo ' active'; }  ?>">
+						<ul id="view4">
+							<?php //print_r($row);?>
+							<?php //var_dump($row->display_type);?>
+							  <li>
+								<label for="display_type">Displaying Content</label>
+								<select id="display_type" name="display_type">
+
+									  <option <?php if($row->display_type == 0){ echo 'selected'; } ?>  value="0">Pagination</option>
+										<option <?php if($row->display_type == 1){ echo 'selected'; } ?>   value="1">Load More</option>
+										<option <?php if($row->display_type == 2){ echo 'selected'; } ?>   value="2">Show All</option>
+							
+								</select>
+								</li>
+							<li id="content_per_page">
+								<label for="content_per_page">Content Per Page</label>
+								<input type="text" name="content_per_page" id="content_per_page" value="<?php echo $row->content_per_page; ?>" class="text_area" />
+							</li>
+							
+
+						
+						</ul>
+					</div>
+					<div id="videogallery-current-options-5" class="videogallery-current-options <?php if($row->huge_it_sl_effects == 5){ echo ' active'; }  ?>">
+						<ul id="view4">
+							<?php //print_r($row);?>
+							<?php //var_dump($row->display_type);?>
+							  <li>
+								<label for="display_type">Displaying Content</label>
+								<select id="display_type" name="display_type">
+
+									  <option <?php if($row->display_type == 0){ echo 'selected'; } ?>  value="0">Pagination</option>
+										<option <?php if($row->display_type == 1){ echo 'selected'; } ?>   value="1">Load More</option>
+										<option <?php if($row->display_type == 2){ echo 'selected'; } ?>   value="2">Show All</option>
+							
+								</select>
+								</li>
+							<li id="content_per_page">
+								<label for="content_per_page">Content Per Page</label>
+								<input type="text" name="content_per_page" id="content_per_page" value="<?php echo $row->content_per_page; ?>" class="text_area" />
+							</li>
+							
+
+						
+						</ul>
+					</div>
+					<div id="videogallery-current-options-6" class="videogallery-current-options <?php if($row->huge_it_sl_effects == 6){ echo ' active'; }  ?>">
+						<ul id="view4">
+							<?php //print_r($row);?>
+							<?php //var_dump($row->display_type);?>
+							  <li>
+								<label for="display_type">Displaying Content</label>
+								<select id="display_type" name="display_type">
+
+									  <option <?php if($row->display_type == 0){ echo 'selected'; } ?>  value="0">Pagination</option>
+										<option <?php if($row->display_type == 1){ echo 'selected'; } ?>   value="1">Load More</option>
+										<option <?php if($row->display_type == 2){ echo 'selected'; } ?>   value="2">Show All</option>
+							
+								</select>
+								</li>
+							<li id="content_per_page">
+								<label for="content_per_page">Content Per Page</label>
+								<input type="text" name="content_per_page" id="content_per_page" value="<?php echo $row->content_per_page; ?>" class="text_area" />
+							</li>
+							
+
+						
+						</ul>
+					</div>
+					<div id="videogallery-current-options-7" class="videogallery-current-options <?php if($row->huge_it_sl_effects == 7){ echo ' active'; }  ?>">
+					<ul id="view7">
+						
+						  <li>
+							<label for="display_type">Displaying Content</label>
+							<select id="display_type" name="display_type">
+
+								  <option <?php if($row->display_type == 0){ echo 'selected'; } ?>  value="0">Pagination</option>
+									<option <?php if($row->display_type == 1){ echo 'selected'; } ?>   value="1">Load More</option>
+									<option <?php if($row->display_type == 2){ echo 'selected'; } ?>   value="2">Show All</option>
+						
+							</select>
+							</li>
+						<li id="content_per_page">
+							<label for="content_per_page">Content Per Page</label>
+							<input type="text" name="content_per_page" id="content_per_page" value="<?php echo $row->content_per_page; ?>" class="text_area" />
+						</li>
+						
+
+					
 					</ul>
 					</div>
 
@@ -806,7 +951,7 @@ function html_videogallery_video(){
 			<div class="control-panel">
 				<form method="post" action="admin.php?page=videogallerys_huge_it_videogallery&task=videogallery_video&id=<?php echo $_GET['id']; ?>&closepop=1" >
 					<input type="text" id="huge_it_add_video_input" name="huge_it_add_video_input" />
-					<button class='save-slider-options button-primary huge-it-insert-video-button' id='huge-it-insert-video-button'>Insert Video Slide</button>
+					<button class='save-slider-options button-primary huge-it-insert-video-button' id='huge-it-insert-video-button'>Insert Video</button>
 					<div id="add-video-popup-options">
 						<div>
 							<div>

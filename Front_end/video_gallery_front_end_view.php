@@ -25,6 +25,7 @@ function youtube_or_vimeo($videourl){
 	}
 	return 'image';
 }
+error_reporting(E_ALL & ~E_NOTICE);
 function front_end_videogallery($images, $paramssld, $videogallery)
 {
 
@@ -259,13 +260,76 @@ $paramssld["video_ht_view9_general_separator_color"] = "010457";
 $paramssld["video_view9_general_separator_style"] = "dotted";
 $paramssld["video_ht_view9_general_content_count"] = "2";
 $paramssld["video_ht_view9_paginator_fontsize"] = "22";
-$paramssld["video_ht_view9_paginator_color"] = "1046B3";
-$paramssld["video_ht_view9_paginator_icon_color"] = "1046B3";
-$paramssld["video_ht_view9_paginator_icon_size"] = "18";
-$paramssld["video_view9_paginator_position"] = "center";
+$paramssld["video_ht_view9_paginator_color"] = "615854";
+$paramssld["video_ht_view9_paginator_icon_color"] = "B3A5A1";
+$paramssld["video_ht_view9_paginator_icon_size"] = "25";
+$paramssld["video_view9_paginator_position"] = "left";
 $paramssld["video_ht_view9_video_width"] = "720";
 $paramssld["video_ht_view9_video_height"] = "420";
 $paramssld["video_view9_video_position"] = "center";
+///////////////////////////////////////
+//////////////////////////////////////
+$paramssld["video_view9_loadmore_position"] = "center";
+$paramssld["video_ht_view9_loadmore_fontsize"] = "19";
+$paramssld["video_ht_view9_button_color"] = "615854";
+$paramssld["video_ht_view9_loadmore_font_color"] = "FFFFFF";
+$paramssld["loading_type"] = "1";
+$paramssld["video_ht_view9_loadmore_text"] = "View More";
+$paramssld["video_ht_view8_paginator_position"] = "center";
+$paramssld["video_ht_view8_paginator_icon_size"] = "18";
+$paramssld["video_ht_view8_paginator_icon_color"] = "26A6FC";
+$paramssld["video_ht_view8_paginator_color"] = "26A6FC";
+$paramssld["video_ht_view8_paginator_fontsize"] = "18";
+$paramssld["video_ht_view8_loadmore_position"] = "center";
+$paramssld["video_ht_view8_loadmore_fontsize"] = "14";
+$paramssld["video_ht_view8_button_color"] = "26A6FC";
+$paramssld["video_ht_view8_loadmore_font_color"] = "FF1C1C";
+$paramssld["video_ht_view8_loading_type"] = "3";
+$paramssld["video_ht_view8_loadmore_text"] = "View More";
+$paramssld["video_ht_view7_paginator_fontsize"] = "22";
+$paramssld["video_ht_view7_paginator_color"] = "0A0202";
+$paramssld["video_ht_view7_paginator_icon_color"] = "333333";
+$paramssld["video_ht_view7_paginator_icon_size"] = "22";
+$paramssld["video_ht_view7_paginator_position"] = "center";
+$paramssld["video_ht_view7_loadmore_position"] = "center";
+$paramssld["video_ht_view7_loadmore_fontsize"] = "19";
+$paramssld["video_ht_view7_button_color"] = "333333";
+$paramssld["video_ht_view7_loadmore_font_color"] = "CCCCCC";
+$paramssld["video_ht_view7_loading_type"] = "1";
+$paramssld["video_ht_view7_loadmore_text"] = "View More";
+$paramssld["video_ht_view4_paginator_fontsize"] = "19";
+$paramssld["video_ht_view4_paginator_color"] = "FF2C2C";
+$paramssld["video_ht_view4_paginator_icon_color"] = "B82020";
+$paramssld["video_ht_view4_paginator_icon_size"] = "21";
+$paramssld["video_ht_view4_paginator_position"] = "center";
+$paramssld["video_ht_view4_loadmore_position"] = "center";
+$paramssld["video_ht_view4_loadmore_fontsize"] = "16";
+$paramssld["video_ht_view4_button_color"] = "5CADFF";
+$paramssld["video_ht_view4_loadmore_font_color"] = "FF0D0D";
+$paramssld["video_ht_view4_loading_type"] = "3";
+$paramssld["video_ht_view4_loadmore_text"] = "View More";
+$paramssld["video_ht_view1_paginator_fontsize"] = "22";
+$paramssld["video_ht_view1_paginator_color"] = "222222";
+$paramssld["video_ht_view1_paginator_icon_color"] = "FF2C2C";
+$paramssld["video_ht_view1_paginator_icon_size"] = "22";
+$paramssld["video_ht_view1_paginator_position"] = "left";
+$paramssld["video_ht_view1_loadmore_position"] = "center";
+$paramssld["video_ht_view1_loadmore_fontsize"] = "22";
+$paramssld["video_ht_view1_button_color"] = "FF2C2C";
+$paramssld["video_ht_view1_loadmore_font_color"] = "FFFFFF";
+$paramssld["video_ht_view1_loading_type"] = "2";
+$paramssld["video_ht_view1_loadmore_text"] = "Load More";
+$paramssld["video_ht_view9_loadmore_font_color_hover"] = "D9D9D9";
+$paramssld["video_ht_view9_button_color_hover"] = "8F827C";
+$paramssld["video_ht_view8_loadmore_font_color_hover"] = "FF4242";
+$paramssld["video_ht_view8_button_color_hover"] = "0FEFFF";
+$paramssld["video_ht_view7_loadmore_font_color_hover"] = "D9D9D9";
+$paramssld["video_ht_view7_button_color_hover"] = "8F827C";
+$paramssld["video_ht_view4_loadmore_font_color_hover"] = "FF4040";
+$paramssld["video_ht_view4_button_color_hover"] = "99C5FF";
+$paramssld["video_ht_view1_loadmore_font_color_hover"] = "F2F2F2";
+$paramssld["video_ht_view1_button_color_hover"] = "991A1A";
+
 	?>
 
 <script>
@@ -713,6 +777,52 @@ jQuery(document).ready(function(){
 	color:#<?php echo $paramssld["ht_view2_element_linkbutton_color"];?>;
 	text-decoration:none;
 }
+.load_more5 {
+		margin: 10px 0;
+		position:relative;
+		text-align:<?php if($paramssld['video_ht_view1_loadmore_position'] == 'left') {echo 'left';} 
+			elseif ($paramssld['video_ht_view1_loadmore_position'] == 'center') { echo 'center'; }
+			elseif($paramssld['video_ht_view1_loadmore_position'] == 'right') { echo 'right'; }?>;
+
+		width:100%;
+
+
+	}
+
+	.load_more_button5 {
+		border-radius: 10px;
+		display:inline-block;
+		padding:5px 15px;
+		font-size:<?php echo $paramssld['video_ht_view1_loadmore_fontsize']; ?>px !important;;
+		color:<?php echo '#'.$paramssld['video_ht_view1_loadmore_font_color']; ?> !important;;
+		background:<?php echo '#'.$paramssld['video_ht_view1_button_color']; ?> !important;
+		cursor:pointer;
+
+	}
+	.load_more_button5:hover{
+		color:<?php echo '#'.$paramssld['video_ht_view1_loadmore_font_color_hover']; ?> !important;
+		background:<?php echo '#'.$paramssld['video_ht_view1_button_color_hover']; ?> !important;
+	}
+
+	.loading5 {
+		display:none;
+	}
+	.paginate5{
+		font-size:<?php echo $paramssld['video_ht_view1_paginator_fontsize']; ?>px !important;
+		color:<?php echo '#'.$paramssld['video_ht_view1_paginator_color']; ?> !important;
+		text-align: <?php echo $paramssld['video_ht_view1_paginator_position']; ?>;
+		margin-top:15px;
+	}
+	.paginate5 a{
+		border-bottom: none !important;
+	}
+	.icon-style5{
+		font-size: <?php echo $paramssld['video_ht_view1_paginator_icon_size']; ?>px !important;
+		color:<?php echo '#'.$paramssld['video_ht_view1_paginator_icon_color']; ?> !important;
+	}
+	.clear{
+		clear:both;
+	}
 
 /*#####POPUP#####*/
 
@@ -974,9 +1084,58 @@ jQuery(document).ready(function(){
 </style>
 <section id="huge_it_videogallery_content_<?php echo $videogalleryID; ?>">
   <div id="huge_it_videogallery_container_<?php echo $videogalleryID; ?>" class="super-list variable-sizes clearfix">
+  	<input type="hidden" class="pagenum" value="1" />
+  	<?php
+			foreach($images as $image){
+			$idofgallery=$image->videogallery_id ;
+			//print_r($image);
+			}
+			global $wpdb;
+			$pattern='/-/';
+			$query2=$wpdb->prepare("SELECT * FROM ".$wpdb->prefix."huge_it_videogallery_galleries where id = '%d' order by ordering ASC ",$idofgallery);
+			$gallery=$wpdb->get_results($query2);
+			foreach ($gallery as $gall) {
+				global $post;
+			$pID=$post->ID;
+				$disp_type=$gall->display_type;
+				$count_page=$gall->content_per_page;
+				if($count_page==0){
+					$count_page=999;
+				}elseif(preg_match($pattern, $count_page)){
+					$count_page=preg_replace($pattern, '', $count_page);
+
+				}
+				//var_dump($count_page) ;
+
+			}
+
+			global $wpdb;
+			
+			$num=$count_page;
+			//$total = count($images) ; 
+			$total = intval(((count($images) - 1) / $num) + 1);
+			//$total_img=count($images);
+			if(isset($_GET['page-img'.$videogalleryID.$pID])){
+				$page = $_GET['page-img'.$videogalleryID.$pID];
+			}else{
+				$page = '';
+					}
+			
+			$page = intval($page);
+			if(empty($page) or $page < 0) $page = 1;  
+			  if($page > $total) $page = $total; 
+			$start = $page * $num - $num; 
+			$query=$wpdb->prepare("SELECT * FROM ".$wpdb->prefix."huge_it_videogallery_videos where videogallery_id = '%d' order by ordering ASC LIMIT ".$start.",".$num."",$idofgallery);
+			$page_images=$wpdb->get_results($query);
+			if($disp_type==2){
+				$page_images=$images;
+				$count_page=9999;
+			}
+			?>
+			<input type="hidden" id="total" value="<?=$total; ?>" />
   	<?php
 	
-	foreach($images as $key=>$row)
+	foreach($page_images as $key=>$row)
 	{
 		$link = $row->sl_url;
 		$descnohtml=strip_tags($row->description);
@@ -992,9 +1151,9 @@ jQuery(document).ready(function(){
 				?>									
 							<?php $imgurl=explode(";",$row->image_url); ?>
 							<?php 	if($row->image_url != ';'){ ?>
-							<img id="wd-cl-img<?php echo $key; ?>" src="<?php echo $imgurl[0]; ?>" alt="<?php echo $row->name; ?>" />
+							<img id="wd-cl-img<?php echo $key; ?>" src="<?php echo $imgurl[0]; ?>" alt="" />
 							<?php } else { ?>
-							<img id="wd-cl-img<?php echo $key; ?>" src="images/noimage.jpg" alt="<?php echo $row->name; ?>" />
+							<img id="wd-cl-img<?php echo $key; ?>" src="images/noimage.jpg" alt="" />
 							<?php
 							} ?>
 
@@ -1005,13 +1164,16 @@ jQuery(document).ready(function(){
 							<?php
 								$videourl=get_video_gallery_id_from_url($row->image_url);
 								if($videourl[1]=='youtube'){
-									if(empty($row->thumb_url)){
+										if(empty($row->thumb_url)){
 											$thumb_pic='http://img.youtube.com/vi/'.$videourl[0].'/mqdefault.jpg';
 										}else{
 											$thumb_pic=$row->thumb_url;
 										}
 									?>
-										<img src="<?php echo $thumb_pic; ?>" alt="<?php echo $row->name; ?>" />		
+									
+										
+										
+										<img src="<?php echo $thumb_pic; ?>" alt="" />		
 								<?php
 									}else {
 									$hash = unserialize(file_get_contents("http://vimeo.com/api/v2/video/".$videourl[0].".php"));
@@ -1020,8 +1182,9 @@ jQuery(document).ready(function(){
 									}else{
 										$imgsrc=$row->thumb_url;
 									}
+									
 								?>
-										<img src="<?php echo $imgsrc; ?>" alt="<?php echo $row->name; ?>" />
+										<img src="<?php echo $imgsrc; ?>" alt="" />
 								<?php
 								}
 							?>
@@ -1030,7 +1193,7 @@ jQuery(document).ready(function(){
 					}
 				?>
 			
-				<div class="image-overlay"><a href="#<?php echo $row->id; ?>"></a></div>
+				<div class="videogallery-image-overlay"><a href="#<?php echo $row->id; ?>"></a></div>
 			</div>
 			<div class="title-block_<?php echo $videogalleryID; ?>">
 				<h3><?php echo $row->name; ?></h3>
@@ -1043,6 +1206,220 @@ jQuery(document).ready(function(){
 	}?>
 	<div style="clear:both;"></div>
   </div>
+  <?php 
+		 $path_site = plugins_url("/../Front_images", __FILE__); 
+			$a=$disp_type;
+			if($a==1){
+
+				//if (!function_exists('check_url')) {
+  //  function check_url() {
+		    $protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https://' : 'http://';
+				$actual_link = $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."";
+				$pattern="/\?p=/";
+				$pattern2="/&page-img[0-9]+=[0-9]+/";
+				$pattern3="/\?page-img[0-9]+=[0-9]+/";
+					if(preg_match($pattern, $actual_link)){
+
+						if(preg_match($pattern2, $actual_link)){
+							$actual_link=preg_replace($pattern2, '', $actual_link);
+							header("Location:".$actual_link."");
+							exit;
+							
+						}	
+					}elseif(preg_match($pattern3, $actual_link)){
+						$actual_link=preg_replace($pattern3, '', $actual_link);
+							header("Location:".$actual_link."");
+							exit;
+						
+					}
+		 //  }
+ //}
+				
+				?>
+				<div class="load_more5">
+					<div class="load_more_button5"><?=$paramssld['video_ht_view1_loadmore_text']; ?></div>
+					<div class="loading5"><img src="<?php if($paramssld['video_ht_view1_loading_type'] == '1') {echo $path_site.'/arrows/loading1.gif';} 
+					elseif ($paramssld['video_ht_view1_loading_type'] == '2') { echo $path_site.'/arrows/loading4.gif'; }
+					elseif($paramssld['video_ht_view1_loading_type'] == '3') { echo $path_site.'/arrows/loading36.gif'; }
+					elseif ($paramssld['video_ht_view1_loading_type'] == '4') { echo $path_site.'/arrows/loading51.gif'; }?>"></div>
+					<script>
+						jQuery(document).ready(function(){
+							if(jQuery("#huge_it_videogallery_content_<?php echo $videogalleryID; ?> .load_more_button5").length){
+								jQuery("#huge_it_videogallery_content_<?php echo $videogalleryID; ?> .load_more_button5").on("click tap",function(){
+									
+
+									if(jQuery("#huge_it_videogallery_content_<?php echo $videogalleryID; ?> .pagenum:last").val()<jQuery("#huge_it_videogallery_container_<?php echo $videogalleryID; ?> #total").val()) {
+										
+										var pagenum = parseInt(jQuery("#huge_it_videogallery_content_<?php echo $videogalleryID; ?> .pagenum:last").val()) + 1;
+										var perpage =<?=$count_page; ?>;
+										var galleryid="<?=$image->videogallery_id; ?>";
+										var thumbtext="<?php echo $paramssld["thumb_view_text"]; ?>";
+										var linkbutton="<?=$paramssld["ht_view2_element_linkbutton_text"]; ?>"
+										var showbutton="<?=$paramssld["ht_view2_element_show_linkbutton"]?>"
+										var width="<?=$paramssld['video_ht_view9_video_width']; ?>";
+										var height="<?=$paramssld['video_ht_view9_video_height']; ?>";
+										//alert(pagenum+','+perpage+','+galleryid+','+width+','+height);
+										getresult(pagenum,perpage,galleryid,thumbtext,linkbutton,showbutton,width,height);
+									}else{
+										jQuery('#huge_it_videogallery_content_<?php echo $videogalleryID; ?> .load_more_button5').hide();
+									}
+									return false;
+								});
+							}
+											if(jQuery("#huge_it_videogallery_content_<?php echo $videogalleryID; ?> .pagenum:last").val()==jQuery("#huge_it_videogallery_container_<?php echo $videogalleryID; ?> #total").val()) {
+												jQuery('#huge_it_videogallery_content_<?php echo $videogalleryID; ?> .load_more_button5').hide();
+											}
+							function getresult(pagenum,perpage,galleryid,thumbtext,linkbutton,showbutton,width,height){
+								var data = {
+										action:"huge_it_video_gallery_ajax",
+										task:'load_videos_content',
+										page:pagenum,
+										perpage:perpage,
+										galleryid:galleryid,
+										thumbtext:thumbtext,
+										linkbutton:linkbutton,
+										showbutton:showbutton,
+										width:width,
+										height:height
+								}
+								jQuery('#huge_it_videogallery_content_<?php echo $videogalleryID; ?> .loading5').show();
+								
+								jQuery('#huge_it_videogallery_content_<?php echo $videogalleryID; ?> .load_more_button5').hide();
+
+								jQuery.post('<?php echo admin_url("admin-ajax.php"); ?>',data,function(response){
+									if(response.success){
+
+										setTimeout(function(){
+											var $objnewitems= jQuery(response.success);										
+											jQuery('#huge_it_videogallery_container_<?php echo $videogalleryID; ?>').append( $objnewitems ).hugeitmicro( 'reloadItems' ).hugeitmicro({ sortBy: 'original-order' }).hugeitmicro( 'reLayout' );
+											//jQuery("#huge_it_videogallery_container_<?php echo $videogalleryID; ?>").append(response.success);
+											jQuery(document).ready(function(){
+
+	jQuery('.element_<?php echo $videogalleryID; ?> .image-block_<?php echo $videogalleryID; ?> .videogallery-image-overlay a').on('click',function(){
+		var strid = jQuery(this).attr('href').replace('#','');
+		jQuery('body').append('<div id="huge-popup-overlay"></div>');
+		jQuery('#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?>').insertBefore('#huge-popup-overlay');
+		var height = jQuery(window).height();
+		var width=jQuery(window).width();
+		if(width<=767){
+			jQuery('body').scrollTop(0);
+			jQuery('#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .image-block_<?php echo $videogalleryID; ?> iframe').height(jQuery('body').width()*0.5);
+		}else {jQuery('#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .image-block_<?php echo $videogalleryID; ?> iframe').height(jQuery('body').width()*0.23);}
+		jQuery('#huge_it_videogallery_pupup_element_'+strid).addClass('active').css({height:height*0.7});
+		jQuery('#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?>').addClass('active');
+		
+		return false;
+	});
+	
+	
+	jQuery('#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .heading-navigation .close').on('click',function(){
+		closePopup();
+		return false;
+	});
+	
+	jQuery('body').on('click','#huge-popup-overlay',function(){
+		closePopup();
+		return false;
+	});
+	
+	function closePopup() {
+		jQuery('#huge-popup-overlay').remove();
+		var videsrc=jQuery('#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> li.active iframe').attr('src');
+		jQuery('#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> li.active iframe').attr('src','');
+		jQuery('#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> li.active iframe').attr('src',videsrc);
+		jQuery('#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> li').removeClass('active');
+		jQuery('#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?>').removeClass('active');
+		
+	}
+
+	jQuery(window).resize(function(){
+		jQuery('#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .image-block_<?php echo $videogalleryID; ?> iframe').height(jQuery('#huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?> .popup-wrapper_<?php echo $videogalleryID; ?> .image-block_<?php echo $videogalleryID; ?>').width()*0.5);
+	});
+
+	
+}); 
+											////////////////////////////////////////////////////////////////////////////////////////////////////
+											jQuery(".group1").colorbox({rel:'group1'});
+											jQuery(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390});
+											jQuery(".vimeo").colorbox({iframe:true, innerWidth:640, innerHeight:390});
+											jQuery(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
+											jQuery(".inline").colorbox({inline:true, width:"50%"});
+											jQuery(".callbacks").colorbox({
+												onOpen:function(){ alert('onOpen: colorbox is about to open'); },
+												onLoad:function(){ alert('onLoad: colorbox has started to load the targeted content'); },
+												onComplete:function(){ alert('onComplete: colorbox has displayed the loaded content'); },
+												onCleanup:function(){ alert('onCleanup: colorbox has begun the close process'); },
+												onClosed:function(){ alert('onClosed: colorbox has completely closed'); }
+											});
+
+											jQuery('.non-retina').colorbox({rel:'group5', transition:'none'})
+											jQuery('.retina').colorbox({rel:'group5', transition:'none', retinaImage:true, retinaUrl:true});
+
+
+  
+											jQuery('#huge_it_videogallery_content_<?php echo $videogalleryID; ?> .load_more_button5').show();
+											jQuery('#huge_it_videogallery_content_<?php echo $videogalleryID; ?> .loading5').hide();
+											
+										},500);
+										setTimeout(function(){
+											if(jQuery("#huge_it_videogallery_content_<?php echo $videogalleryID; ?> .pagenum:last").val()==jQuery("#huge_it_videogallery_container_<?php echo $videogalleryID; ?> #total").val()) {
+												jQuery('#huge_it_videogallery_content_<?php echo $videogalleryID; ?> .load_more_button5').hide();
+											}
+										},500);
+
+									}else{
+										alert("no");
+									}
+								},"json");
+							}
+
+						});
+					</script>
+				</div>
+				<?php 
+			}elseif($a==0){
+		?>
+			<div class="paginate5">
+			<?php
+			$protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https://' : 'http://';
+			$actual_link = $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."";
+			
+			
+			$checkREQ='';
+			$pattern="/\?p=/";
+			$pattern2="/&page-img[0-9]+=[0-9]+/";
+			//$res=preg_match($pattern, $actual_link);
+			if(preg_match($pattern, $actual_link)){
+
+				if(preg_match($pattern2, $actual_link)){
+					$actual_link=preg_replace($pattern2, '', $actual_link);
+				}
+
+				$checkREQ=$actual_link.'&page-img'.$videogalleryID.$pID;
+				
+			}else{
+				$checkREQ='?page-img'.$videogalleryID.$pID;
+				
+			}
+			//var_dump($res);  
+			
+			// Проверяем нужны ли стрелки назад  
+				$pervpage='';
+			if ($page != 1) $pervpage = '<a href= '.$checkREQ.'=1><i class="icon-style5 hugeiticons-fast-backward" ></i></a>  
+			                               <a href= '.$checkREQ.'='. ($page - 1) .'><i class="icon-style5 hugeiticons-chevron-left"></i></a> ';  
+			// Проверяем нужны ли стрелки вперед  
+		       $nextpage='';
+			if ($page != $total) $nextpage = ' <a href= '.$checkREQ.'='. ($page + 1) .'><i class="icon-style5 hugeiticons-chevron-right"></i></a>  
+			                                   <a href= '.$checkREQ.'=' .$total. '><i class="icon-style5 hugeiticons-fast-forward" ></i></a>'; 
+
+			// Вывод меню  
+			echo $pervpage.$page.'/'.$total.$nextpage;  
+
+			?>
+</div>
+<?php 
+}
+?>
 </section>
 <ul id="huge_it_videogallery_popup_list_<?php echo $videogalleryID; ?>">
 	<?php
@@ -1465,13 +1842,107 @@ jQuery(document).ready(function(){
 	color:#<?php echo $paramssld["ht_view6_title_font_hover_color"];?>;
 	text-decoration:none;
 }
+.load_more4 {
+		margin: 10px 0;
+		position:relative;
+		text-align:<?php if($paramssld['video_ht_view4_loadmore_position'] == 'left') {echo 'left';} 
+			elseif ($paramssld['video_ht_view4_loadmore_position'] == 'center') { echo 'center'; }
+			elseif($paramssld['video_ht_view4_loadmore_position'] == 'right') { echo 'right'; }?>;
+
+		width:100%;
+
+
+	}
+
+	.load_more_button4 {
+		border-radius: 10px;
+		display:inline-block;
+		padding:5px 15px;
+		font-size:<?php echo $paramssld['video_ht_view4_loadmore_fontsize']; ?>px !important;;
+		color:<?php echo '#'.$paramssld['video_ht_view4_loadmore_font_color']; ?> !important;;
+		background:<?php echo '#'.$paramssld['video_ht_view4_button_color']; ?> !important;
+		cursor:pointer;
+
+	}
+	.load_more_button4:hover{
+		color:<?php echo '#'.$paramssld['video_ht_view4_loadmore_font_color_hover']; ?> !important;
+		background:<?php echo '#'.$paramssld['video_ht_view4_button_color_hover']; ?> !important;
+	}
+
+	.loading4 {
+		display:none;
+	}
+	.paginate4{
+		font-size:<?php echo $paramssld['video_ht_view4_paginator_fontsize']; ?>px !important;
+		color:<?php echo '#'.$paramssld['video_ht_view4_paginator_color']; ?> !important;
+		text-align: <?php echo $paramssld['video_ht_view4_paginator_position']; ?>;
+		margin-top: 25px;
+	}
+	.paginate4 a{
+		border-bottom: none !important;
+	}
+	.icon-style4{
+		font-size: <?php echo $paramssld['video_ht_view4_paginator_icon_size']; ?>px !important;
+		color:<?php echo '#'.$paramssld['video_ht_view4_paginator_icon_color']; ?> !important;
+	}
+	.clear{
+		clear:both;
+	}
 
 </style>
 <section id="huge_it_videogallery_content_<?php echo $videogalleryID; ?>">
   <div id="huge_it_videogallery_container_<?php echo $videogalleryID; ?>" class="super-list variable-sizes clearfix">
+  	<input type="hidden" class="pagenum" value="1" />
+  	<?php
+			foreach($images as $image){
+			$idofgallery=$image->videogallery_id ;
+			//print_r($image);
+			}
+			global $wpdb;
+			$pattern='/-/';
+			$query2=$wpdb->prepare("SELECT * FROM ".$wpdb->prefix."huge_it_videogallery_galleries where id = '%d' order by ordering ASC ",$idofgallery);
+			$gallery=$wpdb->get_results($query2);
+			foreach ($gallery as $gall) {
+				 global $post;
+				$pID=$post->ID;
+				$disp_type=$gall->display_type;
+				$count_page=$gall->content_per_page;
+				if($count_page==0){
+					$count_page=999;
+				}elseif(preg_match($pattern, $count_page)){
+					$count_page=preg_replace($pattern, '', $count_page);
+
+				}
+				//var_dump($count_page) ;
+
+			}
+
+			global $wpdb;
+			$num=$count_page;
+			//$total = count($images) ; 
+			$total = intval(((count($images) - 1) / $num) + 1);
+			//$total_img=count($images);
+			if(isset($_GET['page-img'.$videogalleryID.$pID])){
+				$page = $_GET['page-img'.$videogalleryID.$pID];
+			}else{
+				$page = '';
+					}
+			
+			$page = intval($page);
+			if(empty($page) or $page < 0) $page = 1;  
+			  if($page > $total) $page = $total; 
+			$start = $page * $num - $num; 
+			$query=$wpdb->prepare("SELECT * FROM ".$wpdb->prefix."huge_it_videogallery_videos where videogallery_id = '%d' order by ordering ASC LIMIT ".$start.",".$num."",$idofgallery);
+			$page_images=$wpdb->get_results($query);
+			if($disp_type==2){
+				$page_images=$images;
+				$count_page=9999;
+			}
+			?>
+			<input type="hidden" id="total" value="<?=$total; ?>" />
   	<?php
 	
-	foreach($images as $key=>$row)
+	foreach($page_images as $key=>$row)
 	{
 		$link = $row->sl_url;
 		$descnohtml=strip_tags($row->description);
@@ -1489,7 +1960,7 @@ jQuery(document).ready(function(){
 							<?php 	if($row->image_url != ';'){ ?>
 							<a href="<?php echo $imgurl[0]; ?>" title="<?php echo $row->name; ?>"><img id="wd-cl-img<?php echo $key; ?>" src="<?php echo $imgurl[0]; ?>" alt="<?php echo $row->name; ?>" /></a>
 							<?php } else { ?>
-							<img id="wd-cl-img<?php echo $key; ?>" src="images/noimage.jpg" alt="<?php echo $row->name; ?>" />
+							<img id="wd-cl-img<?php echo $key; ?>" src="images/noimage.jpg" alt="" />
 							<?php
 							} ?>
 
@@ -1500,7 +1971,7 @@ jQuery(document).ready(function(){
 						<?php
 							$videourl=get_video_gallery_id_from_url($row->image_url);
 							if($videourl[1]=='youtube'){
-								if(empty($row->thumb_url)){
+									if(empty($row->thumb_url)){
 											$thumb_pic='http://img.youtube.com/vi/'.$videourl[0].'/mqdefault.jpg';
 										}else{
 											$thumb_pic=$row->thumb_url;
@@ -1520,7 +1991,7 @@ jQuery(document).ready(function(){
 									}
 							?>
 								<a class="vimeo huge_it_videogallery_item group1" href="http://player.vimeo.com/video/<?php echo $videourl[0]; ?>" title="<?php echo $row->name; ?>">
-									<img src="<?php echo $imgsrc; ?>" alt="<?php echo $row->name; ?>" />
+									<img src="<?php echo $imgsrc; ?>" alt="" />
 									<div class="play-icon <?php echo $videourl[1]; ?>-icon"></div>
 								</a>
 							<?php
@@ -1539,8 +2010,172 @@ jQuery(document).ready(function(){
 		</div>	
 		<?php
 	}?>
-	<div style="clear:both;"></div>
+	<!-- <div style="clear:both;"></div> -->
   </div>
+
+<?php 
+		 $path_site = plugins_url("/../Front_images", __FILE__); 
+			$a=$disp_type;
+			if($a==1){
+				 $protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https://' : 'http://';
+				$actual_link = $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."";
+				$pattern="/\?p=/";
+				$pattern2="/&page-img[0-9]+=[0-9]+/";
+				$pattern3="/\?page-img[0-9]+=[0-9]+/";
+					if(preg_match($pattern, $actual_link)){
+
+						if(preg_match($pattern2, $actual_link)){
+							$actual_link=preg_replace($pattern2, '', $actual_link);
+							header("Location:".$actual_link."");
+							exit;
+							
+						}	
+					}elseif(preg_match($pattern3, $actual_link)){
+						$actual_link=preg_replace($pattern3, '', $actual_link);
+							header("Location:".$actual_link."");
+							exit;
+						
+					}
+				?>
+				<div class="load_more4">
+					<div class="load_more_button4"><?=$paramssld['video_ht_view4_loadmore_text']; ?></div>
+					<div class="loading4"><img src="<?php if($paramssld['video_ht_view4_loading_type'] == '1') {echo $path_site.'/arrows/loading1.gif';} 
+					elseif ($paramssld['video_ht_view4_loading_type'] == '2') { echo $path_site.'/arrows/loading4.gif'; }
+					elseif($paramssld['video_ht_view4_loading_type'] == '3') { echo $path_site.'/arrows/loading36.gif'; }
+					elseif ($paramssld['video_ht_view4_loading_type'] == '4') { echo $path_site.'/arrows/loading51.gif'; }?>"></div>
+					<script>
+						jQuery(document).ready(function(){
+							if(jQuery("#huge_it_videogallery_content_<?php echo $videogalleryID; ?> .load_more_button4").length){
+								jQuery("#huge_it_videogallery_content_<?php echo $videogalleryID; ?> .load_more_button4").on("click tap",function(){
+
+									if(jQuery("#huge_it_videogallery_content_<?php echo $videogalleryID; ?> .pagenum:last").val()<jQuery("#huge_it_videogallery_container_<?php echo $videogalleryID; ?> #total").val()) {
+										
+										var pagenum = parseInt(jQuery("#huge_it_videogallery_content_<?php echo $videogalleryID; ?> .pagenum:last").val()) + 1;
+										var perpage =<?=$count_page; ?>;
+										var galleryid="<?=$image->videogallery_id; ?>";
+										var thumbtext="<?php echo $paramssld["thumb_view_text"]; ?>";
+										var width="<?=$paramssld['video_ht_view9_video_width']; ?>";
+										var height="<?=$paramssld['video_ht_view9_video_height']; ?>";
+										//alert(pagenum+','+perpage+','+galleryid+','+width+','+height);
+										getresult(pagenum,perpage,galleryid,thumbtext,width,height);
+									}else{
+										jQuery('#huge_it_videogallery_content_<?php echo $videogalleryID; ?> .load_more_button4').hide();
+									}
+									return false;
+								});
+							}
+											if(jQuery("#huge_it_videogallery_content_<?php echo $videogalleryID; ?> .pagenum:last").val()==jQuery("#huge_it_videogallery_container_<?php echo $videogalleryID; ?> #total").val()) {
+												jQuery('#huge_it_videogallery_content_<?php echo $videogalleryID; ?> .load_more_button4').hide();
+											}
+							function getresult(pagenum,perpage,galleryid,thumbtext,width,height){
+								var data = {
+										action:"huge_it_video_gallery_ajax",
+										task:'load_videos_lightbox',
+										page:pagenum,
+										perpage:perpage,
+										galleryid:galleryid,
+										thumbtext:thumbtext,
+										width:width,
+										height:height
+								}
+								jQuery('#huge_it_videogallery_content_<?php echo $videogalleryID; ?> .loading4').show();
+								
+								jQuery('#huge_it_videogallery_content_<?php echo $videogalleryID; ?> .load_more_button4').hide();
+
+								jQuery.post('<?php echo admin_url("admin-ajax.php"); ?>',data,function(response){
+									if(response.success){
+											//alert(response.success);
+										
+										setTimeout(function(){
+											
+											//############# Hakob
+											var $objnewitems= jQuery(response.success);										
+											jQuery('#huge_it_videogallery_container_<?php echo $videogalleryID; ?>').append( $objnewitems ).hugeitmicro( 'reloadItems' ).hugeitmicro({ sortBy: 'original-order' }).hugeitmicro( 'reLayout' );
+											//############# End
+											
+											
+											jQuery(".group1").colorbox({rel:'group1'});
+											jQuery(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390});
+											jQuery(".vimeo").colorbox({iframe:true, innerWidth:640, innerHeight:390});
+											jQuery(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
+											jQuery(".inline").colorbox({inline:true, width:"50%"});
+											jQuery(".callbacks").colorbox({
+												onOpen:function(){ alert('onOpen: colorbox is about to open'); },
+												onLoad:function(){ alert('onLoad: colorbox has started to load the targeted content'); },
+												onComplete:function(){ alert('onComplete: colorbox has displayed the loaded content'); },
+												onCleanup:function(){ alert('onCleanup: colorbox has begun the close process'); },
+												onClosed:function(){ alert('onClosed: colorbox has completely closed'); }
+											});
+
+											jQuery('.non-retina').colorbox({rel:'group5', transition:'none'})
+											jQuery('.retina').colorbox({rel:'group5', transition:'none', retinaImage:true, retinaUrl:true});
+											var defaultBlockWidth=<?php echo $paramssld['ht_view6_width']; ?>+20+<?php echo $paramssld['ht_view6_width']*2; ?>;
+    										
+
+  
+											jQuery('#huge_it_videogallery_content_<?php echo $videogalleryID; ?> .load_more_button4').show();
+											jQuery('#huge_it_videogallery_content_<?php echo $videogalleryID; ?> .loading4').hide();
+											
+										},500);
+										setTimeout(function(){
+											if(jQuery("#huge_it_videogallery_content_<?php echo $videogalleryID; ?> .pagenum:last").val()==jQuery("#huge_it_videogallery_container_<?php echo $videogalleryID; ?> #total").val()) {
+												jQuery('#huge_it_videogallery_content_<?php echo $videogalleryID; ?> .load_more_button4').hide();
+											}
+										},500);
+
+									}else{
+										alert("no");
+									}
+								},"json");
+							}
+
+						});
+					</script>
+				</div>
+				<?php 
+			}elseif($a==0){
+		?>
+			<div class="paginate4">
+			<?php
+			$protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https://' : 'http://';
+			$actual_link = $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."";
+			
+			
+			$checkREQ='';
+			$pattern="/\?p=/";
+			$pattern2="/&page-img[0-9]+=[0-9]+/";
+			//$res=preg_match($pattern, $actual_link);
+			if(preg_match($pattern, $actual_link)){
+
+				if(preg_match($pattern2, $actual_link)){
+					$actual_link=preg_replace($pattern2, '', $actual_link);
+				}
+
+				$checkREQ=$actual_link.'&page-img'.$videogalleryID.$pID;
+				
+			}else{
+				$checkREQ='?page-img'.$videogalleryID.$pID;
+				
+			}
+			//var_dump($res);  
+			
+			// Проверяем нужны ли стрелки назад  
+				$pervpage='';
+			if ($page != 1) $pervpage = '<a href= '.$checkREQ.'=1><i class="icon-style4 hugeiticons-fast-backward" ></i></a>  
+			                               <a href= '.$checkREQ.'='. ($page - 1) .'><i class="icon-style4 hugeiticons-chevron-left"></i></a> ';  
+			// Проверяем нужны ли стрелки вперед  
+		       $nextpage='';
+			if ($page != $total) $nextpage = ' <a href= '.$checkREQ.'='. ($page + 1) .'><i class="icon-style4 hugeiticons-chevron-right"></i></a>  
+			                                   <a href= '.$checkREQ.'=' .$total. '><i class="icon-style4 hugeiticons-fast-forward" ></i></a>'; 
+
+			// Вывод меню  
+			echo $pervpage.$page.'/'.$total.$nextpage;  
+
+			?>
+</div>
+<?php 
+}
+?>
 </section>
 
 <script> 
@@ -3298,6 +3933,50 @@ jQuery(function(){
 				border-radius: <?php echo $paramssld["thumb_image_border_radius"]; ?>px;
 				padding:0px !important
 			}
+			.load_more3 {
+		margin: 10px 0;
+		position:relative;
+		text-align:<?php if($paramssld['video_ht_view7_loadmore_position'] == 'left') {echo 'left';} 
+			elseif ($paramssld['video_ht_view7_loadmore_position'] == 'center') { echo 'center'; }
+			elseif($paramssld['video_ht_view7_loadmore_position'] == 'right') { echo 'right'; }?>;
+
+		width:100%;
+
+
+	}
+
+	.load_more_button3 {
+		border-radius: 10px;
+		display:inline-block;
+		padding:5px 15px;
+		font-size:<?php echo $paramssld['video_ht_view7_loadmore_fontsize']; ?>px !important;;
+		color:<?php echo '#'.$paramssld['video_ht_view7_loadmore_font_color']; ?> !important;;
+		background:<?php echo '#'.$paramssld['video_ht_view7_button_color']; ?> !important;
+		cursor:pointer;
+
+	}
+	.load_more_button3:hover{
+		color:<?php echo '#'.$paramssld['video_ht_view7_loadmore_font_color_hover']; ?> !important;
+		background:<?php echo '#'.$paramssld['video_ht_view7_button_color_hover']; ?> !important;
+	} 
+	.loading3 {
+		display:none;
+	}
+	.paginate3{
+		font-size:<?php echo $paramssld['video_ht_view7_paginator_fontsize']; ?>px !important;
+		color:<?php echo '#'.$paramssld['video_ht_view7_paginator_color']; ?> !important;
+		text-align: <?php echo $paramssld['video_ht_view7_paginator_position']; ?>;
+	}
+	.paginate3 a{
+		border-bottom: none !important;
+	}
+	.icon-style3{
+		font-size: <?php echo $paramssld['video_ht_view7_paginator_icon_size']; ?>px !important;
+		color:<?php echo '#'.$paramssld['video_ht_view7_paginator_icon_color']; ?> !important;
+	}
+	.clear{
+		clear:both;
+	}
 			
 			
 			
@@ -3385,11 +4064,58 @@ jQuery(function(){
 		</style>
 		
 		
-		<section>
+		<section id="thumbwrapper<?=$videogalleryID; ?>">
+			<input type="hidden" class="pagenum" value="1" />
 			<ul id="huge_it_videogallery">
 				<li id="fullPreview"></li>
-				
-				<?php  foreach($images as $key=>$row) {
+				<?php
+			foreach($images as $image){
+			$idofgallery=$image->videogallery_id ;
+			//print_r($image);
+			}
+			global $wpdb;
+			$pattern='/-/';
+			$query2=$wpdb->prepare("SELECT * FROM ".$wpdb->prefix."huge_it_videogallery_galleries where id = '%d' order by ordering ASC ",$idofgallery);
+			$gallery=$wpdb->get_results($query2);
+			foreach ($gallery as $gall) {
+				 global $post;
+				$pID=$post->ID;
+				$disp_type=$gall->display_type;
+				$count_page=$gall->content_per_page;
+				if($count_page==0){
+					$count_page=999;
+				}elseif(preg_match($pattern, $count_page)){
+					$count_page=preg_replace($pattern, '', $count_page);
+
+				}
+				//var_dump($count_page) ;
+
+			}
+
+			global $wpdb;
+			$num=$count_page;
+			//$total = count($images) ; 
+			$total = intval(((count($images) - 1) / $num) + 1);
+			//$total_img=count($images);
+			if(isset($_GET['page-img'.$videogalleryID.$pID])){
+				$page = $_GET['page-img'.$videogalleryID.$pID];
+			}else{
+				$page = '';
+					}
+			
+			$page = intval($page);
+			if(empty($page) or $page < 0) $page = 1;  
+			  if($page > $total) $page = $total; 
+			$start = $page * $num - $num; 
+			$query=$wpdb->prepare("SELECT * FROM ".$wpdb->prefix."huge_it_videogallery_videos where videogallery_id = '%d' order by ordering ASC LIMIT ".$start.",".$num."",$idofgallery);
+			$page_images=$wpdb->get_results($query);
+			if($disp_type==2){
+				$page_images=$images;
+				$count_page=9999;
+			}
+			?>
+			<input type="hidden" id="total" value="<?=$total; ?>" />
+				<?php  foreach($page_images as $key=>$row) {
 				$imgurl=explode(";",$row->image_url); ?>
 				<li class="huge_it_big_li">
 				<?php 
@@ -3407,18 +4133,23 @@ jQuery(function(){
 					?>
 							<?php
 								$videourl=get_video_gallery_id_from_url($row->image_url);
+								$thumb_pic="http://img.youtube.com/vi/<?php echo $videourl[0]; ?>/mqdefault.jpg";
 								if($videourl[1]=='youtube'){
-									if(empty($row->thumb_url)){
+										if(empty($row->thumb_url)){
 											$thumb_pic='http://img.youtube.com/vi/'.$videourl[0].'/mqdefault.jpg';
 										}else{
 											$thumb_pic=$row->thumb_url;
 										}
+										
 									?>
+								
 									<a  class="youtube huge_it_videogallery_item group1"  href="https://www.youtube.com/embed/<?php echo $videourl[0]; ?>" title="<?php echo $row->name; ?>"></a>
 									<img src="<?php echo $thumb_pic; ?>" alt="<?php echo $row->name; ?>" />				
 								<?php
 								}else {
+
 									$hash = unserialize(file_get_contents("http://vimeo.com/api/v2/video/".$videourl[0].".php"));
+									
 									if(empty($row->thumb_url)){
 										$imgsrc=$hash[0]['thumbnail_large'];
 									}else{
@@ -3454,6 +4185,157 @@ jQuery(function(){
 				<?php }  ?>
 				
 			</ul>
+			<?php 
+		 $path_site = plugins_url("/../Front_images", __FILE__); 
+			$a=$disp_type;
+			if($a==1){
+				 $protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https://' : 'http://';
+				$actual_link = $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."";
+				$pattern="/\?p=/";
+				$pattern2="/&page-img[0-9]+=[0-9]+/";
+				$pattern3="/\?page-img[0-9]+=[0-9]+/";
+					if(preg_match($pattern, $actual_link)){
+
+						if(preg_match($pattern2, $actual_link)){
+							$actual_link=preg_replace($pattern2, '', $actual_link);
+							header("Location:".$actual_link."");
+							exit;
+							
+						}	
+					}elseif(preg_match($pattern3, $actual_link)){
+						$actual_link=preg_replace($pattern3, '', $actual_link);
+							header("Location:".$actual_link."");
+							exit;
+						
+					}
+				?>
+				<div class="load_more3">
+					<div class="load_more_button3"><?=$paramssld['video_ht_view7_loadmore_text']; ?></div>
+					<div class="loading3"><img src="<?php if($paramssld['video_ht_view7_loading_type'] == '1') {echo $path_site.'/arrows/loading1.gif';} 
+					elseif ($paramssld['video_ht_view7_loading_type'] == '2') { echo $path_site.'/arrows/loading4.gif'; }
+					elseif($paramssld['video_ht_view7_loading_type'] == '3') { echo $path_site.'/arrows/loading36.gif'; }
+					elseif ($paramssld['video_ht_view7_loading_type'] == '4') { echo $path_site.'/arrows/loading51.gif'; }?>"></div>
+					<script>
+						jQuery(document).ready(function(){
+							if(jQuery("#thumbwrapper<?=$videogalleryID; ?> .load_more_button3").length){
+								jQuery("#thumbwrapper<?=$videogalleryID; ?> .load_more_button3").on("click tap",function(){
+
+									if(jQuery("#thumbwrapper<?=$videogalleryID; ?> .pagenum:last").val()<jQuery("#thumbwrapper<?=$videogalleryID; ?> #total").val()) {
+										var pagenum = parseInt(jQuery("#thumbwrapper<?=$videogalleryID; ?> .pagenum:last").val()) + 1;
+										var perpage =<?=$count_page; ?>;
+										var galleryid="<?=$image->videogallery_id; ?>";
+										var thumbtext="<?php echo $paramssld["thumb_view_text"]; ?>";
+										var width="<?=$paramssld['video_ht_view9_video_width']; ?>";
+										var height="<?=$paramssld['video_ht_view9_video_height']; ?>";
+										//alert(pagenum+','+perpage+','+galleryid+','+width+','+height);
+										getresult(pagenum,perpage,galleryid,thumbtext,width,height);
+									}else{
+										jQuery('#thumbwrapper<?=$videogalleryID; ?> .load_more_button3').hide();
+									}
+									return false;
+								});
+							}
+											if(jQuery("#thumbwrapper<?=$videogalleryID; ?> .pagenum:last").val()==jQuery("#thumbwrapper<?=$videogalleryID; ?> #total").val()) {
+												jQuery('#thumbwrapper<?=$videogalleryID; ?> .load_more_button3').hide();
+											}
+							function getresult(pagenum,perpage,galleryid,thumbtext,width,height){
+								var data = {
+										action:"huge_it_video_gallery_ajax",
+										task:'load_videos_thumbnail',
+										page:pagenum,
+										perpage:perpage,
+										galleryid:galleryid,
+										thumbtext:thumbtext,
+										width:width,
+										height:height
+								}
+								jQuery('#thumbwrapper<?=$videogalleryID; ?> .loading3').show();
+								
+								jQuery('#thumbwrapper<?=$videogalleryID; ?> .load_more_button3').hide();
+
+								jQuery.post('<?php echo admin_url("admin-ajax.php"); ?>',data,function(response){
+									if(response.success){
+										setTimeout(function(){
+											jQuery("#thumbwrapper<?=$videogalleryID; ?> #huge_it_videogallery").append(response.success);
+											
+											jQuery(".group1").colorbox({rel:'group1'});
+											jQuery(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390});
+											jQuery(".vimeo").colorbox({iframe:true, innerWidth:640, innerHeight:390});
+											jQuery(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
+											jQuery(".inline").colorbox({inline:true, width:"50%"});
+											jQuery(".callbacks").colorbox({
+												onOpen:function(){ alert('onOpen: colorbox is about to open'); },
+												onLoad:function(){ alert('onLoad: colorbox has started to load the targeted content'); },
+												onComplete:function(){ alert('onComplete: colorbox has displayed the loaded content'); },
+												onCleanup:function(){ alert('onCleanup: colorbox has begun the close process'); },
+												onClosed:function(){ alert('onClosed: colorbox has completely closed'); }
+											});
+
+											jQuery('.non-retina').colorbox({rel:'group5', transition:'none'})
+											jQuery('.retina').colorbox({rel:'group5', transition:'none', retinaImage:true, retinaUrl:true});
+											jQuery('#thumbwrapper<?=$videogalleryID; ?> .load_more_button3').show();
+											jQuery('#thumbwrapper<?=$videogalleryID; ?> .loading3').hide();
+											
+										},500);
+										setTimeout(function(){
+											if(jQuery("#thumbwrapper<?=$videogalleryID; ?> .pagenum:last").val()==jQuery("#thumbwrapper<?=$videogalleryID; ?> #total").val()) {
+												jQuery('#thumbwrapper<?=$videogalleryID; ?> .load_more_button3').hide();
+											}
+										},500);
+
+									}else{
+										alert("no");
+									}
+								},"json");
+							}
+
+						});
+					</script>
+				</div>
+				<?php 
+			}elseif($a==0){
+		?>
+			<div class="paginate3">
+			<?php
+			$protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https://' : 'http://';
+			$actual_link = $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."";
+			
+			
+			$checkREQ='';
+			$pattern="/\?p=/";
+			$pattern2="/&page-img[0-9]+=[0-9]+/";
+			//$res=preg_match($pattern, $actual_link);
+			if(preg_match($pattern, $actual_link)){
+
+				if(preg_match($pattern2, $actual_link)){
+					$actual_link=preg_replace($pattern2, '', $actual_link);
+				}
+
+				$checkREQ=$actual_link.'&page-img'.$videogalleryID.$pID;
+				
+			}else{
+				$checkREQ='?page-img'.$videogalleryID.$pID;
+				
+			}
+			//var_dump($res);  
+			
+			// Проверяем нужны ли стрелки назад  
+				$pervpage='';
+			if ($page != 1) $pervpage = '<a href= '.$checkREQ.'=1><i class="icon-style3 hugeiticons-fast-backward" ></i></a>  
+			                               <a href= '.$checkREQ.'='. ($page - 1) .'><i class="icon-style3 hugeiticons-chevron-left"></i></a> ';  
+			// Проверяем нужны ли стрелки вперед  
+		       $nextpage='';
+			if ($page != $total) $nextpage = ' <a href= '.$checkREQ.'='. ($page + 1) .'><i class="icon-style3 hugeiticons-chevron-right"></i></a>  
+			                                   <a href= '.$checkREQ.'=' .$total. '><i class="icon-style3 hugeiticons-fast-forward" ></i></a>'; 
+
+			// Вывод меню  
+			echo $pervpage.$page.'/'.$total.$nextpage;  
+
+			?>
+</div>
+<?php 
+}
+?>
 		</section>
 		<?php
 		
@@ -3566,6 +4448,52 @@ jQuery(function(){
 		border-bottom-right-radius: 6px;
 		border-bottom-left-radius: 6px;
 	}
+		.load_more2 {
+		margin: 10px 0;
+		position:relative;
+		text-align:<?php if($paramssld['video_ht_view8_loadmore_position'] == 'left') {echo 'left';} 
+			elseif ($paramssld['video_ht_view8_loadmore_position'] == 'center') { echo 'center'; }
+			elseif($paramssld['video_ht_view8_loadmore_position'] == 'right') { echo 'right'; }?>;
+
+		width:100%;
+
+
+	}
+
+	.load_more_button2 {
+		border-radius: 10px;
+		display:inline-block;
+		padding:5px 15px;
+		font-size:<?php echo $paramssld['video_ht_view8_loadmore_fontsize']; ?>px !important;;
+		color:<?php echo '#'.$paramssld['video_ht_view8_loadmore_font_color']; ?> !important;;
+		background:<?php echo '#'.$paramssld['video_ht_view8_button_color']; ?> !important;
+		cursor:pointer;
+
+	}
+	.load_more_button2:hover{
+		color:<?php echo '#'.$paramssld['video_ht_view8_loadmore_font_color_hover']; ?> !important;
+		background:<?php echo '#'.$paramssld['video_ht_view8_button_color_hover']; ?> !important;
+	} 
+
+	.loading2 {
+		display:none;
+	}
+	.paginate2{
+		font-size:<?php echo $paramssld['video_ht_view8_paginator_fontsize']; ?>px !important;
+		color:<?php echo '#'.$paramssld['video_ht_view8_paginator_color']; ?> !important;
+		text-align: <?php echo $paramssld['video_ht_view8_paginator_position']; ?>;
+		margin-top: 25px;
+	}
+	.paginate2 a{
+		border-bottom: none !important;
+	}
+	.icon-style2{
+		font-size: <?php echo $paramssld['video_ht_view8_paginator_icon_size']; ?>px !important;
+		color:<?php echo '#'.$paramssld['video_ht_view8_paginator_icon_color']; ?> !important;
+	}
+	.clear{
+		clear:both;
+	}
         .play-icon {
                 position:absolute;
                 top:0px;
@@ -3583,9 +4511,64 @@ jQuery(function(){
 <?php
     $path_site = plugins_url("", __FILE__);
 ?>
+                <div id="my_video_gallery_wrapper_<?php echo $videogalleryID; ?>" class="clearfix">
+
+					
                 <div id="my_video_gallery_<?php echo $videogalleryID; ?>" class="clearfix">
+
+<?php foreach($images as $image){
+			$idofgallery=$image->videogallery_id ;
+			//print_r($image);
+			}
+			global $wpdb;
+			$pattern='/-/';
+			$query2=$wpdb->prepare("SELECT * FROM ".$wpdb->prefix."huge_it_videogallery_galleries where id = '%d' order by ordering ASC ",$idofgallery);
+			$gallery=$wpdb->get_results($query2);
+			foreach ($gallery as $gall) {
+				 global $post;
+				$pID=$post->ID;
+				$disp_type=$gall->display_type;
+				$count_page=$gall->content_per_page;
+				if($count_page==0){
+					$count_page=999;
+				}elseif(preg_match($pattern, $count_page)){
+					$count_page=preg_replace($pattern, '', $count_page);
+
+				}
+				//var_dump($count_page) ;
+
+			}
+
+			global $wpdb;
+			$num=$count_page;
+			//$total = count($images) ; 
+			$total = intval(((count($images) - 1) / $num) + 1);
+			//$total_img=count($images);
+			if(isset($_GET['page-img'.$videogalleryID.$pID])){
+				$page = $_GET['page-img'.$videogalleryID.$pID];
+			}else{
+				$page = '';
+					}
+			
+			$page = intval($page);
+			if(empty($page) or $page < 0) $page = 1;  
+			  if($page > $total) $page = $total; 
+			$start = $page * $num - $num; 
+			$query=$wpdb->prepare("SELECT * FROM ".$wpdb->prefix."huge_it_videogallery_videos where videogallery_id = '%d' order by ordering ASC LIMIT ".$start.",".$num."",$idofgallery);
+			
+			$page_images=$wpdb->get_results($query);
+			if($disp_type==2){
+				$page_images=$images;
+				$count_page=9999;
+			}
+		
+			?>
+			
+
+<input type="hidden" id="total" value="<?=$total; ?>" />
                     <?php
-                    foreach($images as $key=>$row)
+
+                    foreach($page_images as $key=>$row)
                     {
                         $imgurl=explode(";",$row->image_url);
                         $imagerowstype=$row->sl_type;
@@ -3595,47 +4578,209 @@ jQuery(function(){
                     ?>
                                 <?php 	if($row->image_url != ';'){ ?>
                                 <a class="group1" href="<?php echo $imgurl[0]; ?>" title="<?php echo $row->name; ?>">
-                                    <img alt="<?php echo $row->name; ?>" id="wd-cl-img<?php echo $key; ?>" src="<?php echo get_huge_image($imgurl[0],$image_prefix); ?>"/>
+                                    <img id="wd-cl-img<?php echo $key; ?>" alt="<?php echo $row->name; ?>" src="<?php echo get_huge_image($imgurl[0],$image_prefix); ?>"/>
                                 </a>
                                 <?php } else { ?>
                                 <img alt="<?php echo $row->name; ?>" id="wd-cl-img<?php echo $key; ?>" src="images/noimage.jpg"  />
+                                <input type="hidden" class="pagenum" value="1" />
                                 <?php
                                 } ?>
                                 <?php break;
                             
                             case 'video':
-                            
+        
                                 $videourl=get_video_gallery_id_from_url($row->image_url);
                                 if($videourl[1]=='youtube'){
-                                	if(empty($row->thumb_url)){
+                                		if(empty($row->thumb_url)){
 											$thumb_pic='http://img.youtube.com/vi/'.$videourl[0].'/mqdefault.jpg';
 										}else{
 											$thumb_pic=$row->thumb_url;
 										}
-                                		?>
+                                	?>
                                         <a class="youtube huge_it_videogallery_item group1"  href="https://www.youtube.com/embed/<?php echo $videourl[0]; ?>" title="<?php echo $row->name; ?>">
-                                                <img alt="<?php echo $row->name; ?>" src="<?php echo $thumb_pic; ?>" />
+                                                <img  src="<?php echo $thumb_pic; ?>" alt="<?php echo $row->name; ?>" />
                                                 <div class="play-icon <?php echo $videourl[1]; ?>-icon"></div>
                                         </a>
+                                        <input type="hidden" class="pagenum" value="1" />
                                 <?php }
                                 else {
                                         $hash = unserialize(file_get_contents("http://vimeo.com/api/v2/video/".$videourl[0].".php"));
                                         if(empty($row->thumb_url)){
 										$imgsrc=$hash[0]['thumbnail_large'];
-									}else{
-										$imgsrc=$row->thumb_url;
-									}
+										}else{
+											$imgsrc=$row->thumb_url;
+										}
                                 ?>
                                         <a class="vimeo huge_it_videogallery_item group1" href="http://player.vimeo.com/video/<?php echo $videourl[0]; ?>" title="<?php echo $row->name; ?>">
-                                                <img alt="<?php echo $row->name; ?>" src="<?php echo $imgsrc; ?>"  />
+                                                <img alt="<?php echo $row->name; ?>" src="<?php echo $imgsrc; ?>"/>
                                                 <div class="play-icon <?php echo $videourl[1]; ?>-icon"></div>
                                         </a>
+                                        <input type="hidden" class="pagenum" value="1" />
                                 <?php
                                 }
                         }
                     }
                     ?>
                 </div>
+                <?php 
+		 $path_site = plugins_url("/../Front_images", __FILE__); 
+			$a=$disp_type;
+			if($a==1){
+				 $protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https://' : 'http://';
+				$actual_link = $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."";
+				$pattern="/\?p=/";
+				$pattern2="/&page-img[0-9]+=[0-9]+/";
+				$pattern3="/\?page-img[0-9]+=[0-9]+/";
+					if(preg_match($pattern, $actual_link)){
+
+						if(preg_match($pattern2, $actual_link)){
+							$actual_link=preg_replace($pattern2, '', $actual_link);
+							header("Location:".$actual_link."");
+							exit;
+							
+						}	
+					}elseif(preg_match($pattern3, $actual_link)){
+						$actual_link=preg_replace($pattern3, '', $actual_link);
+							header("Location:".$actual_link."");
+							exit;
+						
+					}
+				?>
+				<div class="load_more2">
+					<div class="load_more_button2 load_more_button_<?php echo $videogalleryID; ?>"><?=$paramssld['video_ht_view8_loadmore_text']; ?></div>
+					<div class="loading2 loading_<?php echo $videogalleryID; ?>"><img src="<?php if($paramssld['video_ht_view8_loading_type'] == '1') {echo $path_site.'/arrows/loading1.gif';} 
+					elseif ($paramssld['video_ht_view8_loading_type'] == '2') { echo $path_site.'/arrows/loading4.gif'; }
+					elseif($paramssld['video_ht_view8_loading_type'] == '3') { echo $path_site.'/arrows/loading36.gif'; }
+					elseif ($paramssld['video_ht_view8_loading_type'] == '4') { echo $path_site.'/arrows/loading51.gif'; }?>"></div>
+					<script>
+						jQuery(document).ready(function(){
+
+							if(jQuery("#my_video_gallery_wrapper_<?php echo $videogalleryID; ?> .load_more_button_<?php echo $videogalleryID; ?>").length){
+								jQuery("#my_video_gallery_wrapper_<?php echo $videogalleryID; ?> .load_more_button_<?php echo $videogalleryID; ?>").on("click tap",function(){
+									//alert(jQuery(this).length);
+
+									if(jQuery("#my_video_gallery_<?php echo $videogalleryID; ?> .pagenum:last").val()<jQuery("#my_video_gallery_wrapper_<?php echo $videogalleryID; ?> #total").val()) {
+										
+										var pagenum = parseInt(jQuery("#my_video_gallery_<?php echo $videogalleryID; ?> .pagenum:last").val()) + 1;
+										//alert(pagenum);
+										var perpage =<?=$count_page; ?>;
+										var galleryid="<?=$image->videogallery_id; ?>";
+										var width="<?=$paramssld['video_ht_view9_video_width']; ?>";
+										var height="<?=$paramssld['video_ht_view9_video_height']; ?>";
+										getresult(pagenum,perpage,galleryid,width,height);
+									}else{
+										jQuery('#my_video_gallery_wrapper_<?php echo $videogalleryID; ?> .load_more_button_<?php echo $videogalleryID; ?>').hide();
+									}
+									return false;
+								});
+							}
+							if(jQuery("#my_video_gallery_<?php echo $videogalleryID; ?> .pagenum:last").val()==jQuery("#my_video_gallery_<?php echo $videogalleryID; ?> #total").val()) {
+												jQuery('#my_video_gallery_wrapper_<?php echo $videogalleryID; ?> .load_more_button_<?php echo $videogalleryID; ?>').hide();
+											}			
+							function getresult(pagenum,perpage,galleryid,width,height){
+								var data = {
+										action:"huge_it_video_gallery_ajax",
+										task:'load_videos_justified',
+										page:pagenum,
+										perpage:perpage,
+										galleryid:galleryid,
+										width:width,
+										height:height										
+								}
+								jQuery('#my_video_gallery_wrapper_<?php echo $videogalleryID; ?> .loading_<?php echo $videogalleryID; ?>').show();
+								jQuery('#my_video_gallery_wrapper_<?php echo $videogalleryID; ?> .load_more_button_<?php echo $videogalleryID; ?>').hide();
+								
+								jQuery.post('<?php echo admin_url("admin-ajax.php"); ?>',data,function(response){
+									if(response.success){
+											
+										setTimeout(function(){
+											jQuery("#my_video_gallery_<?php echo $videogalleryID; ?>").append(response.success);
+											jQuery("#my_video_gallery_<?php echo $videogalleryID; ?>").justifiedGallery();
+											jQuery(".group1").colorbox({rel:'group1'});
+											jQuery(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390});
+											jQuery(".vimeo").colorbox({iframe:true, innerWidth:640, innerHeight:390});
+											jQuery(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
+											jQuery(".inline").colorbox({inline:true, width:"50%"});
+											jQuery(".callbacks").colorbox({
+												onOpen:function(){ alert('onOpen: colorbox is about to open'); },
+												onLoad:function(){ alert('onLoad: colorbox has started to load the targeted content'); },
+												onComplete:function(){ alert('onComplete: colorbox has displayed the loaded content'); },
+												onCleanup:function(){ alert('onCleanup: colorbox has begun the close process'); },
+												onClosed:function(){ alert('onClosed: colorbox has completely closed'); }
+											});
+
+											jQuery('.non-retina').colorbox({rel:'group5', transition:'none'})
+											jQuery('.retina').colorbox({rel:'group5', transition:'none', retinaImage:true, retinaUrl:true});
+											jQuery('#my_video_gallery_wrapper_<?php echo $videogalleryID; ?> .load_more_button_<?php echo $videogalleryID; ?>').show();
+											jQuery('#my_video_gallery_wrapper_<?php echo $videogalleryID; ?> .loading_<?php echo $videogalleryID; ?>').hide();
+											
+										},500);
+										setTimeout(function(){
+											if(jQuery("#my_video_gallery_<?php echo $videogalleryID; ?> .pagenum:last").val()==jQuery("#my_video_gallery_<?php echo $videogalleryID; ?> #total").val()) {
+												jQuery('#my_video_gallery_wrapper_<?php echo $videogalleryID; ?> .load_more_button_<?php echo $videogalleryID; ?>').hide();
+											}
+										},500);
+
+									}else{
+										alert("no");
+									}
+								},"json");
+							}
+
+						});
+					</script>
+				</div>
+				<?php 
+			}elseif($a==0){
+		?>
+		<div class="paginate2">
+			<?php
+			$protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https://' : 'http://';
+			$actual_link = $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."";
+			
+			
+			$checkREQ='';
+			$pattern="/\?p=/";
+			$pattern2="/&page-img[0-9]+=[0-9]+/";
+			//$res=preg_match($pattern, $actual_link);
+			if(preg_match($pattern, $actual_link)){
+
+				if(preg_match($pattern2, $actual_link)){
+					$actual_link=preg_replace($pattern2, '', $actual_link);
+				}
+
+				$checkREQ=$actual_link.'&page-img'.$videogalleryID.$pID;
+				
+			}else{
+				$checkREQ='?page-img'.$videogalleryID.$pID;
+				
+			}
+			//var_dump($res);  
+			
+			// Проверяем нужны ли стрелки назад  
+				$pervpage='';
+			if ($page != 1) $pervpage = '<a href= '.$checkREQ.'=1><i class="icon-style2 hugeiticons-fast-backward" ></i></a>  
+			                               <a href= '.$checkREQ.'='. ($page - 1) .'><i class="icon-style2 hugeiticons-chevron-left"></i></a> ';  
+			// Проверяем нужны ли стрелки вперед  
+		       $nextpage='';
+			if ($page != $total) $nextpage = ' <a href= '.$checkREQ.'='. ($page + 1) .'><i class="icon-style2 hugeiticons-chevron-right"></i></a>  
+			                                   <a href= '.$checkREQ.'=' .$total. '><i class="icon-style2 hugeiticons-fast-forward" ></i></a>';  
+
+			// Находим две ближайшие станицы с обоих краев, если они есть  
+			/*if($page - 2 > 0) $page2left = ' <a href= ./?page='. ($page - 2) .'>'. ($page - 2) .'</a> | ';  
+			if($page - 1 > 0) $page1left = '<a href= ./?page='. ($page - 1) .'>'. ($page - 1) .'</a> | ';  
+			if($page + 2 <= $total) $page2right = ' | <a href= ./?page='. ($page + 2) .'>'. ($page + 2) .'</a>';  
+			if($page + 1 <= $total) $page1right = ' | <a href= ./?page='. ($page + 1) .'>'. ($page + 1) .'</a>'; */
+
+			// Вывод меню  
+			echo $pervpage.$page.'/'.$total.$nextpage;  
+
+			?>
+</div>
+</div>
+<?php
+}
+?>
 
 
 <script>
@@ -3711,7 +4856,7 @@ jQuery(function(){
 	}
 	.icon-style{
 		font-size: <?php echo $paramssld['video_ht_view9_paginator_icon_size']; ?>px !important;
-		color:<?php echo '#'.$paramssld['video_ht_view9_paginator_icon_color']; ?> !important;;
+		color:<?php echo '#'.$paramssld['video_ht_view9_paginator_icon_color']; ?> !important;
 	}
 	.clear{
 		clear:both;
@@ -3746,6 +4891,36 @@ jQuery(function(){
 		position: absolute;
 	}
 
+	.load_more {
+		margin: 10px 0;
+		position:relative;
+		text-align:<?php if($paramssld['video_view9_loadmore_position'] == 'left') {echo 'left';} 
+			elseif ($paramssld['video_view9_loadmore_position'] == 'center') { echo 'center'; }
+			elseif($paramssld['video_view9_loadmore_position'] == 'right') { echo 'right'; }?>;
+
+		width:100%;
+
+
+	}
+
+	.load_more_button {
+		border-radius: 10px;
+		display:inline-block;
+		padding:5px 15px;
+		font-size:<?php echo $paramssld['video_ht_view9_loadmore_fontsize']; ?>px !important;
+		color:<?php echo '#'.$paramssld['video_ht_view9_loadmore_font_color']; ?> !important;
+		background:<?php echo '#'.$paramssld['video_ht_view9_button_color']; ?> !important;
+		cursor:pointer;
+
+	}
+	.load_more_button:hover{
+		color:<?php echo '#'.$paramssld['video_ht_view9_loadmore_font_color_hover']; ?> !important;
+		background:<?php echo '#'.$paramssld['video_ht_view9_button_color_hover']; ?> !important;
+	} 
+	.loading {
+		display:none;
+	}
+
 </style>
 <script>
 
@@ -3765,152 +4940,323 @@ jQuery(function(){
 });
 //console.log($(".video_view9_img"));
 </script>
-<div class="video_view9_cont_wrapper">
+<div class="video_view9_cont_wrapper" id="video_view9_cont_wrapper<?=$videogalleryID; ?>">
+	<div id="video_view9_cont_list<?=$videogalleryID; ?>">
+		<?php
 
-	<?php
-	foreach($images as $image){
-	$idofgallery=$image->videogallery_id ;
-	}
+			foreach($images as $image){
+			$idofgallery=$image->videogallery_id ;
+			//print_r($image);
+			}
+			global $wpdb;
+			$pattern='/-/';
+			$query2=$wpdb->prepare("SELECT * FROM ".$wpdb->prefix."huge_it_videogallery_galleries where id = '%d' order by ordering ASC ",$idofgallery);
+			$gallery=$wpdb->get_results($query2);
+			foreach ($gallery as $gall) {
+				 global $post;
+				$pID=$post->ID;
+				$disp_type=$gall->display_type;
+				$count_page=$gall->content_per_page;
+				if($count_page==0){
+					$count_page=999;
+				}elseif(preg_match($pattern, $count_page)){
+					$count_page=preg_replace($pattern, '', $count_page);
 
-	global $wpdb;
-	$num=$paramssld['video_ht_view9_general_content_count'];
-	//$total = count($images) ; 
-	$total = intval(((count($images) - 1) / $num) + 1);
-	//$total_img=count($images);
-	if(isset($_GET['page-img'])){
-		$page = $_GET['page-img'];
-	}else{
-		$page = '';
-	}
-	
-	$page = intval($page);
-	if(empty($page) or $page < 0) $page = 1;  
-	  if($page > $total) $page = $total; 
-	$start = $page * $num - $num; 
-	$query=$wpdb->prepare("SELECT * FROM ".$wpdb->prefix."huge_it_videogallery_videos where videogallery_id = '%d' order by ordering ASC LIMIT ".$start.",".$num."",$idofgallery);
-	$page_images=$wpdb->get_results($query);
-	foreach($page_images as $key=>$row)
-	{
-		$videourl=$row->image_url;
-		//var_dump($row);
-		$pattern='/watch\?v=/';
-		$videourl=preg_replace($pattern, 'embed/', $videourl);
-		$icon=youtube_or_vimeo($videourl);
-		//var_dump($icon);
-		$video_name=$row->name;
-		$video_desc=$row->description;
-		$video_thumb=$row->thumb_url;
-	if($paramssld['video_view9_image_position'] == 1) :
-		//var_dump($row);
-	?>
-	<div class="video_view9_container">
-		<div class="video_view9_vid_wrapper">
-			<div class="thumb_wrapper" onclick="thevid=document.getElementById('thevideo'); thevid.style.display='block'; this.style.display='none'">
-				<img class="thumb_image" style="cursor: pointer;" src="<?php echo $video_thumb; ?>" alt="" />
-				<?php if($video_thumb != ''):?>
-					<div class="playbutton <?php echo $icon;?>-icon"></div>
-				<?php endif;?>
-			</div>
-			<div id="thevideo" style="display: block;">
-				<iframe class="video_view9_img" width="<?php echo $paramssld['video_ht_view9_video_width']; ?>" height="<?php echo $paramssld['video_ht_view9_video_height']; ?>" src="<?php echo $videourl;?>" frameborder="0" allowfullscreen></iframe>
-			</div>
-		</div>
-		<h1 class="video_new_view_title"><?php echo $video_name;?></h1>
-		<div class="video_new_view_desc"><?php echo $video_desc;?></div>
-	</div>
-	<div class="clear"></div>
-	<?php 
-		elseif($paramssld['video_view9_image_position'] == 2) :
-		?>
-	<div class="video_view9_container">
-		<h1 class="video_new_view_title"><?php echo $video_name;?></h1>
-		<div class="video_view9_vid_wrapper">
-				<div class="thumb_wrapper" onclick="thevid=document.getElementById('thevideo'); thevid.style.display='block'; this.style.display='none'">
-					<img class="thumb_image" style="cursor: pointer;" src="<?php echo $video_thumb; ?>" alt="" />
-					<?php if($video_thumb != ''):?>
-					<div class="playbutton <?php echo $icon;?>-icon"></div>
-					<?php endif;?>
-				</div>
-				<div id="thevideo" style="display: block;">
-					<iframe class="video_view9_img" width="<?php echo $paramssld['video_ht_view9_video_width']; ?>" height="<?php echo $paramssld['video_ht_view9_video_height']; ?>" src="<?php echo $videourl;?>" frameborder="0" allowfullscreen>
-					
-		 		</iframe>
-				</div>
-		</div>
-		<div class="video_new_view_desc"><?php echo $video_desc;?></div>
-	
-	</div>
-	<div class="clear"></div>
-	<?php
-	elseif($paramssld['video_view9_image_position'] == 3) :
-	?>
-	<div class="video_view9_container">
-		<h1 class="video_new_view_title"><?php echo $video_name;?></h1>
-		<div class="video_new_view_desc"><?php echo $video_desc;?></div>
-		<div class="video_view9_vid_wrapper">
-				<div class="thumb_wrapper" onclick="thevid=document.getElementById('thevideo'); thevid.style.display='block'; this.style.display='none'">
-					<img class="thumb_image" style="cursor: pointer;" src="<?php echo $video_thumb; ?>" alt="" />
-					<?php if($video_thumb != ''):?>
-					<div class="playbutton <?php echo $icon;?>-icon"></div>
-					<?php endif;?>
-				</div>
-				<div id="thevideo" style="display: block;">
-					<iframe class="video_view9_img" width="<?php echo $paramssld['video_ht_view9_video_width']; ?>" height="<?php echo $paramssld['video_ht_view9_video_height']; ?>" src="<?php echo $videourl;?>" frameborder="0" allowfullscreen>
-					
-		 		</iframe>
-				</div>
-		</div>
-	</div>
-	<div class="clear"></div>
-	<?php
-	endif;
-	}
-
-
-	////////////////
-	/*foreach($images as $key=>$row){
-		$videourl=$row->image_url;
-	?>
-	<iframe width="560" height="480" src="<?=$videourl;?>" frameborder="0" allowfullscreen></iframe>
-	<?php
-	}*/
-	
-?>
-<div class="paginate">
-				<?php
-				$actual_link = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."";
-				$checkREQ='';
-				$pattern="/\?p=/";
-				//$res=preg_match($pattern, $actual_link);
-				if(preg_match($pattern, $actual_link)){
-					$checkREQ='./?p=1&page-img';
-					
-				}else{
-					$checkREQ='?page-img';
-					
 				}
-				//var_dump($res);  
-				
-				// Проверяем нужны ли стрелки назад 
-				 $pervpage='';
-				if ($page != 1) $pervpage = '<a href= '.$checkREQ.'=1><i class="icon-style hugeiticons-fast-backward" ></i></a>  
-				                               <a href= '.$checkREQ.'='. ($page - 1) .'><i class="icon-style hugeiticons-chevron-left"></i></a> ';  
-				// Проверяем нужны ли стрелки вперед  
-				  $nextpage='';                         
-				if ($page != $total) $nextpage = ' <a href= '.$checkREQ.'='. ($page + 1) .'><i class="icon-style hugeiticons-chevron-right"></i></a>  
-				                                   <a href= '.$checkREQ.'=' .$total. '><i class="icon-style hugeiticons-fast-forward" ></i></a>';  
+				//var_dump($count_page) ;
 
-				// Находим две ближайшие станицы с обоих краев, если они есть  
-				/*if($page - 2 > 0) $page2left = ' <a href= ./?page='. ($page - 2) .'>'. ($page - 2) .'</a> | ';  
-				if($page - 1 > 0) $page1left = '<a href= ./?page='. ($page - 1) .'>'. ($page - 1) .'</a> | ';  
-				if($page + 2 <= $total) $page2right = ' | <a href= ./?page='. ($page + 2) .'>'. ($page + 2) .'</a>';  
-				if($page + 1 <= $total) $page1right = ' | <a href= ./?page='. ($page + 1) .'>'. ($page + 1) .'</a>'; */
+			}
 
-				// Вывод меню  
-				echo $pervpage.$page.'/'.$total.$nextpage;  
+			global $wpdb;
+			$num=$count_page;
+			//$total = count($images) ; 
+			$total = intval(((count($images) - 1) / $num) + 1);
+			//$total_img=count($images);
+			if(isset($_GET['page-img'.$videogalleryID.$pID])){
+				$page = $_GET['page-img'.$videogalleryID.$pID];
+			}else{
+				$page = '';
+					}
+			
+			$page = intval($page);
+			if(empty($page) or $page < 0) $page = 1;  
+			  if($page > $total) $page = $total; 
+			$start = $page * $num - $num; 
+			$query=$wpdb->prepare("SELECT * FROM ".$wpdb->prefix."huge_it_videogallery_videos where videogallery_id = '%d' order by ordering ASC LIMIT ".$start.",".$num."",$idofgallery);
+			
+			$page_images=$wpdb->get_results($query);
+			if($disp_type==2){
+				$page_images=$images;
+				$count_page=9999;
+			}
+			?>
+			<input type="hidden" id="total" value="<?=$total; ?>" />
+			<?php
+			foreach($page_images as $key=>$row)
+			{
+				$videourl=$row->image_url;
+				//var_dump($row);
+				$pattern='/watch\?v=/';
+				$videourl=preg_replace($pattern, 'embed/', $videourl);
+				$icon=youtube_or_vimeo($videourl);
+				//var_dump($icon);
+				$video_name=$row->name;
+				$video_desc=$row->description;
+				$video_thumb=$row->thumb_url;
 
-				?>
+					
+			if($paramssld['video_view9_image_position'] == 1) :
+				//var_dump($row);
+			?>
+			<div class="video_view9_container">
+				<input type="hidden" class="pagenum" value="1" />
+				<div class="video_view9_vid_wrapper">
+
+					<div class="thumb_wrapper" onclick="thevid=document.getElementById('thevideo'); thevid.style.display='block'; this.style.display='none'">
+						<img class="thumb_image" style="cursor: pointer;" src="<?php echo $video_thumb; ?>" alt="" />
+						<?php if($video_thumb != ''):?>
+							<div class="playbutton <?php echo $icon;?>-icon"></div>
+						<?php endif;?>
+					</div>
+					<div id="thevideo" style="display: block;">
+							<?php
+						$videourl=get_video_gallery_id_from_url($row->image_url);
+							if($videourl[1]=='youtube'){ ?>
+								<iframe class="video_view9_img" width="<?php echo $paramssld['video_ht_view9_video_width']; ?>" height="<?php echo $paramssld['video_ht_view9_video_height']; ?>" src="//www.youtube.com/embed/<?php echo $videourl[0]; ?>" style="border: 0;" allowfullscreen></iframe>
+								<?php
+							}else {
+								?>
+									<iframe class="video_view9_img" width="<?php echo $paramssld['video_ht_view9_video_width']; ?>" height="<?php echo $paramssld['video_ht_view9_video_height']; ?>" src="//player.vimeo.com/video/<?php echo $videourl[0]; ?>"  style="border: 0;" allowfullscreen></iframe>
+								<?php
+							}
+							?>
+					</div>
 				</div>
+				<h1 class="video_new_view_title"><?php echo $video_name;?></h1>
+				<div class="video_new_view_desc"><?php echo $video_desc;?></div>
+			</div>
+			<div class="clear"></div>
+			<?php 
+				elseif($paramssld['video_view9_image_position'] == 2) :
+				?>
+			<div class="video_view9_container">
+				<input type="hidden" class="pagenum" value="1" />
+				<h1 class="video_new_view_title"><?php echo $video_name;?></h1>
+				<div class="video_view9_vid_wrapper">
+									
+						
+						<div class="thumb_wrapper" onclick="thevid=document.getElementById('thevideo'); thevid.style.display='block'; this.style.display='none'">
+							<img class="thumb_image" style="cursor: pointer;" src="<?php echo $video_thumb; ?>" alt="" />
+							<?php if($video_thumb != ''):?>
+							<div class="playbutton <?php echo $icon;?>-icon"></div>
+							<?php endif;?>
+						</div>
+						<div id="thevideo" style="display: block;">
+								<?php
+						$videourl=get_video_gallery_id_from_url($row->image_url);
+							if($videourl[1]=='youtube'){ ?>
+								<iframe class="video_view9_img" width="<?php echo $paramssld['video_ht_view9_video_width']; ?>" height="<?php echo $paramssld['video_ht_view9_video_height']; ?>" src="//www.youtube.com/embed/<?php echo $videourl[0]; ?>" style="border: 0;" allowfullscreen></iframe>
+								<?php
+							}else {
+								?>
+									<iframe class="video_view9_img" width="<?php echo $paramssld['video_ht_view9_video_width']; ?>" height="<?php echo $paramssld['video_ht_view9_video_height']; ?>" src="//player.vimeo.com/video/<?php echo $videourl[0]; ?>"  style="border: 0;" allowfullscreen></iframe>
+								<?php
+							}
+							?>
+							<!-- <iframe class="video_view9_img" width="<?php echo $paramssld['video_ht_view9_video_width']; ?>" height="<?php echo $paramssld['video_ht_view9_video_height']; ?>" src="<?php echo $videourl;?>" frameborder="0" allowfullscreen> -->
+							
+				 		</iframe>
+						</div>
+				
+				</div>
+				<div class="video_new_view_desc"><?php echo $video_desc;?></div>
+			
+			</div>
+			
+			<div class="clear"></div>
+			<?php
+			elseif($paramssld['video_view9_image_position'] == 3) :
+			?>
+			<div class="video_view9_container">
+				<input type="hidden" class="pagenum" value="1" />
+				<h1 class="video_new_view_title"><?php echo $video_name;?></h1>
+				<div class="video_new_view_desc"><?php echo $video_desc;?></div>
+				<div class="video_view9_vid_wrapper">
+
+						<div class="thumb_wrapper" onclick="thevid=document.getElementById('thevideo'); thevid.style.display='block'; this.style.display='none'">
+							<img class="thumb_image" style="cursor: pointer;" src="<?php echo $video_thumb; ?>" alt="" />
+							<?php if($video_thumb != ''):?>
+							<div class="playbutton <?php echo $icon;?>-icon"></div>
+							<?php endif;?>
+						</div>
+						<div id="thevideo" style="display: block;">
+								<?php
+						$videourl=get_video_gallery_id_from_url($row->image_url);
+							if($videourl[1]=='youtube'){ ?>
+								<iframe class="video_view9_img" width="<?php echo $paramssld['video_ht_view9_video_width']; ?>" height="<?php echo $paramssld['video_ht_view9_video_height']; ?>" src="//www.youtube.com/embed/<?php echo $videourl[0]; ?>" style="border: 0;" allowfullscreen></iframe>
+								<?php
+							}else {
+								?>
+									<iframe class="video_view9_img" width="<?php echo $paramssld['video_ht_view9_video_width']; ?>" height="<?php echo $paramssld['video_ht_view9_video_height']; ?>" src="//player.vimeo.com/video/<?php echo $videourl[0]; ?>"  style="border: 0;" allowfullscreen></iframe>
+								<?php
+							}
+							?>
+							<!-- <iframe class="video_view9_img" width="<?php echo $paramssld['video_ht_view9_video_width']; ?>" height="<?php echo $paramssld['video_ht_view9_video_height']; ?>" src="<?php echo $videourl;?>" frameborder="0" allowfullscreen> -->
+							
+				 		</iframe>
+						</div>
+				</div>
+			</div>
+
+			<div class="clear"></div>
+			<?php
+			endif;
+			}
+
+
+			
+		?>
+	</div>
+	
+		<?php 
+		 $path_site = plugins_url("/../Front_images", __FILE__); 
+			$a=$disp_type;
+			if($a==1){
+				 $protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https://' : 'http://';
+				$actual_link = $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."";
+				$pattern="/\?p=/";
+				$pattern2="/&page-img[0-9]+=[0-9]+/";
+				$pattern3="/\?page-img[0-9]+=[0-9]+/";
+					if(preg_match($pattern, $actual_link)){
+
+						if(preg_match($pattern2, $actual_link)){
+							$actual_link=preg_replace($pattern2, '', $actual_link);
+							header("Location:".$actual_link."");
+							exit;
+							
+						}	
+					}elseif(preg_match($pattern3, $actual_link)){
+						$actual_link=preg_replace($pattern3, '', $actual_link);
+							header("Location:".$actual_link."");
+							exit;
+						
+					}
+				?>
+				<div class="load_more">
+					<div class="load_more_button"><?=$paramssld['video_ht_view9_loadmore_text']; ?></div>
+					<div class="loading"><img src="<?php if($paramssld['loading_type'] == '1') {echo $path_site.'/arrows/loading1.gif';} 
+					elseif ($paramssld['loading_type'] == '2') { echo $path_site.'/arrows/loading4.gif'; }
+					elseif($paramssld['loading_type'] == '3') { echo $path_site.'/arrows/loading36.gif'; }
+					elseif ($paramssld['loading_type'] == '4') { echo $path_site.'/arrows/loading51.gif'; }?>"></div>
+					<script>
+						jQuery(document).ready(function(){
+							if(jQuery("#video_view9_cont_wrapper<?=$videogalleryID; ?> .load_more_button").length){
+								jQuery("#video_view9_cont_wrapper<?=$videogalleryID; ?> .load_more_button").on("click tap",function(){
+									if(jQuery("#video_view9_cont_wrapper<?=$videogalleryID; ?> .pagenum:last").val()<jQuery("#video_view9_cont_wrapper<?=$videogalleryID; ?> #total").val()) {
+										var pagenum = parseInt(jQuery("#video_view9_cont_wrapper<?=$videogalleryID; ?> .pagenum:last").val()) + 1;
+										var perpage =<?=$count_page; ?>;
+										var galleryid="<?=$image->videogallery_id; ?>";
+										var width="<?=$paramssld['video_ht_view9_video_width']; ?>";
+										var height="<?=$paramssld['video_ht_view9_video_height']; ?>";
+										var position="<?=$paramssld['video_view9_image_position']; ?>";
+										getresult(pagenum,perpage,galleryid,width,height,position);
+									}else{
+										jQuery('#video_view9_cont_wrapper<?=$videogalleryID; ?> .load_more_button').hide();
+									}
+									return false;
+								});
+							}
+if(jQuery("#video_view9_cont_wrapper<?=$videogalleryID; ?> .pagenum:last").val()==jQuery("#video_view9_cont_wrapper<?=$videogalleryID; ?> #total").val()) {
+												jQuery('#video_view9_cont_wrapper<?=$videogalleryID; ?> .load_more_button').hide();
+											}
+							function getresult(pagenum,perpage,galleryid,width,height,position){
+								var data = {
+										action:"huge_it_video_gallery_ajax",
+										task:'load_videos',
+										page:pagenum,
+										perpage:perpage,
+										galleryid:galleryid,
+										width:width,
+										height:height,
+										position:position
+								}
+								jQuery('#video_view9_cont_wrapper<?=$videogalleryID; ?> .loading').show();
+								jQuery('#video_view9_cont_wrapper<?=$videogalleryID; ?> .load_more_button').hide();
+								jQuery.post('<?php echo admin_url("admin-ajax.php"); ?>',data,function(response){
+									if(response.success){
+										setTimeout(function(){
+											jQuery("#video_view9_cont_list<?=$videogalleryID; ?>").append(response.success);
+											jQuery('#video_view9_cont_wrapper<?=$videogalleryID; ?> .load_more_button').show();
+											jQuery('#video_view9_cont_wrapper<?=$videogalleryID; ?> .loading').hide();
+											
+										},500);
+										setTimeout(function(){
+											if(jQuery("#video_view9_cont_wrapper<?=$videogalleryID; ?> .pagenum:last").val()==jQuery("#video_view9_cont_wrapper<?=$videogalleryID; ?> #total").val()) {
+												jQuery('#video_view9_cont_wrapper<?=$videogalleryID; ?> .load_more_button').hide();
+											}
+										},1000);
+
+									}else{
+										alert("no");
+									}
+								},"json");
+							}
+
+						});
+					</script>
+				</div>
+				<?php 
+			}elseif($a==0){
+		?>
+		<div class="paginate">
+			<?php
+			$protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https://' : 'http://';
+			$actual_link = $protocol.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."";
+			
+			
+			$checkREQ='';
+			$pattern="/\?p=/";
+			$pattern2="/&page-img[0-9]+=[0-9]+/";
+			$pattern3="/?page-img[0-9]+=[0-9]+/";
+			//$res=preg_match($pattern, $actual_link);
+			if(preg_match($pattern, $actual_link)){
+
+				if(preg_match($pattern2, $actual_link)){
+					$actual_link=preg_replace($pattern2, '', $actual_link);
+				}
+
+				$checkREQ=$actual_link.'&page-img'.$videogalleryID.$pID;
+				
+			}else{
+				$checkREQ='?page-img'.$videogalleryID.$pID;
+				
+			}
+			//var_dump($res);  
+			
+			// Проверяем нужны ли стрелки назад  
+				$pervpage='';
+			if ($page != 1) $pervpage = '<a href= '.$checkREQ.'=1><i class="icon-style hugeiticons-fast-backward" ></i></a>  
+			                               <a href= '.$checkREQ.'='. ($page - 1) .'><i class="icon-style hugeiticons-chevron-left"></i></a> ';  
+			// Проверяем нужны ли стрелки вперед  
+		       $nextpage='';
+			if ($page != $total) $nextpage = ' <a href= '.$checkREQ.'='. ($page + 1) .'><i class="icon-style hugeiticons-chevron-right"></i></a>  
+			                                   <a href= '.$checkREQ.'=' .$total. '><i class="icon-style hugeiticons-fast-forward" ></i></a>';  
+
+			// Находим две ближайшие станицы с обоих краев, если они есть  
+			/*if($page - 2 > 0) $page2left = ' <a href= ./?page='. ($page - 2) .'>'. ($page - 2) .'</a> | ';  
+			if($page - 1 > 0) $page1left = '<a href= ./?page='. ($page - 1) .'>'. ($page - 1) .'</a> | ';  
+			if($page + 2 <= $total) $page2right = ' | <a href= ./?page='. ($page + 2) .'>'. ($page + 2) .'</a>';  
+			if($page + 1 <= $total) $page1right = ' | <a href= ./?page='. ($page + 1) .'>'. ($page + 1) .'</a>'; */
+
+			// Вывод меню  
+			echo $pervpage.$page.'/'.$total.$nextpage;  
+
+			?>
+</div>
+<?php
+}
+?>
+				
 </div>
 <?php		
 	break;

@@ -243,18 +243,36 @@ function apply_cat($id)
 	if(isset($_POST["content"])){
 	$script_cat = preg_replace('#<script(.*?)>(.*?)</script>#is', '', stripslashes($_POST["content"]));
 	}
+			if(isset($_POST["name"]) && isset($_POST["display_type"]) && isset($_POST["content_per_page"])){
+			if($_POST["name"] != ''){
+			$wpdb->query("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  name = '".$_POST["name"]."'  WHERE id = '".$id."' ");
+			$wpdb->query("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  sl_width = '".$_POST["sl_width"]."'  WHERE id = '".$id."' ");
+			$wpdb->query("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  sl_height = '".$_POST["sl_height"]."'  WHERE id = '".$id."' ");
+			$wpdb->query("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  pause_on_hover = '".$_POST["pause_on_hover"]."'  WHERE id = '".$id."' ");
+			$wpdb->query("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  videogallery_list_effects_s = '".$_POST["videogallery_list_effects_s"]."'  WHERE id = '".$id."' ");
+			$wpdb->query("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  description = '".$_POST["sl_pausetime"]."'  WHERE id = '".$id."' ");
+			$wpdb->query("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  param = '".$_POST["sl_changespeed"]."'  WHERE id = '".$id."' ");
+			$wpdb->query("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  sl_position = '".$_POST["sl_position"]."'  WHERE id = '".$id."' ");
+			$wpdb->query("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  huge_it_sl_effects = '".$_POST["huge_it_sl_effects"]."'  WHERE id = '".$id."' ");
+			$wpdb->query("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  display_type = '".$_POST["display_type"]."'  WHERE id = '".$id."' ");
+			$wpdb->query("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  content_per_page = '".$_POST["content_per_page"]."'  WHERE id = '".$id."' ");
+			
+			$wpdb->query("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  ordering = '1'  WHERE id = '".$id."' ");
+			}
+			}
+
 			if(isset($_POST["name"])){
 			if($_POST["name"] != ''){
-	$wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  name = %s  WHERE id = %d ", $_POST["name"], $id));
-	$wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  sl_width = %s  WHERE id = %d ", $_POST["sl_width"], $id));
-	$wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  sl_height = %s  WHERE id = %d ", $_POST["sl_height"], $id));
-	$wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  pause_on_hover = %s  WHERE id = %d ", $_POST["pause_on_hover"], $id));
-	$wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  videogallery_list_effects_s = %s  WHERE id = %d ", $_POST["videogallery_list_effects_s"], $id));
-	$wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  description = %s  WHERE id = %d ", $_POST["sl_pausetime"], $id));
-	$wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  param = %s  WHERE id = %d ", $_POST["sl_changespeed"], $id));
-	$wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  sl_position = %s  WHERE id = %d ", $_POST["sl_position"], $id));
-	$wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  huge_it_sl_effects = %s  WHERE id = %d ", $_POST["huge_it_sl_effects"], $id));
-	$wpdb->query($wpdb->prepare("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  ordering = '1'  WHERE id = %d ", $id));
+			$wpdb->query("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  name = '".$_POST["name"]."'  WHERE id = '".$id."' ");
+			$wpdb->query("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  sl_width = '".$_POST["sl_width"]."'  WHERE id = '".$id."' ");
+			$wpdb->query("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  sl_height = '".$_POST["sl_height"]."'  WHERE id = '".$id."' ");
+			$wpdb->query("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  pause_on_hover = '".$_POST["pause_on_hover"]."'  WHERE id = '".$id."' ");
+			$wpdb->query("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  videogallery_list_effects_s = '".$_POST["videogallery_list_effects_s"]."'  WHERE id = '".$id."' ");
+			$wpdb->query("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  description = '".$_POST["sl_pausetime"]."'  WHERE id = '".$id."' ");
+			$wpdb->query("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  param = '".$_POST["sl_changespeed"]."'  WHERE id = '".$id."' ");
+			$wpdb->query("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  sl_position = '".$_POST["sl_position"]."'  WHERE id = '".$id."' ");
+			$wpdb->query("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  huge_it_sl_effects = '".$_POST["huge_it_sl_effects"]."'  WHERE id = '".$id."' ");
+			$wpdb->query("UPDATE ".$wpdb->prefix."huge_it_videogallery_galleries SET  ordering = '1'  WHERE id = '".$id."' ");
 			}
 			}
 	
